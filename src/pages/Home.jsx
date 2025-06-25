@@ -79,12 +79,11 @@ export default function PortfolioAuthForm() {
                     placeholder="User Name"
                     value={formData.userName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                    className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:bg-orange-100 focus:border-white focus:outline-none transition-colors"
                     required={!isLogin}
                   />
                 </div>
               )}
-
               <div>
                 <input
                   type="email"
@@ -92,7 +91,7 @@ export default function PortfolioAuthForm() {
                   placeholder="Email ID"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:bg-orange-100 focus:border-white focus:outline-none transition-colors"
                   required
                 />
               </div>
@@ -104,7 +103,7 @@ export default function PortfolioAuthForm() {
                   placeholder={isLogin ? "Password" : "Enter password"}
                   value={formData.password}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:bg-orange-100 focus:border-white focus:outline-none transition-colors"
                   required
                 />
               </div>
@@ -117,7 +116,7 @@ export default function PortfolioAuthForm() {
                     placeholder="Re-enter password"
                     value={formData.confirmPassword}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                    className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:bg-orange-100 focus:border-white focus:outline-none transition-colors"
                     required={!isLogin}
                   />
                 </div>
