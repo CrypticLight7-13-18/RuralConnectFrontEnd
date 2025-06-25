@@ -37,20 +37,21 @@ export default function PortfolioAuthForm() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex">
+    <div className="min-h-screen bg-cyan-400 text-white flex">
+    <div className="max-h-3/4 bg-green-300 text-white flex m-auto border-orange-70 border-10 rounded-md ">
       <div className="flex-1 flex items-center justify-center p-12">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold mb-4">
             <span className="text-gray-500">Welcome to your</span>
             <br />
-            <span className="text-white">Portfolio</span>
+            <span className="text-white">Healthcare</span>
             <br />
-            <span className="text-white">Management</span>
+            <span className="text-white">Assistance</span>
             <br />
             <span className="text-gray-500">platform</span>
           </h1>
-          <p className="text-gray-300 text-lg mt-6">
-            One stop and best solution for your portfolio management and guide
+          <p className="text-gray-700 text-lg mt-6">
+            One stop and best solution for your healthcare needs and benefits
           </p>
         </div>
       </div>
@@ -72,7 +73,7 @@ export default function PortfolioAuthForm() {
                   placeholder="User Name"
                   value={formData.userName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
                   required={!isLogin}
                 />
               </div>
@@ -85,7 +86,7 @@ export default function PortfolioAuthForm() {
                 placeholder="Email ID"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -97,7 +98,7 @@ export default function PortfolioAuthForm() {
                 placeholder={isLogin ? "Password" : "Enter password"}
                 value={formData.password}
                 onChange={handleInputChange}
-                className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
                 required
               />
             </div>
@@ -110,7 +111,7 @@ export default function PortfolioAuthForm() {
                   placeholder="Re-enter password"
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
+                  className="w-full px-4 py-4 bg-transparent border border-gray-600 rounded-lg text-black placeholder-gray-500 focus:border-white focus:outline-none transition-colors"
                   required={!isLogin}
                 />
               </div>
@@ -120,7 +121,7 @@ export default function PortfolioAuthForm() {
               <button
                 type="button"
                 onClick={toggleMode}
-                className="text-gray-400 hover:text-white transition-colors mb-4"
+                className="text-gray-700 hover:text-white transition-colors mb-4"
               >
                 {isLogin ? "New user? SignUp" : "Already have an existing account?"}
               </button>
@@ -136,6 +137,7 @@ export default function PortfolioAuthForm() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
