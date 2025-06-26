@@ -1,3 +1,9 @@
 @import "tailwindcss";
 
-@tailwind utilities;
+@theme {
+  --color-lightestBlue: "#e0fbfc";
+  --color-lightBlue: "#c2dfe3";
+  --color-mediumBlue: "#9db4c0";
+  --color-darkBlue: "#5c6b73";
+  --color-darkestBlue: "#253237";
+}
