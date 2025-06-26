@@ -41,7 +41,6 @@ export default function PortfolioAuthForm() {
 
     return (
   <div className="min-h-screen bg-cyan-400 text-white flex flex-col">
-    <Navbar />
 
     <div className="flex-grow flex items-center justify-center">
       <div className="max-h-3/4 bg-green-300 text-white flex m-auto border-orange-100 border-[10px] rounded-md">
