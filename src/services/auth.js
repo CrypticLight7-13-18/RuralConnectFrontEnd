@@ -34,7 +34,7 @@ export const logout = async () => {
  */
 export const fetchUserProfile = async () => {
   try {
-    const response = await axiosInstance.get("api/users/me", {
+    const response = await axiosInstance.get("/api/users/me", {
       withCredentials: true, // Ensures the cookie gets sent
     });
     console.log("User profile fetched:", response.data);
