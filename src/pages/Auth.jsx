@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Stethoscope, Mail, Lock, Eye, EyeOff, Heart } from "lucide-react";
+import { User, Calendar , Stethoscope, Mail, Lock, Eye, EyeOff, Heart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Nav";
 import { login , signup } from "../services/auth";
 
 export default function Auth() {
@@ -17,6 +16,7 @@ export default function Auth() {
     password: "",
     confirmPassword: "",
     role: "patient",
+    dateOfBirth: "",
   });
 
   const handleInputChange = (e) => {
@@ -31,6 +31,7 @@ export default function Auth() {
       password: "",
       confirmPassword: "",
       role: "patient",
+      dateOfBirth: "",
     });
   };
 
@@ -64,6 +65,7 @@ export default function Auth() {
           password: formData.password,
           passwordConfirm: formData.confirmPassword,
           role: "patient",
+          dateOfBirth: formData.dateOfBirth,
         });
 
         console.log("Signup response:", res);
@@ -243,6 +245,18 @@ export default function Auth() {
                             name="userName"
                             placeholder="Full Name"
                             value={formData.userName}
+                            onChange={handleInputChange}
+                            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all duration-200"
+                            required={!isLogin}
+                          />
+                        </div>
+                        <div className="relative">
+                          <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+                          <input
+                            type="date"
+                            name="dateOfBirth"
+                            placeholder="Date of Birth"
+                            value={formData.dateOfBirth}
                             onChange={handleInputChange}
                             className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent transition-all duration-200"
                             required={!isLogin}
