@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Calendar, Store, MessageCircle, User, RefreshCw } from 'lucide-react';
 import { fetchUserProfile } from '../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 // Custom Medical Logo Component
 const MedicalLogo = () => (
@@ -22,6 +23,7 @@ export default function Navbar() {
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const loadUserProfile = async () => {
     try {
@@ -43,7 +45,17 @@ export default function Navbar() {
   }, []);
 
   const handleNavigation = (section) => {
-    console.log(`Navigating to ${section}`);
+    if (section === 'appointments') {
+      if (userData.role === 'doctor') {
+        navigate('/appointment');
+      } else {
+        navigate('/my-appointments');
+      }
+    } else if (section === 'store') {
+      navigate('/store');
+    } else if (section === 'chat') {
+      navigate('/chat');
+    }
   };
 
   if (isLoading) {

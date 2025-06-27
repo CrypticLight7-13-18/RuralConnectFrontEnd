@@ -1,7 +1,5 @@
 import {
   X,
-  User,
-  Settings,
   Plus,
   Clock,
   Trash2,
@@ -19,9 +17,6 @@ const colors = {
 export default function Sidebar({
   chatSummary,
   currentChat,
-  patientProfile,
-  showProfile,
-  setShowProfile,
   onNewChat,
   onSelectChat,
   onDeleteChat,
@@ -53,30 +48,6 @@ export default function Sidebar({
           >
             <X size={20} />
           </button>
-        </div>
-
-        {/* Profile Section */}
-        <div className="p-4 border-b" style={{ borderColor: colors.darkBlue }}>
-          <div className="flex items-center space-x-3">
-            <div
-              className="w-10 h-10 rounded-full flex items-center justify-center text-white"
-              style={{ backgroundColor: colors.mediumBlue }}
-            >
-              <User size={20} />
-            </div>
-            <div className="flex-1">
-              <p className="text-white font-medium">
-                {patientProfile?.personalInfo?.name}
-              </p>
-              <p className="text-gray-300 text-sm">{patientProfile?.role}</p>
-            </div>
-            <button
-              onClick={() => setShowProfile(!showProfile)}
-              className="text-gray-300 hover:text-white"
-            >
-              <Settings size={16} />
-            </button>
-          </div>
         </div>
 
         {/* New Chat Button */}

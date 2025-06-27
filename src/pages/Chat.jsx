@@ -186,10 +186,7 @@ const ChatPage = () => {
   };
 
   return (
-    <div
-      className="flex h-screen"
-      style={{ backgroundColor: colors.lightestBlue }}
-    >
+    <div className="flex flex-1 min-h-0" style={{ backgroundColor: colors.lightestBlue }}>
       {/* Sidebar */}
       <Sidebar
         chatSummary={chatSummary}
@@ -203,12 +200,10 @@ const ChatPage = () => {
         setShowProfile={setShowProfile}
         showProfile={showProfile}
       />
-
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-h-0">
         {/* Header */}
         <ChatHeader currentChat={currentChat} setSidebarOpen={setSidebarOpen} />
-
         {/* Chat Messages or Welcome Screen */}
         <MainArea
           currentChat={currentChat}
@@ -216,7 +211,6 @@ const ChatPage = () => {
           startNewChat={startNewChat}
           messagesEndRef={messagesEndRef}
         />
-
         {/* Message Input */}
         <MessageInput
           currentChat={currentChat}
@@ -226,15 +220,12 @@ const ChatPage = () => {
           isLoading={isLoading}
         />
       </div>
-
       {/* Profile Modal */}
       <ProfileModal
         showProfile={showProfile}
         setShowProfile={setShowProfile}
         patientProfile={patientProfile}
       />
-      
-
       {/* Overlay for mobile sidebar */}
       {sidebarOpen && (
         <div
