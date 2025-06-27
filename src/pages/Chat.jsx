@@ -1,11 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
-import { socket } from "../services/socket";
 import Sidebar from "../components/Chat/Sidebar";
 import ChatHeader from "../components/Chat/ChatHeader";
 import MessageInput from "../components/Chat/MessageInput";
 import MainArea from "../components/Chat/MainArea";
 import ProfileModal from "../components/Chat/ProfileModal";
 import { dummyPatientData } from "../assets/dummyVariables";
+
+//Socket setup
+import { io } from "socket.io-client";
+import { backendURL } from "../services/api";
+
+const socket = io(backendURL);
 
 // Color scheme variables
 const colors = {
