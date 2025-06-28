@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const backendURL = "http://localhost:3000";
-// export const backendURL = "https://opulent-broccoli-4pjg9w97jqv2j97-3000.app.github.dev/"
+// export const backendURL = "http://localhost:3000";
+export const backendURL = "https://opulent-broccoli-4pjg9w97jqv2j97-3000.app.github.dev/"
 
 const axiosInstance = axios.create({
   baseURL: backendURL,

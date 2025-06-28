@@ -16,12 +16,12 @@ export default function MainArea({
   messagesEndRef,
 }) {
   return (
-    <div className="flex-1 overflow-y-auto p-4">
+    <div className="flex-1 overflow-y-auto max-h-[90.5vh] p-4">
       {currentChat ? (
         <div className="max-w-4xl mx-auto">
           {currentChat.messageHistory.map((msg, index) => (
-            <MessageBubble key={index} msg={msg} />
-          ))}
+              <MessageBubble key={index} msg={msg} />
+            ))}
           {isLoading && (
             <div className="flex justify-start mb-4">
               <div

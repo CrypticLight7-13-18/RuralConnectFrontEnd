@@ -37,7 +37,6 @@ export const fetchUserProfile = async () => {
     const response = await axiosInstance.get("/api/users/me", {
       withCredentials: true, // Ensures the cookie gets sent
     });
-    console.log("User profile fetched:", response.data);
     return response.data.data.user;
   } catch (error) {
     console.error("Failed to fetch user profile:", error);
