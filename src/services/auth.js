@@ -34,10 +34,10 @@ export const logout = async () => {
  */
 export const fetchUserProfile = async () => {
   try {
-    const response = await axiosInstance.get("/users/me", {
+    const response = await axiosInstance.get("/api/users/me", {
       withCredentials: true, // Ensures the cookie gets sent
     });
-    return response.data.user;
+    return response.data.data.user;
   } catch (error) {
     console.error("Failed to fetch user profile:", error);
     throw error;

@@ -1,13 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
-import { socket } from "../services/socket";
+import { useState, useRef, useEffect } from "react";
 import Sidebar from "../components/Chat/Sidebar";
 import ChatHeader from "../components/Chat/ChatHeader";
 import MessageInput from "../components/Chat/MessageInput";
 import MainArea from "../components/Chat/MainArea";
-import ProfileModal from "../components/Chat/ProfileModal";
 import { dummyPatientData } from "../assets/dummyVariables";
+import { fetchChatSummaries, createChat } from "../services/chat";
+import { io } from "socket.io-client";
+import { backendURL } from "../services/api";
 
-// Color scheme variables
+const socket = io(backendURL);
+
 const colors = {
   lightestBlue: "#e0fbfc",
   lightBlue: "#c2dfe3",
@@ -16,25 +18,11 @@ const colors = {
   darkestBlue: "#253237",
 };
 
-// Dummy functions
 const getPatientProfile = () => Promise.resolve(dummyPatientData);
-
-// Simulate backend data retrieval for chat details
-const getChatSummaries = async () => {
-  const res = await fetch("http://localhost:3000/api/chatSummaries");
-  return await res.json();
-};
-
-const getMessagesForChat = (chatId) => {
-  const chat = dummyChatHistory.find((chat) => chat.id === chatId);
-
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(chat ? chat.messageHistory : []), 500); // simulate delay
-  });
-};
 
 const ChatPage = () => {
   const [currentChat, setCurrentChat] = useState(null);
+  const [selectedChatId, setSelectedChatId] = useState(null);
   const [chatSummary, setChatSummary] = useState([]);
   const [patientProfile, setPatientProfile] = useState(null);
   const [message, setMessage] = useState("");
@@ -47,7 +35,12 @@ const ChatPage = () => {
     // Load initial data
     const loadData = async () => {
       const profile = await getPatientProfile();
-      const summaries = await getChatSummaries();
+      let summaries = [];
+      try {
+        summaries = await fetchChatSummaries();
+      } catch (e) {
+        summaries = [];
+      }
       setPatientProfile(profile);
       setChatSummary(summaries);
     };
@@ -55,121 +48,101 @@ const ChatPage = () => {
   }, []);
 
   useEffect(() => {
+    // Removed console.log for production
+  }, [currentChat]);
+
+  // Socket listeners for chatHistory and message
+  useEffect(() => {
+    socket.on("chatHistory", (messages) => {
+      // Find the summary for the selected chat
+      const summary = chatSummary.find((c) => c.id === selectedChatId);
+      if (summary) {
+        setCurrentChat({ ...summary, messageHistory: messages.messageHistory });
+      }
+    });
+    socket.on("message", (msg) => {
+      setCurrentChat((prev) => {
+        if (!prev) return prev;
+        const history = prev.messageHistory || [];
+        // Prevent duplicate if the last message is identical
+        if (history.length > 0) {
+          const last = history[history.length - 1];
+          if (
+            last &&
+            last.message === msg.message &&
+            last.role === msg.role &&
+            new Date(last.timestamp).getTime() === new Date(msg.timestamp).getTime()
+          ) {
+            return prev;
+          }
+        }
+        return { ...prev, messageHistory: [...history, msg] };
+      });
+    });
+    return () => {
+      socket.off("chatHistory");
+      socket.off("message");
+    };
+  }, [chatSummary, selectedChatId]);
+
+  useEffect(() => {
     scrollToBottom();
   }, [currentChat?.messageHistory]);
 
+  // Join chat room when chat changes
   useEffect(() => {
-    if (!currentChat) return;
-
-    // Join selected chat room
-    socket.emit("joinChat", currentChat.id);
-
-    // Receive existing messages
-    socket.on("chatSummary", (messages) => {
-      setCurrentChat((prev) => ({
-        ...prev,
-        messageHistory: messages,
-      }));
-    });
-
-    // Listen for new incoming messages
-    socket.on("message", (msg) => {
-      setCurrentChat((prev) => ({
-        ...prev,
-        messageHistory: [...prev.messageHistory, msg],
-      }));
-    });
-
-    return () => {
-      socket.off("chatSummary");
-      socket.off("message");
-    };
+    if (currentChat && currentChat.id) {
+      socket.emit("joinChat", { chatId: currentChat.id });
+    }
   }, [currentChat?.id]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const startNewChat = () => {
-    const newChat = {
-      id: `chat-${Date.now()}`,
-      title: "New Consultation",
-      lastMessage: "",
-      timestamp: new Date().toISOString(),
-      messageHistory: [
-        {
-          role: "System",
-          message:
-            "Hello! I'm here to help with your preliminary health assessment. Please describe your symptoms in detail.",
-          timestamp: new Date().toISOString(),
-        },
-      ],
-    };
-    setCurrentChat(newChat);
-    setChatSummary([newChat, ...chatSummary]);
-    setSidebarOpen(false);
+  const startNewChat = async () => {
+    const title = "New Consultation";
+    const systemMessage = "Hello! I'm here to help with your preliminary health assessment. Please describe your symptoms in detail.";
+    try {
+      setIsLoading(true);
+      const chat = await createChat(title, systemMessage);
+      const newChat = {
+        id: chat._id,
+        title: chat.title,
+        lastMessage: chat.lastMessage,
+        timestamp: chat.updatedAt || chat.createdAt || new Date().toISOString(),
+        messageHistory: chat.messageHistory || [],
+      };
+      setCurrentChat(newChat);
+      setChatSummary([newChat, ...chatSummary]);
+      setSidebarOpen(false);
+    } catch (error) {
+      alert(error.message || "Failed to create chat");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const selectChat = async (chat) => {
-    const messages = await getMessagesForChat(chat.id);
-    const chatWithMessages = {
-      ...chat,
-      messageHistory: messages,
-    };
-    setCurrentChat(chatWithMessages);
+  const selectChat = (chat) => {
+    if (!chat) {
+      console.error("No chat or chat.id provided to selectChat", chat, chat?.id);
+      return;
+    }
+    setSelectedChatId(chat.id);
+    socket.emit("joinChat", { chatId: chat.id });
     setSidebarOpen(false);
   };
 
   const handleSendMessage = async () => {
-    if (!message.trim() || isLoading) return;
-
-    const userMessage = {
-      role: "User",
-      message: message.trim(),
-      timestamp: new Date().toISOString(),
-    };
-
-    const updatedChat = {
-      ...currentChat,
-      messageHistory: [...currentChat.messageHistory, userMessage],
-      lastMessage: message.trim(),
-      timestamp: new Date().toISOString(),
-    };
-
-    setCurrentChat(updatedChat);
-    setMessage("");
+    if (!message.trim() || isLoading || !currentChat?.id) return;
     setIsLoading(true);
-
-    try {
-      socket.emit("newMessage", {
-        chatId: currentChat.id,
-        role: "User",
-        message,
-      });
-
-      const assistantMessage = {
-        role: "Assistant",
-        message: response,
-        timestamp: new Date().toISOString(),
-      };
-
-      const finalChat = {
-        ...updatedChat,
-        messageHistory: [...updatedChat.messageHistory, assistantMessage],
-        lastMessage: response,
-      };
-
-      setCurrentChat(finalChat);
-
-      // Update chat history
-      setChatSummary((prev) =>
-        prev.map((chat) => (chat.id === finalChat.id ? finalChat : chat))
-      );
-    } catch (error) {
-      console.error("Error sending message:", error);
-    } finally {
-      setIsLoading(false);
-    }
+    socket.emit("newMessage", {
+      chatId: currentChat.id,
+      role: "User",
+      message,
+    });
+    setMessage("");
+    setIsLoading(false);
   };
 
   const deleteChat = (chatId, e) => {
@@ -181,10 +154,7 @@ const ChatPage = () => {
   };
 
   return (
-    <div
-      className="flex h-screen"
-      style={{ backgroundColor: colors.lightestBlue }}
-    >
+    <div className="flex flex-1 min-h-0" style={{ backgroundColor: colors.lightestBlue }}>
       {/* Sidebar */}
       <Sidebar
         chatSummary={chatSummary}
@@ -198,12 +168,10 @@ const ChatPage = () => {
         setShowProfile={setShowProfile}
         showProfile={showProfile}
       />
-
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-h-0">
         {/* Header */}
         <ChatHeader currentChat={currentChat} setSidebarOpen={setSidebarOpen} />
-
         {/* Chat Messages or Welcome Screen */}
         <MainArea
           currentChat={currentChat}
@@ -211,7 +179,6 @@ const ChatPage = () => {
           startNewChat={startNewChat}
           messagesEndRef={messagesEndRef}
         />
-
         {/* Message Input */}
         <MessageInput
           currentChat={currentChat}
@@ -221,15 +188,6 @@ const ChatPage = () => {
           isLoading={isLoading}
         />
       </div>
-
-      {/* Profile Modal */}
-      <ProfileModal
-        showProfile={showProfile}
-        setShowProfile={setShowProfile}
-        patientProfile={patientProfile}
-      />
-      
-
       {/* Overlay for mobile sidebar */}
       {sidebarOpen && (
         <div
