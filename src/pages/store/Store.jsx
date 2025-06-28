@@ -1,59 +1,56 @@
-import React, { useState, useMemo } from 'react';
-import { Plus, Minus, Trash2, ShoppingCart, X } from 'lucide-react';
-import  CheckoutModal  from '../../components/Store/CheckoutModal';
-import MedicineCard from '../../components/Store/MedicineCard';
+import React, { useState, useMemo, useEffect } from "react";
+import { Plus, Minus, Trash2, ShoppingCart } from "lucide-react";
+// Using simple alert for notifications. Feel free to swap with toast library.
+import { fetchMedicines } from "../../services/medicine";
+import { createOrder } from "../../services/order";
+import { fetchUserProfile } from "../../services/auth";
+import CheckoutModal from "../../components/Store/CheckoutModal";
+import MedicineCard from "../../components/Store/MedicineCard";
 
 /* -------------------------------------------------- */
 /* 1.  THEME  */
 const colors = {
-  lightestBlue: '#e0fbfc',
-  lightBlue:    '#c2dfe3',
-  mediumBlue:   '#9db4c0',
-  darkBlue:     '#5c6b73',
-  darkestBlue:  '#253237',
+  lightestBlue: "#e0fbfc",
+  lightBlue: "#c2dfe3",
+  mediumBlue: "#9db4c0",
+  darkBlue: "#5c6b73",
+  darkestBlue: "#253237",
 };
 
 /* -------------------------------------------------- */
-/* 2.  MOCK MEDICINE DATA  (replace with API later)  */
-const DUMMY_MEDICINES = [
-  {
-    id: 'm1',
-    name: 'Paracet 500mg',
-    price: 40,
-    description: 'Fever & mild-pain relief',
-    img: 'https://source.unsplash.com/200x160/?pill',
-  },
-  {
-    id: 'm2',
-    name: 'Amoxy 250mg',
-    price: 120,
-    description: 'Broad-spectrum antibiotic',
-    img: 'https://source.unsplash.com/200x160/?medicine',
-  },
-  {
-    id: 'm3',
-    name: 'Vit-C ChewTabs',
-    price: 150,
-    description: 'Immunity booster (orange)',
-    img: 'https://source.unsplash.com/200x160/?vitamin',
-  },
-  {
-    id: 'm4',
-    name: 'Cetirizine 10mg',
-    price: 25,
-    description: 'Anti-allergic relief',
-    img: 'https://source.unsplash.com/200x160/?capsule',
-  },
-];
-
-
+/* 2.  Medicines fetched from backend */
 
 /* -------------------------------------------------- */
 /* 4.  MAIN STORE PAGE  */
 export default function StorePage() {
   /* cart = { id, name, price, qty }[] */
-  const [cart, setCart]         = useState([]);
+  const [cart, setCart] = useState([]);
   const [showCheckout, setShow] = useState(false);
+  const [medicines, setMedicines] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  /* Fetch medicines on mount */
+  useEffect(() => {
+    const loadMedicines = async () => {
+      try {
+        const meds = await fetchMedicines({ limit: 30 });
+        // Transform medicines to expected shape for UI
+        const transformed = meds.map((m) => ({
+          id: m._id,
+          name: m.name,
+          price: m.price,
+          description: m.shortDesc,
+          img: m.image || "https://source.unsplash.com/200x160/?medicine",
+        }));
+        setMedicines(transformed);
+      } catch (err) {
+        console.error("Failed to load medicines", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadMedicines();
+  }, []);
 
   /* ----- cart helpers ----- */
   const addToCart = (prod) => {
@@ -82,6 +79,35 @@ export default function StorePage() {
     [cart]
   );
 
+  /* Create order handler passed to CheckoutModal */
+  const handlePlaceOrder = async (address, paymentMethod) => {
+    try {
+      // 1. Get user profile to obtain ID
+      const user = await fetchUserProfile();
+      // 2. Build order items list
+      const orderItems = cart.map((item) => ({
+        medicineId: item.id,
+        quantity: item.qty,
+      }));
+
+      const orderPayload = {
+        customerId: user._id,
+        orderItems,
+        shippingAddress: address,
+        // Let backend compute total and delivery date
+      };
+
+      await createOrder(orderPayload);
+      // Reset cart after success
+      setCart([]);
+      setShow(false);
+      alert("Order placed successfully");
+    } catch (err) {
+      console.error("Order creation failed", err);
+      alert(err.response?.data?.message || "Failed to place order");
+    }
+  };
+
   /* ----- render ----- */
   return (
     <div
@@ -98,7 +124,7 @@ export default function StorePage() {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {DUMMY_MEDICINES.map((m) => (
+        {medicines.map((m) => (
           <MedicineCard key={m.id} product={m} onAdd={addToCart} />
         ))}
       </div>
@@ -184,21 +210,16 @@ export default function StorePage() {
       </div>
 
       {/* Checkout Modal */}
-     {showCheckout && (
-  <CheckoutModal
-    cart={cart}
-    total={total}
-    changeQty={changeQty}
-    removeItem={removeItem}
-    onClose={() => setShow(false)}
-  />
+      {showCheckout && (
+        <CheckoutModal
+          cart={cart}
+          total={total}
+          changeQty={changeQty}
+          removeItem={removeItem}
+          onClose={() => setShow(false)}
+          onPlaceOrder={handlePlaceOrder}
+        />
       )}
     </div>
   );
 }
-
-
-
-
-
-
