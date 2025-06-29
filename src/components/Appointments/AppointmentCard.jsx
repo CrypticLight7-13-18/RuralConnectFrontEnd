@@ -7,6 +7,7 @@ import {
   IndianRupee,
   Edit3,
   Trash2,
+  FileText,
 } from "lucide-react";
 
 const formatDate = (dateString) => {
@@ -23,6 +24,7 @@ export default function AppointmentCard({
   getStatusColor, 
   onEdit, 
   onCancel, 
+  onViewReport,
   loading 
 }) {
   return (
@@ -85,6 +87,15 @@ export default function AppointmentCard({
                 <Trash2 className="w-4 h-4" />
               </button>
             </div>
+          )}
+          {appointment.status === "Completed" && (
+            <button
+              onClick={() => onViewReport(appointment)}
+              className="p-2 text-slate-600 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+              title="View Report"
+            >
+              <FileText className="w-4 h-4" />
+            </button>
           )}
           <span
             className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(
