@@ -1,3 +1,5 @@
+import Markdown from "react-markdown";
+
 const colors = {
   lightestBlue: "#e0fbfc",
   lightBlue: "#c2dfe3",
@@ -20,26 +22,26 @@ const MessageBubble = ({ msg }) => {
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
       <div
-        className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
-          isUser
-            ? `text-white`
-            : isSystem
+        className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${isUser
+          ? `text-white`
+          : isSystem
             ? `text-gray-700 border-2 border-dashed`
             : `text-gray-800`
-        }`}
+          }`}
         style={{
           backgroundColor: isUser
             ? colors.darkBlue
             : isSystem
-            ? colors.lightestBlue
-            : colors.lightBlue,
+              ? colors.lightestBlue
+              : colors.lightBlue,
           borderColor: isSystem ? colors.mediumBlue : "transparent",
         }}
       >
-        <p className="text-sm">{msg.message}</p>
+        <p className="text-sm"><Markdown>{msg.message}</Markdown></p>
         <p className="text-xs mt-1 opacity-70">{formatTime(msg.timestamp)}</p>
       </div>
     </div>
+
   );
 };
 
