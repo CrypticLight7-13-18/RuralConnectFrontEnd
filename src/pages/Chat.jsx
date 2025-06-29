@@ -4,7 +4,7 @@ import ChatHeader from "../components/Chat/ChatHeader";
 import MessageInput from "../components/Chat/MessageInput";
 import MainArea from "../components/Chat/MainArea";
 import { dummyPatientData } from "../assets/dummyVariables";
-import { fetchChatSummaries, createChat } from "../services/chat";
+import { fetchChatSummaries, createChat, deleteChatById } from "../services/chat";
 import { io } from "socket.io-client";
 import { backendURL } from "../services/api";
 
@@ -114,6 +114,7 @@ const ChatPage = () => {
                 messageHistory: chat.messageHistory || [],
             };
             setCurrentChat(newChat);
+            setSelectedChatId(newChat.id); // Switch to the new chat
             setChatSummary([newChat, ...chatSummary]);
             setSidebarOpen(false);
         } catch (error) {
@@ -145,11 +146,19 @@ const ChatPage = () => {
         setIsLoading(false);
     };
 
-    const deleteChat = (chatId, e) => {
+    const deleteChat = async (chatId, e) => {
         e.stopPropagation();
-        setChatSummary((prev) => prev.filter((chat) => chat.id !== chatId));
-        if (currentChat?.id === chatId) {
-            setCurrentChat(null);
+        try {
+            setIsLoading(true);
+            await deleteChatById(chatId);
+            setChatSummary((prev) => prev.filter((chat) => chat.id !== chatId));
+            if (currentChat?.id === chatId) {
+                setCurrentChat(null);
+            }
+        } catch (error) {
+            alert(error.message || "Failed to delete chat");
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -169,7 +178,7 @@ const ChatPage = () => {
                 showProfile={showProfile}
             />
             {/* Main Chat Area */}
-            <div className="flex-1 flex flex-col min-h-0">
+            <div className="flex-1 flex flex-col min-h-0 max-h-[90.5vh]">
                 {/* Header */}
                 <ChatHeader currentChat={currentChat} setSidebarOpen={setSidebarOpen} />
                 {/* Chat Messages or Welcome Screen */}
