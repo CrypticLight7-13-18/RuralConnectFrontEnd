@@ -1,8 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Calendar , Stethoscope, Mail, Lock, Eye, EyeOff, Heart } from "lucide-react";
+import {
+  User,
+  Calendar,
+  Stethoscope,
+  Mail,
+  Lock,
+  Eye,
+  EyeOff,
+  Heart,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { login , signup } from "../services/auth";
+import { login, signup } from "../services/auth";
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -86,7 +95,7 @@ export default function Auth() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-lightestBlue to-lightBlue flex flex-col">
       <div className="flex-grow flex items-center justify-center p-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -102,7 +111,9 @@ export default function Auth() {
               >
                 <div className="flex items-center mb-6">
                   <Heart className="w-8 h-8 text-lightBlue mr-3" />
-                  <h1 className="text-3xl lg:text-4xl font-bold">PharmaConnect</h1>
+                  <h1 className="text-3xl lg:text-4xl font-bold">
+                    PharmaConnect
+                  </h1>
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                   Welcome to your
@@ -111,8 +122,9 @@ export default function Auth() {
                   <span className="block text-mediumBlue">platform</span>
                 </h2>
                 <p className="text-mediumBlue text-lg lg:text-xl mb-8 leading-relaxed">
-                  Your trusted companion for comprehensive healthcare management. 
-                  Connect with doctors, track your health, and get personalized care.
+                  Your trusted companion for comprehensive healthcare
+                  management. Connect with doctors, track your health, and get
+                  personalized care.
                 </p>
                 <div className="flex space-x-4">
                   <div className="flex items-center text-lightBlue">
@@ -141,9 +153,13 @@ export default function Auth() {
                       className="absolute inset-y-1 bg-darkBlue rounded-full"
                       animate={{
                         x: isLogin ? 4 : "calc(100% - 4px)",
-                        width: isLogin ? "calc(50% - 4px)" : "calc(50% - 4px)"
+                        width: isLogin ? "calc(50% - 4px)" : "calc(50% - 4px)",
                       }}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
                     />
                     <button
                       onClick={() => setIsLogin(true)}
@@ -173,7 +189,9 @@ export default function Auth() {
                       transition={{ duration: 0.3 }}
                       className="mb-6"
                     >
-                      <p className="text-darkBlue text-sm mb-3 font-medium">I am a:</p>
+                      <p className="text-darkBlue text-sm mb-3 font-medium">
+                        I am a:
+                      </p>
                       <div className="grid grid-cols-2 gap-3">
                         <motion.button
                           type="button"
@@ -186,12 +204,20 @@ export default function Auth() {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          <User className={`w-6 h-6 mx-auto mb-2 ${
-                            formData.role === "patient" ? "text-darkBlue" : "text-mediumBlue"
-                          }`} />
-                          <span className={`text-sm font-medium ${
-                            formData.role === "patient" ? "text-darkestBlue" : "text-mediumBlue"
-                          }`}>
+                          <User
+                            className={`w-6 h-6 mx-auto mb-2 ${
+                              formData.role === "patient"
+                                ? "text-darkBlue"
+                                : "text-mediumBlue"
+                            }`}
+                          />
+                          <span
+                            className={`text-sm font-medium ${
+                              formData.role === "patient"
+                                ? "text-darkestBlue"
+                                : "text-mediumBlue"
+                            }`}
+                          >
                             Patient
                           </span>
                         </motion.button>
@@ -206,12 +232,20 @@ export default function Auth() {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                         >
-                          <Stethoscope className={`w-6 h-6 mx-auto mb-2 ${
-                            formData.role === "doctor" ? "text-darkBlue" : "text-mediumBlue"
-                          }`} />
-                          <span className={`text-sm font-medium ${
-                            formData.role === "doctor" ? "text-darkestBlue" : "text-mediumBlue"
-                          }`}>
+                          <Stethoscope
+                            className={`w-6 h-6 mx-auto mb-2 ${
+                              formData.role === "doctor"
+                                ? "text-darkBlue"
+                                : "text-mediumBlue"
+                            }`}
+                          />
+                          <span
+                            className={`text-sm font-medium ${
+                              formData.role === "doctor"
+                                ? "text-darkestBlue"
+                                : "text-mediumBlue"
+                            }`}
+                          >
                             Doctor
                           </span>
                         </motion.button>
@@ -226,10 +260,10 @@ export default function Auth() {
                       <motion.div
                         key="signup-fields"
                         initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
+                        animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                        style={{ overflow: 'hidden' }}
+                        style={{ overflow: "hidden" }}
                       >
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mediumBlue" />
@@ -286,7 +320,11 @@ export default function Auth() {
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-3 top-1/2 transform -translate-y-1/2 text-mediumBlue hover:text-darkBlue"
                     >
-                      {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                      {showPassword ? (
+                        <EyeOff className="w-5 h-5" />
+                      ) : (
+                        <Eye className="w-5 h-5" />
+                      )}
                     </button>
                   </div>
                   <AnimatePresence>
@@ -310,10 +348,16 @@ export default function Auth() {
                         />
                         <button
                           type="button"
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          onClick={() =>
+                            setShowConfirmPassword(!showConfirmPassword)
+                          }
                           className="absolute right-3 top-1/2 transform -translate-y-1/2 text-mediumBlue hover:text-darkBlue"
                         >
-                          {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                          {showConfirmPassword ? (
+                            <EyeOff className="w-5 h-5" />
+                          ) : (
+                            <Eye className="w-5 h-5" />
+                          )}
                         </button>
                       </motion.div>
                     )}

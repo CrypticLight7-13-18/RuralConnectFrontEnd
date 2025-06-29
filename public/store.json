@@ -1,0 +1,5763 @@
+[
+  {
+    "id": 1,
+    "name": "1 ML penicillin G benzathine 600000 UNT",
+    "price": 88.01,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "1 ML penicillin G benzathine 600000 UNT",
+    "price": 167.13,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "1 ML penicillin G procaine 600000 UNT",
+    "price": 354.99,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "10 ML dihydrostreptomycin 100 MG",
+    "price": 341.8,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "10 ML dihydrostreptomycin 100 MG",
+    "price": 343.42,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "10 ML nitroglycerin 5 MG",
+    "price": 118.97,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "name": "10 ML novobiocin 40 MG",
+    "price": 119.06,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "name": "10 ML novobiocin 40 MG",
+    "price": 487.75,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 9,
+    "name": "10 ML penicillin G procaine 10000 UNT",
+    "price": 426.96,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 10,
+    "name": "10 ML penicillin G procaine 10000 UNT",
+    "price": 151.96,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 11,
+    "name": "10 ML penicillin G procaine 10000 UNT",
+    "price": 397.3,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 12,
+    "name": "12 HR amoxicillin 1000 MG",
+    "price": 180.75,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 13,
+    "name": "12 HR amoxicillin 1000 MG",
+    "price": 212.85,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 14,
+    "name": "12 HR chlorpheniramine maleate 8 MG",
+    "price": 405.67,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 15,
+    "name": "12 HR dextromethorphan hydrobromide 25 MG",
+    "price": 218.34,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 16,
+    "name": "12 HR dextromethorphan hydrobromide 30 MG",
+    "price": 303.35,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 17,
+    "name": "12 HR dextromethorphan hydrobromide 30 MG",
+    "price": 312.57,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 18,
+    "name": "12 HR dextromethorphan hydrobromide 30 MG",
+    "price": 67.24,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 19,
+    "name": "12 HR dextromethorphan hydrobromide 40 MG",
+    "price": 430.69,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 20,
+    "name": "12 HR dextromethorphan hydrobromide 57.5 MG",
+    "price": 372.41,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 21,
+    "name": "12 HR dextromethorphan hydrobromide 60 MG",
+    "price": 493.31,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 22,
+    "name": "12 HR dextromethorphan hydrobromide 60 MG",
+    "price": 75.85,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 23,
+    "name": "12 HR dextromethorphan polistirex 6 MG",
+    "price": 272.44,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 24,
+    "name": "12 HR dextromethorphan polistirex 6 MG",
+    "price": 191.87,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 25,
+    "name": "2 ML penicillin G benzathine 300000 UNT",
+    "price": 73.42,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 26,
+    "name": "2 ML penicillin G benzathine 300000 UNT",
+    "price": 368.9,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 27,
+    "name": "2 ML penicillin G benzathine 450000 UNT",
+    "price": 423.63,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 28,
+    "name": "2 ML penicillin G benzathine 450000 UNT",
+    "price": 384.85,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 29,
+    "name": "2 ML penicillin G benzathine 600000 UNT",
+    "price": 372.11,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 30,
+    "name": "2 ML penicillin G benzathine 600000 UNT",
+    "price": 56.1,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 31,
+    "name": "2 ML penicillin G procaine 600000 UNT",
+    "price": 67.79,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 32,
+    "name": "24 HR calcium carbonate 1500 MG",
+    "price": 86.13,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 33,
+    "name": "24 HR nitroglycerin 0.1 MG",
+    "price": 59.99,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 34,
+    "name": "24 HR nitroglycerin 0.1 MG",
+    "price": 197.61,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 35,
+    "name": "24 HR nitroglycerin 0.2 MG",
+    "price": 487.41,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 36,
+    "name": "24 HR nitroglycerin 0.2 MG",
+    "price": 190.31,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 37,
+    "name": "24 HR nitroglycerin 0.3 MG",
+    "price": 419.41,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 38,
+    "name": "24 HR nitroglycerin 0.3 MG",
+    "price": 191.98,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 39,
+    "name": "24 HR nitroglycerin 0.4 MG",
+    "price": 492.96,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 40,
+    "name": "24 HR nitroglycerin 0.4 MG",
+    "price": 463.94,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 41,
+    "name": "24 HR nitroglycerin 0.6 MG",
+    "price": 319.96,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 42,
+    "name": "24 HR nitroglycerin 0.6 MG",
+    "price": 370.86,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 43,
+    "name": "24 HR nitroglycerin 0.8 MG",
+    "price": 206.34,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 44,
+    "name": "24 HR nitroglycerin 0.8 MG",
+    "price": 322.6,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 45,
+    "name": "250 ML nitroglycerin 0.1 MG",
+    "price": 196.48,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 46,
+    "name": "250 ML nitroglycerin 0.2 MG",
+    "price": 255.74,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 47,
+    "name": "250 ML nitroglycerin 0.4 MG",
+    "price": 82.68,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 48,
+    "name": "4 ML penicillin G benzathine 600000 UNT",
+    "price": 151.08,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 49,
+    "name": "4 ML penicillin G benzathine 600000 UNT",
+    "price": 160.46,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 50,
+    "name": "50 ML penicillin G potassium 20000 UNT",
+    "price": 101.84,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 51,
+    "name": "50 ML penicillin G potassium 40000 UNT",
+    "price": 100.15,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 52,
+    "name": "50 ML penicillin G potassium 60000 UNT",
+    "price": 470.39,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 53,
+    "name": "500 ML nitroglycerin 0.1 MG",
+    "price": 70.32,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 54,
+    "name": "500 ML nitroglycerin 0.4 MG",
+    "price": 72.54,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 55,
+    "name": "acetaminophen 1000 MG",
+    "price": 382.8,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 56,
+    "name": "acetaminophen 1000 MG",
+    "price": 147.22,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 57,
+    "name": "acetaminophen 160 MG",
+    "price": 378.92,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 58,
+    "name": "acetaminophen 160 MG",
+    "price": 165.59,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 59,
+    "name": "acetaminophen 162.5 MG",
+    "price": 116.89,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 60,
+    "name": "acetaminophen 162.5 MG",
+    "price": 117.86,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 61,
+    "name": "acetaminophen 162.5 MG",
+    "price": 313.11,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 62,
+    "name": "acetaminophen 162.5 MG",
+    "price": 202.65,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 63,
+    "name": "acetaminophen 163 MG",
+    "price": 221.59,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 64,
+    "name": "acetaminophen 200 MG",
+    "price": 121.1,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 65,
+    "name": "acetaminophen 200 MG",
+    "price": 194.35,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 66,
+    "name": "acetaminophen 21.7 MG",
+    "price": 494.74,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 67,
+    "name": "acetaminophen 21.7 MG",
+    "price": 171.7,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 68,
+    "name": "acetaminophen 21.7 MG",
+    "price": 135.82,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 69,
+    "name": "acetaminophen 21.7 MG",
+    "price": 470.97,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 70,
+    "name": "acetaminophen 21.7 MG",
+    "price": 242.27,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 71,
+    "name": "acetaminophen 21.7 MG",
+    "price": 97.26,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 72,
+    "name": "acetaminophen 21.7 MG",
+    "price": 94.41,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 73,
+    "name": "acetaminophen 21.7 MG",
+    "price": 244.58,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 74,
+    "name": "acetaminophen 21.7 MG",
+    "price": 250.59,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 75,
+    "name": "acetaminophen 21.7 MG",
+    "price": 242.8,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 76,
+    "name": "acetaminophen 21.7 MG",
+    "price": 445.49,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 77,
+    "name": "acetaminophen 25 MG",
+    "price": 390.22,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 78,
+    "name": "acetaminophen 25 MG",
+    "price": 244.3,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 79,
+    "name": "acetaminophen 250 MG",
+    "price": 351.16,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 80,
+    "name": "acetaminophen 250 MG",
+    "price": 70.07,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 81,
+    "name": "acetaminophen 250 MG",
+    "price": 81.52,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 82,
+    "name": "acetaminophen 250 MG",
+    "price": 318.97,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 83,
+    "name": "acetaminophen 250 MG",
+    "price": 439.6,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 84,
+    "name": "acetaminophen 250 MG",
+    "price": 204.38,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 85,
+    "name": "acetaminophen 250 MG",
+    "price": 200.82,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 86,
+    "name": "acetaminophen 250 MG",
+    "price": 363.98,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 87,
+    "name": "acetaminophen 32 MG",
+    "price": 424.67,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 88,
+    "name": "acetaminophen 32 MG",
+    "price": 136.64,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 89,
+    "name": "acetaminophen 32 MG",
+    "price": 422.85,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 90,
+    "name": "acetaminophen 32 MG",
+    "price": 280.07,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 91,
+    "name": "acetaminophen 32 MG",
+    "price": 422.16,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 92,
+    "name": "acetaminophen 32 MG",
+    "price": 392.2,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 93,
+    "name": "acetaminophen 32 MG",
+    "price": 243.98,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 94,
+    "name": "acetaminophen 32 MG",
+    "price": 339.6,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 95,
+    "name": "acetaminophen 32 MG",
+    "price": 55.33,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 96,
+    "name": "acetaminophen 32.5 MG",
+    "price": 172.83,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 97,
+    "name": "acetaminophen 32.5 MG",
+    "price": 245.8,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 98,
+    "name": "acetaminophen 32.5 MG",
+    "price": 168.79,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 99,
+    "name": "acetaminophen 32.5 MG",
+    "price": 225.9,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 100,
+    "name": "acetaminophen 32.5 MG",
+    "price": 237.55,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 101,
+    "name": "acetaminophen 32.5 MG",
+    "price": 135.05,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 102,
+    "name": "acetaminophen 32.5 MG",
+    "price": 169.51,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 103,
+    "name": "acetaminophen 32.5 MG",
+    "price": 296.78,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 104,
+    "name": "acetaminophen 32.5 MG",
+    "price": 478.21,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 105,
+    "name": "acetaminophen 32.5 MG",
+    "price": 212.9,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 106,
+    "name": "acetaminophen 32.5 MG",
+    "price": 251.69,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 107,
+    "name": "acetaminophen 325 MG",
+    "price": 209.28,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 108,
+    "name": "acetaminophen 325 MG",
+    "price": 239.08,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 109,
+    "name": "acetaminophen 325 MG",
+    "price": 452.37,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 110,
+    "name": "acetaminophen 325 MG",
+    "price": 211.8,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 111,
+    "name": "acetaminophen 325 MG",
+    "price": 460.04,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 112,
+    "name": "acetaminophen 325 MG",
+    "price": 99.59,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 113,
+    "name": "acetaminophen 325 MG",
+    "price": 164.16,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 114,
+    "name": "acetaminophen 325 MG",
+    "price": 354.17,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 115,
+    "name": "acetaminophen 325 MG",
+    "price": 202.8,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 116,
+    "name": "acetaminophen 325 MG",
+    "price": 164.87,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 117,
+    "name": "acetaminophen 325 MG",
+    "price": 114.48,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 118,
+    "name": "acetaminophen 325 MG",
+    "price": 99.24,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 119,
+    "name": "acetaminophen 325 MG",
+    "price": 104.75,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 120,
+    "name": "acetaminophen 325 MG",
+    "price": 186.29,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 121,
+    "name": "acetaminophen 325 MG",
+    "price": 330.43,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 122,
+    "name": "acetaminophen 325 MG",
+    "price": 287.21,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 123,
+    "name": "acetaminophen 325 MG",
+    "price": 95.71,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 124,
+    "name": "acetaminophen 325 MG",
+    "price": 218.84,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 125,
+    "name": "acetaminophen 325 MG",
+    "price": 455.4,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 126,
+    "name": "acetaminophen 325 MG",
+    "price": 178.66,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 127,
+    "name": "acetaminophen 325 MG",
+    "price": 176.67,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 128,
+    "name": "acetaminophen 325 MG",
+    "price": 382.24,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 129,
+    "name": "acetaminophen 325 MG",
+    "price": 176.92,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 130,
+    "name": "acetaminophen 325 MG",
+    "price": 277.11,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 131,
+    "name": "acetaminophen 325 MG",
+    "price": 386.99,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 132,
+    "name": "acetaminophen 325 MG",
+    "price": 215.53,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 133,
+    "name": "acetaminophen 325 MG",
+    "price": 146.41,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 134,
+    "name": "acetaminophen 325 MG",
+    "price": 71.34,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 135,
+    "name": "acetaminophen 325 MG",
+    "price": 186.63,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 136,
+    "name": "acetaminophen 325 MG",
+    "price": 177.6,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 137,
+    "name": "acetaminophen 325 MG",
+    "price": 158.82,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 138,
+    "name": "acetaminophen 325 MG",
+    "price": 377.81,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 139,
+    "name": "acetaminophen 325 MG",
+    "price": 427.95,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 140,
+    "name": "acetaminophen 325 MG",
+    "price": 64.07,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 141,
+    "name": "acetaminophen 325 MG",
+    "price": 214.36,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 142,
+    "name": "acetaminophen 325 MG",
+    "price": 380.44,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 143,
+    "name": "acetaminophen 325 MG",
+    "price": 406.01,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 144,
+    "name": "acetaminophen 325 MG",
+    "price": 308.99,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 145,
+    "name": "acetaminophen 325 MG",
+    "price": 252.7,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 146,
+    "name": "acetaminophen 325 MG",
+    "price": 83.49,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 147,
+    "name": "acetaminophen 33.3 MG",
+    "price": 240.31,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 148,
+    "name": "acetaminophen 33.3 MG",
+    "price": 467.76,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 149,
+    "name": "acetaminophen 33.3 MG",
+    "price": 418.99,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 150,
+    "name": "acetaminophen 33.3 MG",
+    "price": 342.76,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 151,
+    "name": "acetaminophen 33.3 MG",
+    "price": 54.11,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 152,
+    "name": "acetaminophen 33.3 MG",
+    "price": 388.03,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 153,
+    "name": "acetaminophen 43.3 MG",
+    "price": 381.04,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 154,
+    "name": "acetaminophen 50 MG",
+    "price": 360.18,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 155,
+    "name": "acetaminophen 500 MG",
+    "price": 379.45,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 156,
+    "name": "acetaminophen 500 MG",
+    "price": 430.84,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 157,
+    "name": "acetaminophen 500 MG",
+    "price": 354.84,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 158,
+    "name": "acetaminophen 500 MG",
+    "price": 148.29,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 159,
+    "name": "acetaminophen 500 MG",
+    "price": 346.82,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 160,
+    "name": "acetaminophen 500 MG",
+    "price": 89.9,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 161,
+    "name": "acetaminophen 500 MG",
+    "price": 492.88,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 162,
+    "name": "acetaminophen 500 MG",
+    "price": 304.7,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 163,
+    "name": "acetaminophen 500 MG",
+    "price": 87.19,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 164,
+    "name": "acetaminophen 500 MG",
+    "price": 321.85,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 165,
+    "name": "acetaminophen 6.67 MG",
+    "price": 456.17,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 166,
+    "name": "acetaminophen 65 MG",
+    "price": 160.69,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 167,
+    "name": "acetaminophen 65 MG",
+    "price": 442.02,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 168,
+    "name": "acetaminophen 650 MG",
+    "price": 248.29,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 169,
+    "name": "acetaminophen 650 MG",
+    "price": 265.25,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 170,
+    "name": "acetaminophen 650 MG",
+    "price": 448.05,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 171,
+    "name": "acetaminophen 650 MG",
+    "price": 385.22,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 172,
+    "name": "acetaminophen 650 MG",
+    "price": 115.29,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 173,
+    "name": "acetaminophen 650 MG",
+    "price": 426.01,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 174,
+    "name": "acetaminophen 80 MG",
+    "price": 448.78,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 175,
+    "name": "alendronic acid 70 MG",
+    "price": 294.94,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 176,
+    "name": "alendronic acid 70 MG",
+    "price": 305.51,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 177,
+    "name": "alendronic acid 70 MG",
+    "price": 458.23,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 178,
+    "name": "alendronic acid 70 MG",
+    "price": 482.05,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 179,
+    "name": "alpha tocopherol 10 MG",
+    "price": 290.41,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 180,
+    "name": "alpha tocopherol 30 UNT",
+    "price": 431.3,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 181,
+    "name": "alpha tocopherol 30 UNT",
+    "price": 138.65,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 182,
+    "name": "alpha tocopherol 300 UNT",
+    "price": 348.49,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 183,
+    "name": "alpha tocopherol 300 UNT",
+    "price": 272.45,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 184,
+    "name": "alpha tocopherol 300 UNT",
+    "price": 284.96,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 185,
+    "name": "alpha tocopherol 300 UNT",
+    "price": 231.01,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 186,
+    "name": "alpha tocopherol 500 UNT",
+    "price": 291.68,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 187,
+    "name": "alpha tocopherol 500 UNT",
+    "price": 254.05,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 188,
+    "name": "alpha-tocopherol acetate 1 UNT",
+    "price": 230.25,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 189,
+    "name": "alpha-tocopherol acetate 1 UNT",
+    "price": 370.97,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 190,
+    "name": "alpha-tocopherol acetate 1.4 UNT",
+    "price": 363.06,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 191,
+    "name": "alpha-tocopherol acetate 1.4 UNT",
+    "price": 477.44,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 192,
+    "name": "alpha-tocopherol acetate 30 UNT",
+    "price": 245.71,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 193,
+    "name": "alpha-tocopherol acetate 30 UNT",
+    "price": 269.16,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 194,
+    "name": "ammonium chloride 20 MG",
+    "price": 301.31,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 195,
+    "name": "amoxicillin 100 MG",
+    "price": 226.58,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 196,
+    "name": "amoxicillin 100 MG",
+    "price": 118.52,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 197,
+    "name": "amoxicillin 100 MG",
+    "price": 354.0,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 198,
+    "name": "amoxicillin 100 MG",
+    "price": 384.44,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 199,
+    "name": "amoxicillin 100 MG",
+    "price": 59.19,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 200,
+    "name": "amoxicillin 100 MG",
+    "price": 51.45,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 201,
+    "name": "amoxicillin 100 MG",
+    "price": 291.18,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 202,
+    "name": "amoxicillin 100 MG Oral Tablet",
+    "price": 148.75,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 203,
+    "name": "amoxicillin 100 MG Oral Tablet [Amoxi-tabs]",
+    "price": 243.17,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 204,
+    "name": "amoxicillin 100 MG Oral Tablet [Biomox]",
+    "price": 249.63,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 205,
+    "name": "amoxicillin 100 MG",
+    "price": 454.92,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 206,
+    "name": "amoxicillin 120 MG",
+    "price": 391.84,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 207,
+    "name": "amoxicillin 120 MG",
+    "price": 218.81,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 208,
+    "name": "amoxicillin 125 MG",
+    "price": 165.62,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 209,
+    "name": "amoxicillin 125 MG Chewable Tablet",
+    "price": 90.62,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 210,
+    "name": "amoxicillin 150 MG Oral Tablet",
+    "price": 407.5,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 211,
+    "name": "amoxicillin 150 MG Oral Tablet [Amoxi-tabs]",
+    "price": 246.52,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 212,
+    "name": "amoxicillin 167 MG",
+    "price": 129.89,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 213,
+    "name": "amoxicillin 200 MG",
+    "price": 166.11,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 214,
+    "name": "amoxicillin 200 MG",
+    "price": 425.91,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 215,
+    "name": "amoxicillin 200 MG",
+    "price": 66.61,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 216,
+    "name": "amoxicillin 200 MG",
+    "price": 67.02,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 217,
+    "name": "amoxicillin 200 MG",
+    "price": 95.3,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 218,
+    "name": "amoxicillin 200 MG",
+    "price": 458.69,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 219,
+    "name": "amoxicillin 200 MG",
+    "price": 130.06,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 220,
+    "name": "amoxicillin 200 MG",
+    "price": 193.07,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 221,
+    "name": "amoxicillin 200 MG Oral Tablet",
+    "price": 467.7,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 222,
+    "name": "amoxicillin 200 MG Oral Tablet [Amoxi-tabs]",
+    "price": 139.96,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 223,
+    "name": "amoxicillin 200 MG Oral Tablet [Biomox]",
+    "price": 261.54,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 224,
+    "name": "amoxicillin 200 MG",
+    "price": 407.36,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 225,
+    "name": "amoxicillin 25 MG",
+    "price": 438.71,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 226,
+    "name": "amoxicillin 25 MG",
+    "price": 126.61,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 227,
+    "name": "amoxicillin 25 MG",
+    "price": 128.77,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 228,
+    "name": "amoxicillin 250 MG",
+    "price": 60.69,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 229,
+    "name": "amoxicillin 250 MG",
+    "price": 481.51,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 230,
+    "name": "amoxicillin 250 MG",
+    "price": 412.49,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 231,
+    "name": "amoxicillin 250 MG",
+    "price": 93.85,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 232,
+    "name": "amoxicillin 250 MG",
+    "price": 214.54,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 233,
+    "name": "amoxicillin 250 MG Chewable Tablet",
+    "price": 186.07,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 234,
+    "name": "amoxicillin 250 MG Oral Capsule",
+    "price": 345.12,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 235,
+    "name": "amoxicillin 300 MG",
+    "price": 80.53,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 236,
+    "name": "amoxicillin 300 MG",
+    "price": 387.5,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 237,
+    "name": "amoxicillin 300 MG",
+    "price": 167.78,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 238,
+    "name": "amoxicillin 300 MG",
+    "price": 274.7,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 239,
+    "name": "amoxicillin 300 MG",
+    "price": 250.87,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 240,
+    "name": "amoxicillin 300 MG",
+    "price": 394.66,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 241,
+    "name": "amoxicillin 300 MG",
+    "price": 85.52,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 242,
+    "name": "amoxicillin 40 MG",
+    "price": 417.8,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 243,
+    "name": "amoxicillin 40 MG",
+    "price": 292.11,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 244,
+    "name": "amoxicillin 400 MG",
+    "price": 239.13,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 245,
+    "name": "amoxicillin 400 MG Chewable Tablet",
+    "price": 481.93,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 246,
+    "name": "amoxicillin 400 MG Oral Tablet",
+    "price": 66.64,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 247,
+    "name": "amoxicillin 400 MG Oral Tablet [Amoxi-tabs]",
+    "price": 84.6,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 248,
+    "name": "amoxicillin 50 MG",
+    "price": 361.7,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 249,
+    "name": "amoxicillin 50 MG",
+    "price": 329.73,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 250,
+    "name": "amoxicillin 50 MG",
+    "price": 487.17,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 251,
+    "name": "amoxicillin 50 MG",
+    "price": 95.03,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 252,
+    "name": "amoxicillin 50 MG",
+    "price": 150.24,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 253,
+    "name": "amoxicillin 50 MG",
+    "price": 320.05,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 254,
+    "name": "amoxicillin 50 MG",
+    "price": 471.01,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 255,
+    "name": "amoxicillin 50 MG Oral Tablet",
+    "price": 303.35,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 256,
+    "name": "amoxicillin 50 MG Oral Tablet [Amoxi-tabs]",
+    "price": 178.21,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 257,
+    "name": "amoxicillin 50 MG Oral Tablet [Biomox]",
+    "price": 307.82,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 258,
+    "name": "amoxicillin 50 MG",
+    "price": 319.34,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 259,
+    "name": "amoxicillin 50 MG",
+    "price": 271.49,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 260,
+    "name": "amoxicillin 50 MG",
+    "price": 188.17,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 261,
+    "name": "amoxicillin 50 MG",
+    "price": 462.71,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 262,
+    "name": "amoxicillin 50 MG",
+    "price": 96.92,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 263,
+    "name": "amoxicillin 50 MG",
+    "price": 174.42,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 264,
+    "name": "amoxicillin 50 MG",
+    "price": 330.47,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 265,
+    "name": "amoxicillin 50 MG",
+    "price": 424.48,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 266,
+    "name": "amoxicillin 50 MG",
+    "price": 284.91,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 267,
+    "name": "amoxicillin 50 MG",
+    "price": 127.08,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 268,
+    "name": "amoxicillin 500 MG",
+    "price": 72.18,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 269,
+    "name": "amoxicillin 500 MG",
+    "price": 367.36,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 270,
+    "name": "amoxicillin 500 MG Oral Capsule",
+    "price": 59.97,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 271,
+    "name": "amoxicillin 500 MG Oral Capsule [Trimox]",
+    "price": 312.94,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 272,
+    "name": "amoxicillin 500 MG Oral Tablet",
+    "price": 251.83,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 273,
+    "name": "amoxicillin 60 MG",
+    "price": 354.49,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 274,
+    "name": "amoxicillin 775 MG Extended Release Oral Tablet",
+    "price": 479.06,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 275,
+    "name": "amoxicillin 775 MG Extended Release Oral Tablet [Moxatag]",
+    "price": 371.8,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 276,
+    "name": "amoxicillin 80 MG",
+    "price": 71.77,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 277,
+    "name": "amoxicillin 80 MG",
+    "price": 193.68,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 278,
+    "name": "amoxicillin 80 MG",
+    "price": 145.08,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 279,
+    "name": "amoxicillin 800 MG",
+    "price": 157.57,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 280,
+    "name": "amoxicillin 875 MG",
+    "price": 65.83,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 281,
+    "name": "amoxicillin 875 MG",
+    "price": 202.06,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 282,
+    "name": "amoxicillin 875 MG Oral Tablet",
+    "price": 229.26,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 283,
+    "name": "ampicillin 100 MG",
+    "price": 413.84,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 284,
+    "name": "ampicillin 100 MG",
+    "price": 118.59,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 285,
+    "name": "ampicillin 100 MG",
+    "price": 366.69,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 286,
+    "name": "ampicillin 1000 MG",
+    "price": 107.98,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 287,
+    "name": "ampicillin 1000 MG",
+    "price": 249.25,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 288,
+    "name": "ampicillin 1000 MG Injection",
+    "price": 454.7,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 289,
+    "name": "ampicillin 125 MG Injection",
+    "price": 322.78,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 290,
+    "name": "ampicillin 2000 MG",
+    "price": 143.01,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 291,
+    "name": "ampicillin 2000 MG",
+    "price": 155.97,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 292,
+    "name": "ampicillin 2000 MG Injection",
+    "price": 184.13,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 293,
+    "name": "ampicillin 25 MG",
+    "price": 464.22,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 294,
+    "name": "ampicillin 250 MG",
+    "price": 67.25,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 295,
+    "name": "ampicillin 250 MG Injection",
+    "price": 149.12,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 296,
+    "name": "ampicillin 250 MG Oral Capsule",
+    "price": 404.06,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 297,
+    "name": "ampicillin 250 MG",
+    "price": 98.51,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 298,
+    "name": "ampicillin 250 MG",
+    "price": 405.43,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 299,
+    "name": "ampicillin 400 MG",
+    "price": 420.0,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 300,
+    "name": "ampicillin 50 MG",
+    "price": 352.33,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 301,
+    "name": "ampicillin 500 MG Injection",
+    "price": 395.16,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 302,
+    "name": "ampicillin 500 MG Oral Capsule",
+    "price": 63.01,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 303,
+    "name": "artesunate 110 MG Injection",
+    "price": 163.0,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 304,
+    "name": "ascorbic acid 10.8 MG",
+    "price": 403.44,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 305,
+    "name": "ascorbic acid 10.8 MG",
+    "price": 155.29,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 306,
+    "name": "ascorbic acid 100 MG",
+    "price": 86.62,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 307,
+    "name": "ascorbic acid 100 MG",
+    "price": 176.55,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 308,
+    "name": "ascorbic acid 120 MG",
+    "price": 369.34,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 309,
+    "name": "ascorbic acid 120 MG",
+    "price": 439.83,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 310,
+    "name": "ascorbic acid 30 MG",
+    "price": 453.45,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 311,
+    "name": "ascorbic acid 30 MG",
+    "price": 494.42,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 312,
+    "name": "ascorbic acid 35 MG",
+    "price": 111.83,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 313,
+    "name": "ascorbic acid 35 MG",
+    "price": 101.81,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 314,
+    "name": "ascorbic acid 35 MG",
+    "price": 494.62,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 315,
+    "name": "ascorbic acid 35 MG",
+    "price": 147.12,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 316,
+    "name": "ascorbic acid 35 MG",
+    "price": 86.2,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 317,
+    "name": "ascorbic acid 35 MG",
+    "price": 203.24,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 318,
+    "name": "ascorbic acid 35 MG",
+    "price": 216.57,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 319,
+    "name": "ascorbic acid 35 MG",
+    "price": 120.33,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 320,
+    "name": "ascorbic acid 35 MG",
+    "price": 466.18,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 321,
+    "name": "ascorbic acid 35 MG",
+    "price": 294.85,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 322,
+    "name": "ascorbic acid 50 MG",
+    "price": 338.15,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 323,
+    "name": "ascorbic acid 60 MG",
+    "price": 317.5,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 324,
+    "name": "ascorbic acid 60 MG",
+    "price": 139.44,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 325,
+    "name": "ascorbic acid 60 MG",
+    "price": 398.46,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 326,
+    "name": "ascorbic acid 60 MG",
+    "price": 111.15,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 327,
+    "name": "aspirin 325 MG",
+    "price": 422.5,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 328,
+    "name": "aspirin 325 MG",
+    "price": 55.73,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 329,
+    "name": "aspirin 325 MG",
+    "price": 209.27,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 330,
+    "name": "aspirin 500 MG",
+    "price": 122.5,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 331,
+    "name": "aspirin 845 MG",
+    "price": 495.88,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 332,
+    "name": "benzocaine 50 MG",
+    "price": 474.96,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 333,
+    "name": "benzocaine 6 MG",
+    "price": 128.25,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 334,
+    "name": "benzocaine 6 MG",
+    "price": 450.17,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 335,
+    "name": "benzocaine 6 MG",
+    "price": 374.97,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 336,
+    "name": "benzocaine 7.5 MG",
+    "price": 457.06,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 337,
+    "name": "benzocaine 7.5 MG",
+    "price": 92.01,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 338,
+    "name": "boron 1.5 MG",
+    "price": 205.35,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 339,
+    "name": "boron 1.5 MG",
+    "price": 463.41,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 340,
+    "name": "brompheniramine maleate 0.2 MG",
+    "price": 408.38,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 341,
+    "name": "brompheniramine maleate 0.2 MG",
+    "price": 447.68,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 342,
+    "name": "brompheniramine maleate 0.2 MG",
+    "price": 240.7,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 343,
+    "name": "brompheniramine maleate 0.2 MG",
+    "price": 306.46,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 344,
+    "name": "brompheniramine maleate 0.4 MG",
+    "price": 288.62,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 345,
+    "name": "brompheniramine maleate 0.4 MG",
+    "price": 80.98,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 346,
+    "name": "brompheniramine maleate 0.4 MG",
+    "price": 221.75,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 347,
+    "name": "brompheniramine maleate 0.4 MG",
+    "price": 456.39,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 348,
+    "name": "brompheniramine maleate 0.8 MG",
+    "price": 153.19,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 349,
+    "name": "brompheniramine maleate 0.8 MG",
+    "price": 223.59,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 350,
+    "name": "brompheniramine maleate 0.8 MG",
+    "price": 498.26,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 351,
+    "name": "brompheniramine maleate 0.8 MG",
+    "price": 94.34,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 352,
+    "name": "brompheniramine maleate 0.8 MG",
+    "price": 387.42,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 353,
+    "name": "brompheniramine maleate 0.8 MG",
+    "price": 356.76,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 354,
+    "name": "brompheniramine maleate 4 MG",
+    "price": 250.55,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 355,
+    "name": "brompheniramine maleate 4 MG",
+    "price": 88.26,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 356,
+    "name": "bupropion hydrochloride 105 MG",
+    "price": 309.71,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 357,
+    "name": "bupropion hydrochloride 105 MG",
+    "price": 321.64,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 358,
+    "name": "calcium ascorbate 25 MG",
+    "price": 199.76,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 359,
+    "name": "calcium ascorbate 25 MG",
+    "price": 273.21,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 360,
+    "name": "calcium ascorbate 25 MG",
+    "price": 264.5,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 361,
+    "name": "calcium ascorbate 25 MG",
+    "price": 267.92,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 362,
+    "name": "calcium carbonate 1250 MG",
+    "price": 274.18,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 363,
+    "name": "calcium carbonate 1250 MG",
+    "price": 457.78,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 364,
+    "name": "calcium carbonate 1250 MG",
+    "price": 139.82,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 365,
+    "name": "calcium carbonate 1250 MG",
+    "price": 397.52,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 366,
+    "name": "calcium carbonate 1250 MG",
+    "price": 181.61,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 367,
+    "name": "calcium carbonate 1250 MG",
+    "price": 410.59,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 368,
+    "name": "calcium carbonate 1250 MG",
+    "price": 337.73,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 369,
+    "name": "calcium carbonate 1250 MG",
+    "price": 223.09,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 370,
+    "name": "calcium carbonate 1250 MG",
+    "price": 219.02,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 371,
+    "name": "calcium carbonate 1250 MG",
+    "price": 391.68,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 372,
+    "name": "calcium carbonate 1250 MG",
+    "price": 469.24,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 373,
+    "name": "calcium carbonate 1250 MG",
+    "price": 287.18,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 374,
+    "name": "calcium carbonate 1250 MG",
+    "price": 251.19,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 375,
+    "name": "calcium carbonate 1250 MG",
+    "price": 408.36,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 376,
+    "name": "calcium carbonate 1250 MG",
+    "price": 65.67,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 377,
+    "name": "calcium carbonate 1250 MG",
+    "price": 159.44,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 378,
+    "name": "calcium carbonate 1250 MG",
+    "price": 432.5,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 379,
+    "name": "calcium carbonate 1250 MG",
+    "price": 143.6,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 380,
+    "name": "calcium carbonate 1250 MG",
+    "price": 67.1,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 381,
+    "name": "calcium carbonate 1500 MG",
+    "price": 275.65,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 382,
+    "name": "calcium carbonate 1500 MG",
+    "price": 342.66,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 383,
+    "name": "calcium carbonate 1500 MG",
+    "price": 187.31,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 384,
+    "name": "calcium carbonate 1500 MG",
+    "price": 271.31,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 385,
+    "name": "calcium carbonate 1500 MG",
+    "price": 367.6,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 386,
+    "name": "calcium carbonate 1500 MG",
+    "price": 115.23,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 387,
+    "name": "calcium carbonate 1500 MG",
+    "price": 302.23,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 388,
+    "name": "calcium carbonate 1500 MG",
+    "price": 342.27,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 389,
+    "name": "calcium carbonate 1500 MG",
+    "price": 388.7,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 390,
+    "name": "calcium carbonate 1500 MG",
+    "price": 315.59,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 391,
+    "name": "calcium carbonate 1500 MG",
+    "price": 131.03,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 392,
+    "name": "calcium carbonate 1500 MG",
+    "price": 241.61,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 393,
+    "name": "calcium carbonate 1500 MG",
+    "price": 445.54,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 394,
+    "name": "calcium carbonate 1500 MG",
+    "price": 248.42,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 395,
+    "name": "calcium carbonate 1500 MG",
+    "price": 226.87,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 396,
+    "name": "calcium carbonate 1625 MG",
+    "price": 415.58,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 397,
+    "name": "calcium carbonate 1625 MG",
+    "price": 243.43,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 398,
+    "name": "calcium carbonate 250 MG",
+    "price": 494.54,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 399,
+    "name": "calcium carbonate 250 MG",
+    "price": 393.05,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 400,
+    "name": "calcium carbonate 2500 MG",
+    "price": 317.31,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 401,
+    "name": "calcium carbonate 400 MG",
+    "price": 127.78,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 402,
+    "name": "calcium carbonate 500 MG",
+    "price": 57.94,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 403,
+    "name": "calcium carbonate 6.25 MG",
+    "price": 205.87,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 404,
+    "name": "calcium carbonate 600 MG",
+    "price": 105.48,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 405,
+    "name": "calcium carbonate 600 MG",
+    "price": 358.74,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 406,
+    "name": "calcium carbonate 600 MG",
+    "price": 498.24,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 407,
+    "name": "calcium carbonate 625 MG",
+    "price": 314.25,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 408,
+    "name": "calcium carbonate 625 MG",
+    "price": 171.82,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 409,
+    "name": "calcium citrate 0.415 MG",
+    "price": 60.18,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 410,
+    "name": "calcium citrate 1190 MG",
+    "price": 339.66,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 411,
+    "name": "calcium citrate 1500 MG",
+    "price": 89.97,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 412,
+    "name": "calcium citrate 1500 MG",
+    "price": 147.22,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 413,
+    "name": "calcium citrate 2380 MG",
+    "price": 184.38,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 414,
+    "name": "calcium citrate 2380 MG",
+    "price": 196.38,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 415,
+    "name": "calcium citrate 250 MG",
+    "price": 244.45,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 416,
+    "name": "calcium citrate 250 MG",
+    "price": 219.87,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 417,
+    "name": "calcium citrate 950 MG",
+    "price": 371.98,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 418,
+    "name": "calcium citrate 950 MG",
+    "price": 468.28,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 419,
+    "name": "calcium phosphate 105 MG",
+    "price": 160.13,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 420,
+    "name": "calcium phosphate 200 MG",
+    "price": 298.15,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 421,
+    "name": "captopril 100 MG Oral Tablet",
+    "price": 339.79,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 422,
+    "name": "captopril 12.5 MG Oral Tablet",
+    "price": 86.26,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 423,
+    "name": "captopril 25 MG",
+    "price": 206.74,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 424,
+    "name": "captopril 25 MG",
+    "price": 132.48,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 425,
+    "name": "captopril 25 MG",
+    "price": 302.99,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 426,
+    "name": "captopril 25 MG Oral Tablet",
+    "price": 448.31,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 427,
+    "name": "captopril 50 MG",
+    "price": 325.94,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 428,
+    "name": "captopril 50 MG",
+    "price": 384.58,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 429,
+    "name": "captopril 50 MG Oral Tablet",
+    "price": 347.59,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 430,
+    "name": "carbinoxamine maleate 0.8 MG",
+    "price": 412.04,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 431,
+    "name": "carbinoxamine maleate 0.8 MG",
+    "price": 125.7,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 432,
+    "name": "carbinoxamine maleate 1 MG",
+    "price": 193.31,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 433,
+    "name": "chlorpheniramine maleate 0.133 MG",
+    "price": 286.33,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 434,
+    "name": "chlorpheniramine maleate 0.133 MG",
+    "price": 328.17,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 435,
+    "name": "chlorpheniramine maleate 0.133 MG",
+    "price": 411.17,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 436,
+    "name": "chlorpheniramine maleate 0.2 MG",
+    "price": 190.77,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 437,
+    "name": "chlorpheniramine maleate 0.2 MG",
+    "price": 418.4,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 438,
+    "name": "chlorpheniramine maleate 0.2 MG",
+    "price": 241.65,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 439,
+    "name": "chlorpheniramine maleate 0.4 MG",
+    "price": 201.78,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 440,
+    "name": "chlorpheniramine maleate 0.4 MG",
+    "price": 205.42,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 441,
+    "name": "chlorpheniramine maleate 0.4 MG",
+    "price": 341.55,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 442,
+    "name": "chlorpheniramine maleate 0.4 MG",
+    "price": 336.47,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 443,
+    "name": "chlorpheniramine maleate 0.6 MG",
+    "price": 73.92,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 444,
+    "name": "chlorpheniramine maleate 0.8 MG",
+    "price": 60.13,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 445,
+    "name": "chlorpheniramine maleate 0.8 MG",
+    "price": 189.25,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 446,
+    "name": "chlorpheniramine maleate 0.8 MG",
+    "price": 440.37,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 447,
+    "name": "chlorpheniramine maleate 0.8 MG",
+    "price": 174.88,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 448,
+    "name": "chlorpheniramine maleate 0.8 MG",
+    "price": 149.9,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 449,
+    "name": "chlorpheniramine maleate 1 MG",
+    "price": 222.33,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 450,
+    "name": "chlorpheniramine maleate 1 MG",
+    "price": 219.31,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 451,
+    "name": "chlorpheniramine maleate 1 MG",
+    "price": 249.75,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 452,
+    "name": "chlorpheniramine maleate 2 MG",
+    "price": 97.18,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 453,
+    "name": "chlorpheniramine maleate 3.5 MG",
+    "price": 404.4,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 454,
+    "name": "chlorpheniramine maleate 4 MG",
+    "price": 298.64,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 455,
+    "name": "chlorpheniramine maleate 4 MG",
+    "price": 250.38,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 456,
+    "name": "chlorpheniramine maleate 4 MG",
+    "price": 192.55,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 457,
+    "name": "chlorpheniramine maleate 4 MG",
+    "price": 52.17,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 458,
+    "name": "chlorpheniramine maleate 4 MG",
+    "price": 126.04,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 459,
+    "name": "cholecalciferol 0.002 MG",
+    "price": 195.69,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 460,
+    "name": "cholecalciferol 0.0025 MG",
+    "price": 314.32,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 461,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 273.14,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 462,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 277.46,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 463,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 224.15,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 464,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 117.27,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 465,
+    "name": "cholecalciferol 0.01 MG Chewable Tablet",
+    "price": 80.33,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 466,
+    "name": "cholecalciferol 0.01 MG Oral Capsule",
+    "price": 71.3,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 467,
+    "name": "cholecalciferol 0.01 MG Oral Tablet",
+    "price": 336.78,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 468,
+    "name": "cholecalciferol 0.01 MG Oral Tablet [Delta D3]",
+    "price": 50.71,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 469,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 328.27,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 470,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 94.22,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 471,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 298.45,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 472,
+    "name": "cholecalciferol 0.01 MG",
+    "price": 274.97,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 473,
+    "name": "cholecalciferol 0.025 MG",
+    "price": 137.8,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 474,
+    "name": "cholecalciferol 0.025 MG",
+    "price": 420.37,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 475,
+    "name": "cholecalciferol 0.025 MG Chewable Tablet",
+    "price": 243.26,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 476,
+    "name": "cholecalciferol 0.025 MG Disintegrating Oral Tablet",
+    "price": 82.25,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 477,
+    "name": "cholecalciferol 0.025 MG Oral Capsule",
+    "price": 208.86,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 478,
+    "name": "cholecalciferol 0.025 MG Oral Tablet",
+    "price": 346.44,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 479,
+    "name": "cholecalciferol 0.025 MG",
+    "price": 391.3,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 480,
+    "name": "cholecalciferol 0.05 MG Chewable Tablet",
+    "price": 378.57,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 481,
+    "name": "cholecalciferol 0.05 MG Oral Capsule",
+    "price": 312.42,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 482,
+    "name": "cholecalciferol 0.05 MG Oral Tablet",
+    "price": 217.26,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 483,
+    "name": "cholecalciferol 0.05 MG Oral Tablet [D3 Dots]",
+    "price": 485.3,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 484,
+    "name": "cholecalciferol 0.05 MG Oral Tablet [Thera-D]",
+    "price": 81.98,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 485,
+    "name": "cholecalciferol 0.05 MG",
+    "price": 195.07,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 486,
+    "name": "cholecalciferol 0.0625 MG Chewable Tablet",
+    "price": 220.67,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 487,
+    "name": "cholecalciferol 0.075 MG",
+    "price": 278.48,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 488,
+    "name": "cholecalciferol 0.075 MG Oral Tablet",
+    "price": 457.98,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 489,
+    "name": "cholecalciferol 0.094 MG",
+    "price": 468.06,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 490,
+    "name": "cholecalciferol 0.095 MG",
+    "price": 209.03,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 491,
+    "name": "cholecalciferol 0.1 MG",
+    "price": 496.17,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 492,
+    "name": "cholecalciferol 0.1 MG Oral Capsule",
+    "price": 452.87,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 493,
+    "name": "cholecalciferol 0.1 MG Oral Tablet",
+    "price": 185.14,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 494,
+    "name": "cholecalciferol 0.1 MG Oral Tablet [Thera-D]",
+    "price": 74.03,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 495,
+    "name": "cholecalciferol 0.125 MG",
+    "price": 349.2,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 496,
+    "name": "cholecalciferol 0.125 MG",
+    "price": 76.16,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 497,
+    "name": "cholecalciferol 0.125 MG",
+    "price": 82.72,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 498,
+    "name": "cholecalciferol 0.125 MG",
+    "price": 487.8,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 499,
+    "name": "cholecalciferol 0.125 MG",
+    "price": 69.14,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 500,
+    "name": "cholecalciferol 0.125 MG Chewable Tablet",
+    "price": 99.14,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 501,
+    "name": "cholecalciferol 0.125 MG Disintegrating Oral Tablet",
+    "price": 141.0,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 502,
+    "name": "cholecalciferol 0.125 MG Oral Capsule",
+    "price": 344.6,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 503,
+    "name": "cholecalciferol 0.125 MG Oral Tablet",
+    "price": 452.53,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 504,
+    "name": "cholecalciferol 0.125 MG",
+    "price": 256.44,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 505,
+    "name": "cholecalciferol 0.2 MG",
+    "price": 166.73,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 506,
+    "name": "cholecalciferol 0.25 MG",
+    "price": 472.97,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 507,
+    "name": "cholecalciferol 0.25 MG",
+    "price": 76.92,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 508,
+    "name": "cholecalciferol 0.25 MG Oral Capsule",
+    "price": 421.4,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 509,
+    "name": "cholecalciferol 0.25 MG Oral Tablet",
+    "price": 287.64,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 510,
+    "name": "cholecalciferol 0.25 MG",
+    "price": 465.84,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 511,
+    "name": "cholecalciferol 0.325 MG Oral Capsule",
+    "price": 191.47,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 512,
+    "name": "cholecalciferol 0.325 MG Oral Capsule [Maximum D3]",
+    "price": 398.02,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 513,
+    "name": "cholecalciferol 0.35 MG Oral Capsule",
+    "price": 300.47,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 514,
+    "name": "cholecalciferol 0.35 MG Oral Wafer",
+    "price": 372.5,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 515,
+    "name": "cholecalciferol 0.357 MG",
+    "price": 317.37,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 516,
+    "name": "cholecalciferol 0.375 MG",
+    "price": 459.49,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 517,
+    "name": "cholecalciferol 0.4 MG",
+    "price": 371.57,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 518,
+    "name": "cholecalciferol 0.417 MG",
+    "price": 284.03,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 519,
+    "name": "cholecalciferol 0.625 MG Oral Capsule",
+    "price": 65.92,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 520,
+    "name": "cholecalciferol 0.625 MG Oral Capsule [Decara]",
+    "price": 104.51,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 521,
+    "name": "cholecalciferol 0.625 MG",
+    "price": 254.0,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 522,
+    "name": "cholecalciferol 0.833 MG",
+    "price": 156.59,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 523,
+    "name": "cholecalciferol 1.25 MG",
+    "price": 488.73,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 524,
+    "name": "cholecalciferol 1.25 MG",
+    "price": 179.19,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 525,
+    "name": "cholecalciferol 1.25 MG Oral Capsule",
+    "price": 240.18,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 526,
+    "name": "cholecalciferol 1.25 MG Oral Capsule [Decara]",
+    "price": 455.47,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 527,
+    "name": "cholecalciferol 1.25 MG Oral Tablet",
+    "price": 185.92,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 528,
+    "name": "cholecalciferol 1.25 MG Oral Tablet [Decalcitrol]",
+    "price": 329.62,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 529,
+    "name": "cholecalciferol 1.25 MG Oral Tablet [Dialyvite Vitamin D3 Max]",
+    "price": 149.51,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 530,
+    "name": "cholecalciferol 1.25 MG Oral Wafer",
+    "price": 182.76,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 531,
+    "name": "cholecalciferol 1.67 MG",
+    "price": 227.41,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 532,
+    "name": "cholecalciferol 1000 UNT",
+    "price": 225.21,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 533,
+    "name": "cholecalciferol 1000 UNT",
+    "price": 69.96,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 534,
+    "name": "cholecalciferol 1000 UNT",
+    "price": 132.64,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 535,
+    "name": "cholecalciferol 1000 UNT",
+    "price": 499.05,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 536,
+    "name": "cholecalciferol 10000 UNT",
+    "price": 439.46,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 537,
+    "name": "cholecalciferol 1333 UNT",
+    "price": 63.15,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 538,
+    "name": "cholecalciferol 135 UNT",
+    "price": 429.09,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 539,
+    "name": "cholecalciferol 14000 UNT",
+    "price": 148.56,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 540,
+    "name": "cholecalciferol 14000 UNT",
+    "price": 491.64,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 541,
+    "name": "cholecalciferol 20 UNT",
+    "price": 146.44,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 542,
+    "name": "cholecalciferol 2000 UNT",
+    "price": 308.62,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 543,
+    "name": "cholecalciferol 2000 UNT",
+    "price": 296.82,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 544,
+    "name": "cholecalciferol 2500 UNT",
+    "price": 165.91,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 545,
+    "name": "cholecalciferol 270 UNT",
+    "price": 172.48,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 546,
+    "name": "cholecalciferol 3760 UNT",
+    "price": 100.2,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 547,
+    "name": "cholecalciferol 3775 UNT",
+    "price": 419.71,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 548,
+    "name": "cholecalciferol 500 UNT",
+    "price": 302.85,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 549,
+    "name": "cholecalciferol 500 UNT",
+    "price": 98.97,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 550,
+    "name": "cholecalciferol 500 UNT",
+    "price": 300.11,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 551,
+    "name": "cholecalciferol 5000 UNT",
+    "price": 239.33,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 552,
+    "name": "cholecalciferol 5500 UNT",
+    "price": 165.96,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 553,
+    "name": "cholecalciferol 5750 UNT",
+    "price": 327.91,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 554,
+    "name": "cholecalciferol 6.67 UNT",
+    "price": 452.72,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 555,
+    "name": "cholecalciferol 6.67 UNT",
+    "price": 129.98,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 556,
+    "name": "cholecalciferol 75000 UNT",
+    "price": 363.95,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 557,
+    "name": "cholecalciferol 80 UNT",
+    "price": 158.74,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 558,
+    "name": "cholecalciferol 9.52 UNT",
+    "price": 237.48,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 559,
+    "name": "choline salicylate 29 MG",
+    "price": 446.48,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 560,
+    "name": "dapsone 100 MG",
+    "price": 312.64,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 561,
+    "name": "dexbrompheniramine maleate 0.133 MG",
+    "price": 473.42,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 562,
+    "name": "dexbrompheniramine maleate 0.4 MG",
+    "price": 179.94,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 563,
+    "name": "dexbrompheniramine maleate 0.4 MG",
+    "price": 335.2,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 564,
+    "name": "dexbrompheniramine maleate 0.5 MG",
+    "price": 133.25,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 565,
+    "name": "dexbrompheniramine maleate 1 MG",
+    "price": 127.83,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 566,
+    "name": "dexbrompheniramine maleate 2 MG",
+    "price": 293.44,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 567,
+    "name": "dexchlorpheniramine maleate 0.2 MG",
+    "price": 444.59,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 568,
+    "name": "dexchlorpheniramine maleate 0.2 MG",
+    "price": 410.46,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 569,
+    "name": "dextromethorphan hydrobromide 0.3 MG",
+    "price": 354.98,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 570,
+    "name": "dextromethorphan hydrobromide 0.333 MG",
+    "price": 231.94,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 571,
+    "name": "dextromethorphan hydrobromide 0.333 MG",
+    "price": 226.06,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 572,
+    "name": "dextromethorphan hydrobromide 0.5 MG",
+    "price": 445.6,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 573,
+    "name": "dextromethorphan hydrobromide 0.667 MG",
+    "price": 447.4,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 574,
+    "name": "dextromethorphan hydrobromide 0.667 MG",
+    "price": 430.98,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 575,
+    "name": "dextromethorphan hydrobromide 0.667 MG",
+    "price": 314.89,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 576,
+    "name": "dextromethorphan hydrobromide 0.667 MG",
+    "price": 461.19,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 577,
+    "name": "dextromethorphan hydrobromide 0.667 MG",
+    "price": 126.73,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 578,
+    "name": "dextromethorphan hydrobromide 0.667 MG",
+    "price": 126.72,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 579,
+    "name": "dextromethorphan hydrobromide 0.7 MG",
+    "price": 194.54,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 580,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 95.6,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 581,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 465.4,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 582,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 170.3,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 583,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 276.68,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 584,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 66.76,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 585,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 410.9,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 586,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 338.44,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 587,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 336.49,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 588,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 438.97,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 589,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 131.21,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 590,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 421.49,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 591,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 128.26,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 592,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 130.46,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 593,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 409.92,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 594,
+    "name": "dextromethorphan hydrobromide 1 MG",
+    "price": 155.27,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 595,
+    "name": "dextromethorphan hydrobromide 1.2 MG",
+    "price": 85.3,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 596,
+    "name": "dextromethorphan hydrobromide 1.2 MG",
+    "price": 385.35,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 597,
+    "name": "dextromethorphan hydrobromide 1.2 MG",
+    "price": 315.69,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 598,
+    "name": "dextromethorphan hydrobromide 1.33 MG",
+    "price": 270.97,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 599,
+    "name": "dextromethorphan hydrobromide 1.33 MG",
+    "price": 274.26,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 600,
+    "name": "dextromethorphan hydrobromide 1.5 MG",
+    "price": 123.64,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 601,
+    "name": "dextromethorphan hydrobromide 1.5 MG",
+    "price": 381.69,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 602,
+    "name": "dextromethorphan hydrobromide 1.5 MG",
+    "price": 430.49,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 603,
+    "name": "dextromethorphan hydrobromide 1.5 MG",
+    "price": 149.07,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 604,
+    "name": "dextromethorphan hydrobromide 1.5 MG",
+    "price": 226.64,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 605,
+    "name": "dextromethorphan hydrobromide 1.5 MG",
+    "price": 292.2,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 606,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 352.31,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 607,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 77.3,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 608,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 103.41,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 609,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 213.42,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 610,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 220.06,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 611,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 255.01,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 612,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 472.8,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 613,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 259.37,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 614,
+    "name": "dextromethorphan hydrobromide 10 MG Chewable Tablet",
+    "price": 300.63,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 615,
+    "name": "dextromethorphan hydrobromide 10 MG Oral Lozenge",
+    "price": 238.08,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 616,
+    "name": "dextromethorphan hydrobromide 10 MG",
+    "price": 237.79,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 617,
+    "name": "dextromethorphan hydrobromide 14 MG",
+    "price": 180.51,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 618,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 451.69,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 619,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 343.31,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 620,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 72.45,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 621,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 280.96,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 622,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 352.13,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 623,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 464.1,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 624,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 220.45,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 625,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 153.91,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 626,
+    "name": "dextromethorphan hydrobromide 15 MG",
+    "price": 169.34,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 627,
+    "name": "dextromethorphan hydrobromide 15 MG Chewable Tablet",
+    "price": 449.9,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 628,
+    "name": "dextromethorphan hydrobromide 15 MG Oral Capsule",
+    "price": 139.6,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 629,
+    "name": "dextromethorphan hydrobromide 15 MG Oral Capsule [Robafen Cough]",
+    "price": 427.5,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 630,
+    "name": "dextromethorphan hydrobromide 15 MG Oral Tablet",
+    "price": 119.56,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 631,
+    "name": "dextromethorphan hydrobromide 17.5 MG",
+    "price": 242.88,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 632,
+    "name": "dextromethorphan hydrobromide 17.5 MG",
+    "price": 150.35,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 633,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 343.44,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 634,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 132.39,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 635,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 345.56,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 636,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 347.63,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 637,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 336.45,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 638,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 360.46,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 639,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 272.05,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 640,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 249.62,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 641,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 93.3,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 642,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 384.95,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 643,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 473.6,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 644,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 312.0,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 645,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 124.37,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 646,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 179.44,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 647,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 209.38,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 648,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 417.46,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 649,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 395.66,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 650,
+    "name": "dextromethorphan hydrobromide 2 MG",
+    "price": 59.78,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 651,
+    "name": "dextromethorphan hydrobromide 2.2 MG",
+    "price": 92.9,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 652,
+    "name": "dextromethorphan hydrobromide 2.2 MG",
+    "price": 462.55,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 653,
+    "name": "dextromethorphan hydrobromide 2.5 MG Oral Lozenge",
+    "price": 110.46,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 654,
+    "name": "dextromethorphan hydrobromide 2.5 MG Oral Lozenge [Scot-Tussin DM Cough Chasers]",
+    "price": 301.75,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 655,
+    "name": "dextromethorphan hydrobromide 2.5 MG",
+    "price": 56.37,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 656,
+    "name": "dextromethorphan hydrobromide 2.5 MG",
+    "price": 485.06,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 657,
+    "name": "dextromethorphan hydrobromide 2.5 MG",
+    "price": 210.33,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 658,
+    "name": "dextromethorphan hydrobromide 2.5 MG",
+    "price": 454.06,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 659,
+    "name": "dextromethorphan hydrobromide 2.5 MG",
+    "price": 215.9,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 660,
+    "name": "dextromethorphan hydrobromide 2.5 MG",
+    "price": 343.55,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 661,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 171.62,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 662,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 352.24,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 663,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 149.89,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 664,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 168.94,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 665,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 228.71,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 666,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 333.51,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 667,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 353.61,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 668,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 336.97,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 669,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 476.35,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 670,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 58.72,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 671,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 322.03,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 672,
+    "name": "dextromethorphan hydrobromide 20 MG",
+    "price": 68.38,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 673,
+    "name": "dextromethorphan hydrobromide 28 MG",
+    "price": 122.05,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 674,
+    "name": "dextromethorphan hydrobromide 29 MG",
+    "price": 319.42,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 675,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 171.45,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 676,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 133.17,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 677,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 429.59,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 678,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 310.5,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 679,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 77.02,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 680,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 459.19,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 681,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 283.04,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 682,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 197.58,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 683,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 457.13,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 684,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 148.76,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 685,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 381.37,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 686,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 489.41,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 687,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 493.04,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 688,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 367.45,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 689,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 205.79,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 690,
+    "name": "dextromethorphan hydrobromide 3 MG",
+    "price": 205.62,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 691,
+    "name": "dextromethorphan hydrobromide 3.3 MG",
+    "price": 360.46,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 692,
+    "name": "dextromethorphan hydrobromide 3.3 MG",
+    "price": 438.51,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 693,
+    "name": "dextromethorphan hydrobromide 3.3 MG",
+    "price": 174.32,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 694,
+    "name": "dextromethorphan hydrobromide 30 MG",
+    "price": 200.05,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 695,
+    "name": "dextromethorphan hydrobromide 30 MG",
+    "price": 117.76,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 696,
+    "name": "dextromethorphan hydrobromide 30 MG",
+    "price": 177.27,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 697,
+    "name": "dextromethorphan hydrobromide 30 MG Oral Tablet",
+    "price": 265.04,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 698,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 396.06,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 699,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 429.99,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 700,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 188.35,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 701,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 232.93,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 702,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 262.12,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 703,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 388.0,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 704,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 385.15,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 705,
+    "name": "dextromethorphan hydrobromide 4 MG",
+    "price": 77.72,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 706,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 163.72,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 707,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 174.73,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 708,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 82.72,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 709,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 370.03,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 710,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 326.2,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 711,
+    "name": "dextromethorphan hydrobromide 5 MG Oral Lozenge",
+    "price": 179.41,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 712,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 298.42,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 713,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 342.57,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 714,
+    "name": "dextromethorphan hydrobromide 5 MG",
+    "price": 175.56,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 715,
+    "name": "dextromethorphan hydrobromide 5.6 MG",
+    "price": 346.15,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 716,
+    "name": "dextromethorphan hydrobromide 5.8 MG",
+    "price": 389.46,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 717,
+    "name": "dextromethorphan hydrobromide 6 MG",
+    "price": 318.7,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 718,
+    "name": "dextromethorphan hydrobromide 6 MG",
+    "price": 360.39,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 719,
+    "name": "dextromethorphan hydrobromide 6 MG",
+    "price": 396.86,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 720,
+    "name": "dextromethorphan hydrobromide 6 MG",
+    "price": 444.58,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 721,
+    "name": "dextromethorphan hydrobromide 6 MG",
+    "price": 442.26,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 722,
+    "name": "dextromethorphan hydrobromide 6 MG",
+    "price": 230.41,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 723,
+    "name": "dextromethorphan hydrobromide 7.5 MG",
+    "price": 489.02,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 724,
+    "name": "dextromethorphan hydrobromide 7.5 MG Disintegrating Oral Tablet",
+    "price": 399.02,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 725,
+    "name": "dextromethorphan hydrobromide 7.5 MG Oral Lozenge",
+    "price": 202.33,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 726,
+    "name": "dextromethorphan hydrobromide 7.5 MG",
+    "price": 302.18,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 727,
+    "name": "dextromethorphan hydrobromide 8 MG",
+    "price": 260.48,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 728,
+    "name": "dextromethorphan hydrobromide 9 MG",
+    "price": 151.24,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 729,
+    "name": "evening primrose oil 1000 MG",
+    "price": 176.43,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 730,
+    "name": "follicle stimulating hormone 150 UNT",
+    "price": 250.83,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 731,
+    "name": "follicle stimulating hormone 35 UNT",
+    "price": 320.62,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 732,
+    "name": "follicle stimulating hormone 35 UNT",
+    "price": 177.39,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 733,
+    "name": "follicle stimulating hormone 52.5 UNT",
+    "price": 115.5,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 734,
+    "name": "follicle stimulating hormone 52.5 UNT",
+    "price": 324.43,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 735,
+    "name": "follicle stimulating hormone 75 UNT",
+    "price": 381.16,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 736,
+    "name": "follicle stimulating hormone 75 UNT",
+    "price": 396.01,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 737,
+    "name": "guanidine hydrochloride 125 MG Oral Tablet",
+    "price": 256.21,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 738,
+    "name": "iodine 20 MG",
+    "price": 446.55,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 739,
+    "name": "iodine 25 MG",
+    "price": 55.09,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 740,
+    "name": "iodine 50 MG",
+    "price": 170.07,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 741,
+    "name": "iodine 50 MG",
+    "price": 118.78,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 742,
+    "name": "linoleic acid 10 MG",
+    "price": 279.59,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 743,
+    "name": "linoleic acid 10 MG",
+    "price": 452.72,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 744,
+    "name": "linoleic acid 1000 MG Oral Capsule",
+    "price": 451.36,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 745,
+    "name": "nitric oxide 0.01 %",
+    "price": 428.84,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 746,
+    "name": "nitric oxide 0.01 %",
+    "price": 184.55,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 747,
+    "name": "nitric oxide 0.08 %",
+    "price": 208.42,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 748,
+    "name": "nitric oxide 0.08 %",
+    "price": 483.76,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 749,
+    "name": "nitric oxide 0.08 %",
+    "price": 351.51,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 750,
+    "name": "nitroglycerin 0.002 MG",
+    "price": 171.7,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 751,
+    "name": "nitroglycerin 0.004 MG",
+    "price": 477.54,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 752,
+    "name": "nitroglycerin 0.004 MG",
+    "price": 121.52,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 753,
+    "name": "nitroglycerin 0.02 MG",
+    "price": 249.5,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 754,
+    "name": "nitroglycerin 0.02 MG",
+    "price": 222.98,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 755,
+    "name": "nitroglycerin 0.3 MG Sublingual Tablet",
+    "price": 308.15,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 756,
+    "name": "nitroglycerin 0.3 MG Sublingual Tablet [Nitrostat]",
+    "price": 189.48,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 757,
+    "name": "nitroglycerin 0.4 MG Sublingual Powder",
+    "price": 106.62,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 758,
+    "name": "nitroglycerin 0.4 MG Sublingual Powder [Gonitro]",
+    "price": 367.69,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 759,
+    "name": "nitroglycerin 0.4 MG Sublingual Tablet",
+    "price": 60.57,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 760,
+    "name": "nitroglycerin 0.4 MG Sublingual Tablet [Nitrostat]",
+    "price": 134.99,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 761,
+    "name": "nitroglycerin 0.4 MG",
+    "price": 94.28,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 762,
+    "name": "nitroglycerin 0.4 MG",
+    "price": 187.34,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 763,
+    "name": "nitroglycerin 0.4 MG",
+    "price": 494.85,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 764,
+    "name": "nitroglycerin 0.5 MG Sublingual Tablet",
+    "price": 499.33,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 765,
+    "name": "nitroglycerin 0.6 MG Sublingual Tablet",
+    "price": 178.45,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 766,
+    "name": "nitroglycerin 0.6 MG Sublingual Tablet [Nitrostat]",
+    "price": 392.21,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 767,
+    "name": "nitroglycerin 1 MG Sustained Release Buccal Tablet",
+    "price": 161.39,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 768,
+    "name": "nitroglycerin 1 MG",
+    "price": 349.54,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 769,
+    "name": "nitroglycerin 1.5 MG Sustained Release Buccal Tablet",
+    "price": 385.98,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 770,
+    "name": "nitroglycerin 2 MG Buccal Tablet",
+    "price": 54.12,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 771,
+    "name": "nitroglycerin 2 MG Sustained Release Buccal Tablet",
+    "price": 245.5,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 772,
+    "name": "nitroglycerin 2.5 MG Extended Release Oral Capsule",
+    "price": 253.0,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 773,
+    "name": "nitroglycerin 3 MG Buccal Tablet",
+    "price": 208.12,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 774,
+    "name": "nitroglycerin 3 MG Sustained Release Buccal Tablet",
+    "price": 343.73,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 775,
+    "name": "nitroglycerin 5 MG Buccal Tablet",
+    "price": 51.78,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 776,
+    "name": "nitroglycerin 5 MG Sustained Release Buccal Tablet",
+    "price": 202.54,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 777,
+    "name": "nitroglycerin 6.5 MG Extended Release Oral Capsule",
+    "price": 214.06,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 778,
+    "name": "nitroglycerin 6.5 MG Oral Capsule",
+    "price": 143.72,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 779,
+    "name": "nitroglycerin 9 MG Extended Release Oral Capsule",
+    "price": 148.21,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 780,
+    "name": "nitroglycerin 9 MG Oral Capsule",
+    "price": 301.74,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 781,
+    "name": "penicillin G 375 MG",
+    "price": 203.08,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 782,
+    "name": "penicillin G benzathine 1200000 UNT Injection",
+    "price": 464.56,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 783,
+    "name": "penicillin G benzathine 1200000 UNT Injection [Extencilline]",
+    "price": 147.07,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 784,
+    "name": "penicillin G benzathine 1200000 UNT Injection [Lentocilin]",
+    "price": 127.89,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 785,
+    "name": "penicillin G benzathine 150000 UNT",
+    "price": 402.37,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 786,
+    "name": "penicillin G benzathine 2400000 UNT Injection",
+    "price": 471.89,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 787,
+    "name": "penicillin G benzathine 2400000 UNT Injection [Extencilline]",
+    "price": 276.32,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 788,
+    "name": "penicillin G benzathine 300000 UNT",
+    "price": 310.45,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 789,
+    "name": "penicillin G benzathine 300000 UNT",
+    "price": 397.28,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 790,
+    "name": "penicillin G benzathine 600000 UNT",
+    "price": 456.12,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 791,
+    "name": "penicillin G benzathine 900000 UNT",
+    "price": 400.23,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 792,
+    "name": "penicillin G potassium 1000000 UNT",
+    "price": 293.07,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 793,
+    "name": "penicillin G potassium 1000000 UNT",
+    "price": 182.99,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 794,
+    "name": "penicillin G potassium 250000 UNT Oral Tablet",
+    "price": 83.26,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 795,
+    "name": "penicillin G potassium 400000 UNT Oral Tablet",
+    "price": 411.3,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 796,
+    "name": "penicillin G procaine 300000 UNT",
+    "price": 345.73,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 797,
+    "name": "penicillin G procaine 300000 UNT",
+    "price": 409.25,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 798,
+    "name": "penicillin G procaine 300000 UNT",
+    "price": 461.56,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 799,
+    "name": "penicillin G procaine 600000 UNT",
+    "price": 308.91,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 800,
+    "name": "penicillin G sodium 100000 UNT",
+    "price": 252.3,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 801,
+    "name": "penicillin V potassium 25 MG",
+    "price": 339.93,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 802,
+    "name": "penicillin V potassium 250 MG Oral Tablet",
+    "price": 463.18,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 803,
+    "name": "penicillin V potassium 3 MG",
+    "price": 331.27,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 804,
+    "name": "penicillin V potassium 50 MG",
+    "price": 381.29,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 805,
+    "name": "penicillin V potassium 500 MG Oral Tablet",
+    "price": 315.08,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 806,
+    "name": "phosphatidylserine 100 MG Oral Capsule",
+    "price": 270.16,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 807,
+    "name": "potassium iodide 1000 MG",
+    "price": 112.71,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 808,
+    "name": "potassium iodide 1000 MG",
+    "price": 186.75,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 809,
+    "name": "potassium iodide 130 MG Oral Tablet",
+    "price": 169.73,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 810,
+    "name": "potassium iodide 130 MG Oral Tablet [Iosat]",
+    "price": 304.2,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 811,
+    "name": "potassium iodide 65 MG Oral Tablet",
+    "price": 190.08,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 812,
+    "name": "potassium iodide 65 MG Oral Tablet [Iosat]",
+    "price": 377.26,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 813,
+    "name": "potassium iodide 65 MG Oral Tablet [ThyroSafe]",
+    "price": 261.88,
+    "shortDesc": "Effective treatment for everyday ailments.",
+    "image": ""
+  },
+  {
+    "id": 814,
+    "name": "potassium iodide 65 MG",
+    "price": 463.15,
+    "shortDesc": "Clinically tested and doctor recommended.",
+    "image": ""
+  },
+  {
+    "id": 815,
+    "name": "potassium iodide 65 MG",
+    "price": 268.79,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 816,
+    "name": "pyrimethamine 12.5 MG",
+    "price": 199.87,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 817,
+    "name": "pyrimethamine 12.5 MG",
+    "price": 248.37,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 818,
+    "name": "pyrimethamine 25 MG",
+    "price": 88.96,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  },
+  {
+    "id": 819,
+    "name": "pyrimethamine 25 MG Oral Tablet",
+    "price": 349.06,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 820,
+    "name": "pyrimethamine 25 MG Oral Tablet [Daraprim]",
+    "price": 230.28,
+    "shortDesc": "Fast-acting relief for common symptoms.",
+    "image": ""
+  },
+  {
+    "id": 821,
+    "name": "sulfanilamide 1050 MG Vaginal Insert",
+    "price": 400.22,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 822,
+    "name": "thioguanine 40 MG Oral Tablet",
+    "price": 91.45,
+    "shortDesc": "Safe and reliable over-the-counter medication.",
+    "image": ""
+  },
+  {
+    "id": 823,
+    "name": "thioguanine 40 MG Oral Tablet [Tabloid]",
+    "price": 247.95,
+    "shortDesc": "Trusted by thousands of patients worldwide.",
+    "image": ""
+  }
+]
