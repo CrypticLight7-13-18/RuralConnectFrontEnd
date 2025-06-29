@@ -5,7 +5,6 @@ import axios from "axios";
 // set VITE_BACKEND_URL to point to your deployed API.
 export const backendURL = import.meta.env.VITE_BACKEND_URL || "";
 
-
 const axiosInstance = axios.create({
   baseURL: backendURL,
   withCredentials: true, // Allow cookies to be sent with requests
