@@ -75,7 +75,7 @@ import { login, fetchUserProfile } from "../../services/auth";
 
 ```javascript
 // Update backend URL in one place
-export const backendURL = "http://localhost:3000";
+export const backendURL = "http://localhost:4000";
 // or
 export const backendURL = "https://your-production-api.com";
 ```
