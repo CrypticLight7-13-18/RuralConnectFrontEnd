@@ -64,6 +64,9 @@ export default function Appointments() {
     const [availableSlots, setAvailableSlots] = useState([]);
     const [useDummyData, setUseDummyData] = useState(false);
     const [filteredAppointments, setFilteredAppointments] = useState([])
+    const [showSuccessModal, setShowSuccessModal] = useState(false)
+    const [successAppointmentData, setSuccessAppointmentData] = useState([])
+    const [isUpdateSuccess, setIsUpdateSuccess] = useState(false)
 
   // Filters
   const [appointmentFilter, setAppointmentFilter] = useState("all");
