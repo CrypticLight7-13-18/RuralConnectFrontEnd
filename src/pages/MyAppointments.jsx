@@ -8,19 +8,34 @@ import {
   updateAppointment,
   deleteAppointment,
 } from "../services/appointments";
-import { getDoctorAvailability, getDoctorById, getDoctors } from "../services/doctors";
+import {
+  getDoctorAvailability,
+  getDoctorById,
+  getDoctors,
+} from "../services/doctors";
 import { dummyAppointments, dummyDoctors } from "../assets/dummyVariables";
 
 import TabNavigation from "../components/Appointments/TabNavigation";
 import AppointmentCard from "../components/Appointments/AppointmentCard";
 import DoctorCard from "../components/Appointments/DoctorCard";
 import AppointmentModal from "../components/Appointments/AppointmentModal";
-import ReportModal from "../components/Appointments/ReportModal"
+import ReportModal from "../components/Appointments/ReportModal";
+import AppointmentSuccessModal from "../components/Appointments/AppointmentSuccessModal";
 
 // Helper functions
 const generateDummyTimeSlots = () => [
-  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-  "14:00", "14:30", "15:00", "15:30", "16:00", "16:30"
+  "09:00",
+  "09:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:30",
 ];
 
 const getStatusColor = (status) => {
@@ -48,6 +63,11 @@ export default function Appointments() {
   const [error, setError] = useState("");
   const [availableSlots, setAvailableSlots] = useState([]);
   const [useDummyData, setUseDummyData] = useState(false);
+
+  // Success modal state
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [successAppointmentData, setSuccessAppointmentData] = useState(null);
+  const [isUpdateSuccess, setIsUpdateSuccess] = useState(false);
 
   // Filters
   const [appointmentFilter, setAppointmentFilter] = useState("all");
@@ -151,7 +171,7 @@ export default function Appointments() {
     setEditingAppointment(null);
   };
 
-  const handleEditAppointment = async(appointment) => {
+  const handleEditAppointment = async (appointment) => {
     setSelectedDoctor(appointment.doctorId);
     setAppointmentForm({
       doctorId: appointment.doctorId,
@@ -175,6 +195,9 @@ export default function Appointments() {
     setError("");
 
     try {
+      let appointmentData = null;
+      let isUpdate = false;
+
       if (useDummyData) {
         if (editingAppointment) {
           const updatedAppointments = appointments.map((apt) =>
@@ -187,7 +210,18 @@ export default function Appointments() {
               : apt
           );
           setAppointments(updatedAppointments);
-          alert("Appointment updated successfully!");
+          appointmentData = {
+            ...editingAppointment,
+            appointmentDate: appointmentForm.appointmentDate,
+            appointmentTime: appointmentForm.appointmentTime,
+            doctorName:
+              selectedDoctor?.name || editingAppointment.doctorId?.name,
+            consultationFee:
+              selectedDoctor?.consultationFee ||
+              editingAppointment.consultationFee ||
+              500,
+          };
+          isUpdate = true;
         } else {
           const newAppointment = {
             _id: Date.now().toString(),
@@ -199,7 +233,10 @@ export default function Appointments() {
             createdAt: new Date().toISOString(),
           };
           setAppointments([newAppointment, ...appointments]);
-          alert("Appointment booked successfully!");
+          appointmentData = {
+            ...newAppointment,
+            doctorName: selectedDoctor?.name,
+          };
         }
       } else {
         if (editingAppointment) {
@@ -207,17 +244,31 @@ export default function Appointments() {
             appointmentDate: appointmentForm.appointmentDate,
             appointmentTime: appointmentForm.appointmentTime,
           });
-          alert("Appointment updated successfully!");
+          appointmentData = {
+            ...editingAppointment,
+            appointmentDate: appointmentForm.appointmentDate,
+            appointmentTime: appointmentForm.appointmentTime,
+          };
+          isUpdate = true;
         } else {
-          await createAppointment({
+          const createdAppointment = await createAppointment({
             doctorId: appointmentForm.doctorId,
             appointmentDate: appointmentForm.appointmentDate,
             appointmentTime: appointmentForm.appointmentTime,
           });
-          alert("Appointment booked successfully!");
+          appointmentData = {
+            ...createdAppointment,
+            appointmentDate: appointmentForm.appointmentDate,
+            appointmentTime: appointmentForm.appointmentTime,
+          };
         }
         loadAppointments();
       }
+
+      // Show success modal instead of alert
+      setSuccessAppointmentData(appointmentData);
+      setIsUpdateSuccess(isUpdate);
+      setShowSuccessModal(true);
 
       // Reset form and close modal
       setShowNewAppointment(false);
@@ -319,7 +370,9 @@ export default function Appointments() {
 
                 {loading ? (
                   <div className="flex items-center justify-center py-8">
-                    <span className="text-slate-600">Loading appointments...</span>
+                    <span className="text-slate-600">
+                      Loading appointments...
+                    </span>
                   </div>
                 ) : (
                   <div className="space-y-4">
@@ -489,6 +542,14 @@ export default function Appointments() {
         isOpen={!!viewingReport}
         appointment={viewingReport}
         onClose={() => setViewingReport(null)}
+      />
+
+      {/* Appointment Success Modal */}
+      <AppointmentSuccessModal
+        isOpen={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+        appointmentData={successAppointmentData}
+        isUpdate={isUpdateSuccess}
       />
     </div>
   );
