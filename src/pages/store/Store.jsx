@@ -10,11 +10,11 @@ import MedicineCard from "../../components/Store/MedicineCard";
 /* -------------------------------------------------- */
 /* 1.  THEME  */
 const colors = {
-  lightestBlue: "#e0fbfc",
-  lightBlue: "#c2dfe3",
-  mediumBlue: "#9db4c0",
-  darkBlue: "#5c6b73",
-  darkestBlue: "#253237",
+    lightestBlue: "#e0fbfc",
+    lightBlue: "#c2dfe3",
+    mediumBlue: "#9db4c0",
+    darkBlue: "#5c6b73",
+    darkestBlue: "#253237",
 };
 
 /* -------------------------------------------------- */
@@ -23,213 +23,202 @@ const colors = {
 /* -------------------------------------------------- */
 /* 4.  MAIN STORE PAGE  */
 export default function StorePage() {
-  /* cart = { id, name, price, qty }[] */
-  const [cart, setCart] = useState([]);
-  const [showCheckout, setShow] = useState(false);
-  const [medicines, setMedicines] = useState([]);
-  const [loading, setLoading] = useState(true);
+    /* cart = { id, name, price, qty }[] */
+    const [cart, setCart] = useState([]);
+    const [showCheckout, setShow] = useState(false);
+    const [medicines, setMedicines] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  /* Fetch medicines on mount */
-  useEffect(() => {
-    const loadMedicines = async () => {
-      try {
-        const meds = await fetchMedicines({ limit: 30 });
-        // Transform medicines to expected shape for UI
-        const transformed = meds.map((m) => ({
-          id: m._id,
-          name: m.name,
-          price: m.price,
-          description: m.shortDesc,
-          img:
-            m.image ||
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmedicine&psig=AOvVaw31Fvl6WowcSRAonBE6VEKh&ust=1751277740821000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDN7I-wlo4DFQAAAAAdAAAAABAE",
-        }));
-        setMedicines(transformed);
-      } catch (err) {
-        console.error("Failed to load medicines", err);
-      } finally {
-        setLoading(false);
-      }
+    /* Fetch medicines on mount */
+    useEffect(() => {
+        const loadMedicines = async () => {
+            try {
+                const meds = await fetchMedicines({ limit: 30 });
+                // Transform medicines to expected shape for UI
+                const transformed = meds.map((m) => ({
+                    id: m._id,
+                    name: m.name,
+                    price: m.price,
+                    description: m.shortDesc,
+                    img:
+                        m.image ||
+                        "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmedicine&psig=AOvVaw31Fvl6WowcSRAonBE6VEKh&ust=1751277740821000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDN7I-wlo4DFQAAAAAdAAAAABAE",
+                }));
+                setMedicines(transformed);
+            } catch (err) {
+                console.error("Failed to load medicines", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadMedicines();
+    }, []);
+
+    /* ----- cart helpers ----- */
+    const addToCart = (prod) => {
+        setCart((prev) => {
+            const existing = prev.find((i) => i.id === prod.id);
+            if (existing) {
+                return prev.map((i) =>
+                    i.id === prod.id ? { ...i, qty: i.qty + 1 } : i
+                );
+            }
+            return [...prev, { ...prod, qty: 1 }];
+        });
     };
-    loadMedicines();
-  }, []);
 
-  /* ----- cart helpers ----- */
-  const addToCart = (prod) => {
-    setCart((prev) => {
-      const existing = prev.find((i) => i.id === prod.id);
-      if (existing) {
-        return prev.map((i) =>
-          i.id === prod.id ? { ...i, qty: i.qty + 1 } : i
+    const changeQty = (id, delta) =>
+        setCart((prev) =>
+            prev
+                .map((i) => (i.id === id ? { ...i, qty: i.qty + delta } : i))
+                .filter((i) => i.qty > 0)
         );
-      }
-      return [...prev, { ...prod, qty: 1 }];
-    });
-  };
 
-  const changeQty = (id, delta) =>
-    setCart((prev) =>
-      prev
-        .map((i) => (i.id === id ? { ...i, qty: i.qty + delta } : i))
-        .filter((i) => i.qty > 0)
+    const removeItem = (id) => setCart((prev) => prev.filter((i) => i.id !== id));
+
+    const total = useMemo(
+        () => cart.reduce((sum, i) => sum + i.price * i.qty, 0),
+        [cart]
     );
 
-  const removeItem = (id) => setCart((prev) => prev.filter((i) => i.id !== id));
+    /* Create order handler passed to CheckoutModal */
+    const handlePlaceOrder = async (address, paymentMethod) => {
+        try {
+            // 1. Get user profile to obtain ID
+            const user = await fetchUserProfile();
+            // 2. Build order items list
+            const orderItems = cart.map((item) => ({
+                medicineId: item.id,
+                quantity: item.qty,
+            }));
 
-  const total = useMemo(
-    () => cart.reduce((sum, i) => sum + i.price * i.qty, 0),
-    [cart]
-  );
+            const orderPayload = {
+                customerId: user._id,
+                orderItems,
+                shippingAddress: address,
+                // Let backend compute total and delivery date
+            };
 
-  /* Create order handler passed to CheckoutModal */
-  const handlePlaceOrder = async (address, paymentMethod) => {
-    try {
-      // 1. Get user profile to obtain ID
-      const user = await fetchUserProfile();
-      // 2. Build order items list
-      const orderItems = cart.map((item) => ({
-        medicineId: item.id,
-        quantity: item.qty,
-      }));
+            await createOrder(orderPayload);
+            // Reset cart after success
+            setCart([]);
+            setShow(false);
+            alert("Order placed successfully");
+        } catch (err) {
+            console.error("Order creation failed", err);
+            alert(err.response?.data?.message || "Failed to place order");
+        }
+    };
 
-      const orderPayload = {
-        customerId: user._id,
-        orderItems,
-        shippingAddress: address,
-        // Let backend compute total and delivery date
-      };
 
-      await createOrder(orderPayload);
-      // Reset cart after success
-      setCart([]);
-      setShow(false);
-      alert("Order placed successfully");
-    } catch (err) {
-      console.error("Order creation failed", err);
-      alert(err.response?.data?.message || "Failed to place order");
-    }
-  };
 
-  /* ----- render ----- */
-  return (
-    <div
-      className="min-h-screen p-6"
-      style={{ background: colors.lightestBlue }}
-    >
-      {/* Header */}
-      <h1
-        className="text-2xl font-bold mb-6"
-        style={{ color: colors.darkestBlue }}
-      >
-        Pharmacy Store
-      </h1>
-
-      {/* Main content */}
-      <div className="lg:flex lg:space-x-8">
-        {/* Product Grid */}
-        <div className="flex-1">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-            {medicines.map((m) => (
-              <MedicineCard key={m.id} product={m} onAdd={addToCart} />
-            ))}
-          </div>
-        </div>
-
-        {/* Cart Sidebar */}
-        <div className="lg:w-96 lg:sticky lg:top-24 mt-10 lg:mt-0">
-          {/* Cart Summary */}
-          <div className="mt-10">
-            <h2
-              className="text-xl font-semibold mb-4 flex items-center"
-              style={{ color: colors.darkestBlue }}
-            >
-              <ShoppingCart className="mr-2" /> Cart ({cart.length})
-            </h2>
-
-            {cart.length === 0 ? (
-              <p style={{ color: colors.darkBlue }}>Your cart is empty.</p>
-            ) : (
-              <>
-                <div className="space-y-3 mb-4">
-                  {cart.map((item) => (
-                    <div
-                      key={item.id}
-                      className="flex items-center justify-between bg-white p-3 rounded"
-                      style={{ borderLeft: `4px solid ${colors.mediumBlue}` }}
-                    >
-                      <div>
-                        <p
-                          className="font-medium"
-                          style={{ color: colors.darkestBlue }}
-                        >
-                          {item.name}
-                        </p>
-                        <p className="text-xs text-gray-500">
-                          ₹{item.price} × {item.qty}
-                        </p>
-                      </div>
-
-                      <div className="flex items-center space-x-2">
-                        <button
-                          onClick={() => changeQty(item.id, -1)}
-                          className="p-1 rounded"
-                          style={{ background: colors.lightBlue }}
-                        >
-                          <Minus size={14} />
-                        </button>
-                        <span>{item.qty}</span>
-                        <button
-                          onClick={() => changeQty(item.id, 1)}
-                          className="p-1 rounded"
-                          style={{ background: colors.lightBlue }}
-                        >
-                          <Plus size={14} />
-                        </button>
-                        <button
-                          onClick={() => removeItem(item.id)}
-                          className="p-1 rounded"
-                          style={{ color: colors.darkBlue }}
-                        >
-                          <Trash2 size={14} />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Total + Checkout */}
-                <div className="flex justify-between items-center">
-                  <span
-                    className="font-bold text-lg"
+    /* ----- render ----- */
+    return (
+        <div className="flex overflow-clip" style={{ background: colors.lightestBlue, height: '92vh' }}>
+            {/* Cart Sidebar */}
+            <div className="w-full sm:w-80 p-6 bg-white shadow-md overflow-y-scroll sticky top-0 h-full">
+                <h2
+                    className="text-xl font-semibold mb-4 flex items-center"
                     style={{ color: colors.darkestBlue }}
-                  >
-                    Total: ₹{total}
-                  </span>
-                  <button
-                    onClick={() => setShow(true)}
-                    className="px-4 py-2 rounded text-white"
-                    style={{ background: colors.darkBlue }}
-                  >
-                    Go to Checkout
-                  </button>
-                </div>
-              </>
-            )}
-          </div>
+                >
+                    <ShoppingCart className="mr-2" /> Cart ({cart.length})
+                </h2>
 
-          {/* Checkout Modal */}
-          {showCheckout && (
-            <CheckoutModal
-              cart={cart}
-              total={total}
-              changeQty={changeQty}
-              removeItem={removeItem}
-              onClose={() => setShow(false)}
-              onPlaceOrder={handlePlaceOrder}
-            />
-          )}
+                {cart.length === 0 ? (
+                    <p style={{ color: colors.darkBlue }}>Your cart is empty.</p>
+                ) : (
+                    <>
+                        <div className="space-y-3 mb-4">
+                            {cart.map((item) => (
+                                <div
+                                    key={item.id}
+                                    className="flex items-center justify-between bg-white p-3 rounded"
+                                    style={{ borderLeft: `4px solid ${colors.mediumBlue}` }}
+                                >
+                                    <div>
+                                        <p className="font-medium" style={{ color: colors.darkestBlue }}>
+                                            {item.name}
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            ₹{item.price} × {item.qty}
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center space-x-2">
+                                        <button
+                                            onClick={() => changeQty(item.id, -1)}
+                                            className="p-1 rounded"
+                                            style={{ background: colors.lightBlue }}
+                                        >
+                                            <Minus size={14} />
+                                        </button>
+                                        <span>{item.qty}</span>
+                                        <button
+                                            onClick={() => changeQty(item.id, 1)}
+                                            className="p-1 rounded"
+                                            style={{ background: colors.lightBlue }}
+                                        >
+                                            <Plus size={14} />
+                                        </button>
+                                        <button
+                                            onClick={() => removeItem(item.id)}
+                                            className="p-1 rounded"
+                                            style={{ color: colors.darkBlue }}
+                                        >
+                                            <Trash2 size={14} />
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="flex justify-between items-center">
+                            <span
+                                className="font-bold text-lg"
+                                style={{ color: colors.darkestBlue }}
+                            >
+                                Total: ₹{total.toFixed(2)}
+                            </span>
+                            <button
+                                onClick={() => setShow(true)}
+                                className="px-4 py-2 rounded text-white"
+                                style={{ background: colors.darkBlue }}
+                            >
+                                Checkout
+                            </button>
+                        </div>
+                    </>
+                )}
+            </div>
+
+            {/* Product List */}
+            <div className="flex-1 h-full p-6 overflow-y-scroll">
+                {/* Header */}
+                <h1
+                    className="text-2xl font-bold mb-6"
+                    style={{ color: colors.darkestBlue }}
+                >
+                    Pharmacy Store
+                </h1>
+
+                {/* Product Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {medicines.map((m) => (
+                        <MedicineCard key={m.id} product={m} onAdd={addToCart} />
+                    ))}
+                </div>
+            </div>
+
+            {/* Checkout Modal */}
+            {showCheckout && (
+                <CheckoutModal
+                    cart={cart}
+                    total={total}
+                    changeQty={changeQty}
+                    removeItem={removeItem}
+                    onClose={() => setShow(false)}
+                    onPlaceOrder={handlePlaceOrder}
+                />
+            )}
         </div>
-      </div>
-    </div>
-  );
+    );
 }
