@@ -12,9 +12,11 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { login, signup } from "../services/auth";
+import { useAuth } from "../hooks/useAuth";
 
 export default function Auth() {
   const navigate = useNavigate();
+  const { login: setAuthUser } = useAuth();
 
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
@@ -79,6 +81,9 @@ export default function Auth() {
 
         console.log("Signup response:", res);
       }
+
+      // Update authentication state
+      setAuthUser(res.user);
 
       const role = res?.user?.role;
       if (role === "doctor") {
