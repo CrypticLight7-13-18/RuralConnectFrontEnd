@@ -211,15 +211,17 @@ export default function Appointments() {
           );
           setAppointments(updatedAppointments);
           appointmentData = {
-            ...editingAppointment,
             appointmentDate: appointmentForm.appointmentDate,
             appointmentTime: appointmentForm.appointmentTime,
             doctorName:
-              selectedDoctor?.name || editingAppointment.doctorId?.name,
+              selectedDoctor?.name ||
+              editingAppointment.doctorId?.name ||
+              "Doctor",
             consultationFee:
               selectedDoctor?.consultationFee ||
               editingAppointment.consultationFee ||
               500,
+            status: editingAppointment.status || "Pending",
           };
           isUpdate = true;
         } else {
@@ -229,13 +231,16 @@ export default function Appointments() {
             appointmentDate: appointmentForm.appointmentDate,
             appointmentTime: appointmentForm.appointmentTime,
             status: "Pending",
-            consultationFee: selectedDoctor.consultationFee || 500,
+            consultationFee: selectedDoctor?.consultationFee || 500,
             createdAt: new Date().toISOString(),
           };
           setAppointments([newAppointment, ...appointments]);
           appointmentData = {
-            ...newAppointment,
-            doctorName: selectedDoctor?.name,
+            appointmentDate: appointmentForm.appointmentDate,
+            appointmentTime: appointmentForm.appointmentTime,
+            doctorName: selectedDoctor?.name || "Doctor",
+            consultationFee: selectedDoctor?.consultationFee || 500,
+            status: "Pending",
           };
         }
       } else {
@@ -245,9 +250,17 @@ export default function Appointments() {
             appointmentTime: appointmentForm.appointmentTime,
           });
           appointmentData = {
-            ...editingAppointment,
             appointmentDate: appointmentForm.appointmentDate,
             appointmentTime: appointmentForm.appointmentTime,
+            doctorName:
+              selectedDoctor?.name ||
+              editingAppointment.doctorId?.name ||
+              "Doctor",
+            consultationFee:
+              selectedDoctor?.consultationFee ||
+              editingAppointment.consultationFee ||
+              500,
+            status: editingAppointment.status || "Pending",
           };
           isUpdate = true;
         } else {
@@ -257,15 +270,25 @@ export default function Appointments() {
             appointmentTime: appointmentForm.appointmentTime,
           });
           appointmentData = {
-            ...createdAppointment,
             appointmentDate: appointmentForm.appointmentDate,
             appointmentTime: appointmentForm.appointmentTime,
+            doctorName:
+              selectedDoctor?.name ||
+              createdAppointment.doctorId?.name ||
+              "Doctor",
+            consultationFee:
+              selectedDoctor?.consultationFee ||
+              createdAppointment.consultationFee ||
+              500,
+            status: createdAppointment.status || "Pending",
           };
         }
         loadAppointments();
       }
 
       // Show success modal instead of alert
+      console.log("Appointment data being passed to modal:", appointmentData);
+      console.log("Selected doctor:", selectedDoctor);
       setSuccessAppointmentData(appointmentData);
       setIsUpdateSuccess(isUpdate);
       setShowSuccessModal(true);
