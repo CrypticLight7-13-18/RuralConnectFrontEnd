@@ -19,51 +19,61 @@ const formatDate = (dateString) => {
   });
 };
 
-export default function AppointmentCard({ 
-  appointment, 
-  getStatusColor, 
-  onEdit, 
-  onCancel, 
+export default function AppointmentCard({
+  appointment,
+  getStatusColor,
+  onEdit,
+  onCancel,
   onViewReport,
-  loading 
+  loading,
 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+      className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+      style={{ borderColor: "#c2dfe3" }}
     >
       <div className="flex items-start justify-between">
         <div className="flex-1">
           <div className="flex items-center space-x-3 mb-2">
-            <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center">
-              <Stethoscope className="w-6 h-6 text-slate-600" />
+            <div
+              className="w-12 h-12 rounded-full flex items-center justify-center"
+              style={{ backgroundColor: "#e0fbfc" }}
+            >
+              <Stethoscope className="w-6 h-6" style={{ color: "#5c6b73" }} />
             </div>
             <div>
-              <h3 className="font-semibold text-slate-800">
+              <h3 className="font-semibold" style={{ color: "#253237" }}>
                 {appointment.doctorId?.name || "Doctor Name"}
               </h3>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm" style={{ color: "#5c6b73" }}>
                 {appointment.doctorId?.specialization || "Specialization"}
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-600">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm"
+            style={{ color: "#5c6b73" }}
+          >
             <div className="flex items-center">
-              <Calendar className="w-4 h-4 mr-2" />
+              <Calendar className="w-4 h-4 mr-2" style={{ color: "#9db4c0" }} />
               {formatDate(appointment.appointmentDate)}
             </div>
             <div className="flex items-center">
-              <Clock className="w-4 h-4 mr-2" />
+              <Clock className="w-4 h-4 mr-2" style={{ color: "#9db4c0" }} />
               {appointment.appointmentTime}
             </div>
             <div className="flex items-center">
-              <MapPin className="w-4 h-4 mr-2" />
+              <MapPin className="w-4 h-4 mr-2" style={{ color: "#9db4c0" }} />
               {appointment.doctorId?.location || "Location"}
             </div>
             <div className="flex items-center">
-              <IndianRupee className="w-4 h-4 mr-2" />
+              <IndianRupee
+                className="w-4 h-4 mr-2"
+                style={{ color: "#9db4c0" }}
+              />
               {appointment.consultationFee}
             </div>
           </div>
@@ -74,7 +84,19 @@ export default function AppointmentCard({
             <div className="flex space-x-2">
               <button
                 onClick={() => onEdit(appointment)}
-                className="p-2 text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                className="p-2 rounded-lg transition-colors"
+                style={{
+                  color: "#5c6b73",
+                  ":hover": { color: "#9db4c0", backgroundColor: "#e0fbfc" },
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.color = "#9db4c0";
+                  e.target.style.backgroundColor = "#e0fbfc";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.color = "#5c6b73";
+                  e.target.style.backgroundColor = "transparent";
+                }}
                 disabled={loading}
               >
                 <Edit3 className="w-4 h-4" />
@@ -91,7 +113,18 @@ export default function AppointmentCard({
           {appointment.status === "Completed" && (
             <button
               onClick={() => onViewReport(appointment)}
-              className="p-2 text-slate-600 hover:text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+              className="p-2 rounded-lg transition-colors"
+              style={{
+                color: "#5c6b73",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.color = "#9db4c0";
+                e.target.style.backgroundColor = "#e0fbfc";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.color = "#5c6b73";
+                e.target.style.backgroundColor = "transparent";
+              }}
               title="View Report"
             >
               <FileText className="w-4 h-4" />
