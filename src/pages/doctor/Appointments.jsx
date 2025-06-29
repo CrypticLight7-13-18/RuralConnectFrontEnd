@@ -84,7 +84,7 @@ export default function DoctorAppointments() {
 
   return (
     <div
-      className="min-h-screen p-6"
+      className="min-h-screen w-full p-6"
       style={{ backgroundColor: colors.lightestBlue }}
     >
       <div className="w-full">

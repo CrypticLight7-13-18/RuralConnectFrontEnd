@@ -2,24 +2,27 @@ import axiosInstance from "./api";
 
 export const fetchDoctorAppointments = async () => {
   const response = await axiosInstance.get("/api/appointments");
-  return response.data.data; // list
+  console.log(response)
+  return response.data.data.appointments; // list
 };
 
 export const addConsultationReport = async (
   appointmentId,
   consultationReport
 ) => {
-  const response = await axiosInstance.put(
-    `/api/appointments/${appointmentId}/report`,
+  const response = await axiosInstance.patch(
+    `/api/appointments/${appointmentId}/status`,
     {
       consultationReport,
     }
   );
+  
   return response.data.data;
 };
 
 export const fetchMyAppointments = async () => {
   const response = await axiosInstance.get("/api/appointments");
+  console.log(response)
   return response.data.data;
 };
 
