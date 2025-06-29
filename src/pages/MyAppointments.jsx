@@ -15,6 +15,7 @@ import TabNavigation from "../components/Appointments/TabNavigation";
 import AppointmentCard from "../components/Appointments/AppointmentCard";
 import DoctorCard from "../components/Appointments/DoctorCard";
 import AppointmentModal from "../components/Appointments/AppointmentModal";
+import ReportModal from "../components/Appointments/ReportModal"
 
 // Helper functions
 const generateDummyTimeSlots = () => [
