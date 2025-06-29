@@ -81,7 +81,6 @@ export default function Auth() {
       }
 
       const role = res?.user?.role;
-
       if (role === "doctor") {
         navigate("/appointment");
       } else {
