@@ -1,40 +1,42 @@
-import { Plus, Minus, Trash2, ShoppingCart, X } from 'lucide-react';
-import React, { useState, useMemo } from 'react';
-export default function CheckoutModal({ cart, total, changeQty, removeItem, onClose }) {
+import { Plus, Minus, Trash2, X } from "lucide-react";
+import React, { useState } from "react";
+export default function CheckoutModal({
+  cart,
+  total,
+  changeQty,
+  removeItem,
+  onClose,
+  onPlaceOrder,
+}) {
   // Example saved addresses (you can fetch from API/store)
   const colors = {
-  lightestBlue: '#e0fbfc',
-  lightBlue:    '#c2dfe3',
-  mediumBlue:   '#9db4c0',
-  darkBlue:     '#5c6b73',
-  darkestBlue:  '#253237',
-};
+    lightestBlue: "#e0fbfc",
+    lightBlue: "#c2dfe3",
+    mediumBlue: "#9db4c0",
+    darkBlue: "#5c6b73",
+    darkestBlue: "#253237",
+  };
   const [addresses, setAddresses] = useState([
-    '123 Main St, Springfield',
-    '456 Elm St, Shelbyville'
+    "123 Main St, Springfield",
+    "456 Elm St, Shelbyville",
   ]);
-  const [selectedAddress, setSelectedAddress] = useState(addresses[0] || '');
+  const [selectedAddress, setSelectedAddress] = useState(addresses[0] || "");
   const [addingNew, setAddingNew] = useState(false);
-  const [newAddress, setNewAddress] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('card');
+  const [newAddress, setNewAddress] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("card");
 
   const handleAddAddress = () => {
     if (!newAddress.trim()) return;
-    setAddresses(prev => [...prev, newAddress.trim()]);
+    setAddresses((prev) => [...prev, newAddress.trim()]);
     setSelectedAddress(newAddress.trim());
-    setNewAddress('');
+    setNewAddress("");
     setAddingNew(false);
   };
 
   const handlePay = () => {
-    const orderData = {
-      cart,
-      total,
-      address: selectedAddress,
-      paymentMethod
-    };
-    console.log('Proceeding with order:', orderData);
-    onClose();
+    if (typeof onPlaceOrder === "function") {
+      onPlaceOrder(selectedAddress, paymentMethod);
+    }
   };
 
   return (
@@ -57,20 +59,25 @@ export default function CheckoutModal({ cart, total, changeQty, removeItem, onCl
           </button>
 
           <div className="p-6 space-y-6">
-            <h3 className="text-xl font-semibold" style={{ color: colors.darkestBlue }}>
+            <h3
+              className="text-xl font-semibold"
+              style={{ color: colors.darkestBlue }}
+            >
               Order Review & Checkout
             </h3>
 
             {/* Cart Items */}
             <div className="space-y-4">
-              {cart.map(item => (
+              {cart.map((item) => (
                 <div
                   key={item.id}
                   className="flex justify-between items-center bg-gray-50 p-3 rounded"
                 >
                   <div>
                     <p className="font-medium">{item.name}</p>
-                    <p className="text-xs text-gray-500">₹{item.price} × {item.qty}</p>
+                    <p className="text-xs text-gray-500">
+                      ₹{item.price} × {item.qty}
+                    </p>
                   </div>
                   <div className="flex items-center space-x-2">
                     <button
@@ -98,7 +105,10 @@ export default function CheckoutModal({ cart, total, changeQty, removeItem, onCl
             </div>
 
             {/* Total */}
-            <p className="text-right font-bold text-lg" style={{ color: colors.darkestBlue }}>
+            <p
+              className="text-right font-bold text-lg"
+              style={{ color: colors.darkestBlue }}
+            >
               Total: ₹{total}
             </p>
 
@@ -107,11 +117,13 @@ export default function CheckoutModal({ cart, total, changeQty, removeItem, onCl
               <label className="block font-medium">Delivery Address</label>
               <select
                 value={selectedAddress}
-                onChange={e => setSelectedAddress(e.target.value)}
+                onChange={(e) => setSelectedAddress(e.target.value)}
                 className="w-full border rounded px-3 py-2"
               >
                 {addresses.map((addr, idx) => (
-                  <option key={idx} value={addr}>{addr}</option>
+                  <option key={idx} value={addr}>
+                    {addr}
+                  </option>
                 ))}
               </select>
               <button
@@ -119,26 +131,26 @@ export default function CheckoutModal({ cart, total, changeQty, removeItem, onCl
                 onClick={() => setAddingNew(!addingNew)}
                 className="text-sm text-blue-600 hover:underline"
               >
-                {addingNew ? 'Cancel New Address' : 'Add New Address'}
+                {addingNew ? "Cancel New Address" : "Add New Address"}
               </button>
 
               {addingNew && (
-            <div className="mt-2 space-y-2 bg-gray-50 p-3 rounded">
-              <input
-                type="text"
-                placeholder="Enter new address"
-                value={newAddress}
-                onChange={e => setNewAddress(e.target.value)}
-                className="w-full border border-gray-300 rounded px-3 py-2"
-              />
-              <button
-                onClick={handleAddAddress}
-                className="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700 transition"
-              >
-                Save Address
-              </button>
-            </div>
-          )}
+                <div className="mt-2 space-y-2 bg-gray-50 p-3 rounded">
+                  <input
+                    type="text"
+                    placeholder="Enter new address"
+                    value={newAddress}
+                    onChange={(e) => setNewAddress(e.target.value)}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
+                  />
+                  <button
+                    onClick={handleAddAddress}
+                    className="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700 transition"
+                  >
+                    Save Address
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Payment Method */}
@@ -146,7 +158,7 @@ export default function CheckoutModal({ cart, total, changeQty, removeItem, onCl
               <label className="block font-medium">Payment Method</label>
               <select
                 value={paymentMethod}
-                onChange={e => setPaymentMethod(e.target.value)}
+                onChange={(e) => setPaymentMethod(e.target.value)}
                 className="w-full border rounded px-3 py-2"
               >
                 <option value="card">Credit / Debit Card</option>
