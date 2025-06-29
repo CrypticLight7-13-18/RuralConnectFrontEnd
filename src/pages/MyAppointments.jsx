@@ -11,10 +11,10 @@ import {
 import { getDoctorAvailability, getDoctorById, getDoctors } from "../services/doctors";
 import { dummyAppointments, dummyDoctors } from "../assets/dummyVariables";
 
-import TabNavigation from "../components/appointments/TabNavigation";
-import AppointmentCard from "../components/appointments/AppointmentCard";
-import DoctorCard from "../components/appointments/DoctorCard";
-import AppointmentModal from "../components/appointments/AppointmentModal";
+import TabNavigation from "../components/Appointments/TabNavigation";
+import AppointmentCard from "../components/Appointments/AppointmentCard";
+import DoctorCard from "../components/Appointments/DoctorCard";
+import AppointmentModal from "../components/Appointments/AppointmentModal";
 
 // Helper functions
 const generateDummyTimeSlots = () => [
