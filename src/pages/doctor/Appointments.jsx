@@ -87,7 +87,7 @@ export default function DoctorAppointments() {
       className="min-h-screen p-6"
       style={{ backgroundColor: colors.lightestBlue }}
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full">
         <h1
           className="text-2xl font-bold mb-4"
           style={{ color: colors.darkestBlue }}

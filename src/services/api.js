@@ -1,7 +1,9 @@
 import axios from "axios";
 
- export const backendURL = "http://localhost:3000";
-//export const backendURL = "https://opulent-broccoli-4pjg9w97jqv2j97-3000.app.github.dev/"
+// In dev we rely on the Vite proxy (see vite.config.js) so a relative base
+// path keeps requests "same-origin" and avoids CORS. In production you can
+// set VITE_BACKEND_URL to point to your deployed API.
+export const backendURL = import.meta.env.VITE_BACKEND_URL || "";
 
 const axiosInstance = axios.create({
   baseURL: backendURL,

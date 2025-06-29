@@ -40,7 +40,9 @@ export default function StorePage() {
           name: m.name,
           price: m.price,
           description: m.shortDesc,
-          img: m.image || "https://source.unsplash.com/200x160/?medicine",
+          img:
+            m.image ||
+            "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmedicine&psig=AOvVaw31Fvl6WowcSRAonBE6VEKh&ust=1751277740821000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDN7I-wlo4DFQAAAAAdAAAAABAE",
         }));
         setMedicines(transformed);
       } catch (err) {
@@ -122,104 +124,112 @@ export default function StorePage() {
         Pharmacy Store
       </h1>
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {medicines.map((m) => (
-          <MedicineCard key={m.id} product={m} onAdd={addToCart} />
-        ))}
-      </div>
+      {/* Main content */}
+      <div className="lg:flex lg:space-x-8">
+        {/* Product Grid */}
+        <div className="flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            {medicines.map((m) => (
+              <MedicineCard key={m.id} product={m} onAdd={addToCart} />
+            ))}
+          </div>
+        </div>
 
-      {/* Cart Summary */}
-      <div className="mt-10">
-        <h2
-          className="text-xl font-semibold mb-4 flex items-center"
-          style={{ color: colors.darkestBlue }}
-        >
-          <ShoppingCart className="mr-2" /> Cart ({cart.length})
-        </h2>
+        {/* Cart Sidebar */}
+        <div className="lg:w-96 lg:sticky lg:top-24 mt-10 lg:mt-0">
+          {/* Cart Summary */}
+          <div className="mt-10">
+            <h2
+              className="text-xl font-semibold mb-4 flex items-center"
+              style={{ color: colors.darkestBlue }}
+            >
+              <ShoppingCart className="mr-2" /> Cart ({cart.length})
+            </h2>
 
-        {cart.length === 0 ? (
-          <p style={{ color: colors.darkBlue }}>Your cart is empty.</p>
-        ) : (
-          <>
-            <div className="space-y-3 mb-4">
-              {cart.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex items-center justify-between bg-white p-3 rounded"
-                  style={{ borderLeft: `4px solid ${colors.mediumBlue}` }}
-                >
-                  <div>
-                    <p
-                      className="font-medium"
-                      style={{ color: colors.darkestBlue }}
+            {cart.length === 0 ? (
+              <p style={{ color: colors.darkBlue }}>Your cart is empty.</p>
+            ) : (
+              <>
+                <div className="space-y-3 mb-4">
+                  {cart.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between bg-white p-3 rounded"
+                      style={{ borderLeft: `4px solid ${colors.mediumBlue}` }}
                     >
-                      {item.name}
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      ₹{item.price} × {item.qty}
-                    </p>
-                  </div>
+                      <div>
+                        <p
+                          className="font-medium"
+                          style={{ color: colors.darkestBlue }}
+                        >
+                          {item.name}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          ₹{item.price} × {item.qty}
+                        </p>
+                      </div>
 
-                  <div className="flex items-center space-x-2">
-                    <button
-                      onClick={() => changeQty(item.id, -1)}
-                      className="p-1 rounded"
-                      style={{ background: colors.lightBlue }}
-                    >
-                      <Minus size={14} />
-                    </button>
-                    <span>{item.qty}</span>
-                    <button
-                      onClick={() => changeQty(item.id, 1)}
-                      className="p-1 rounded"
-                      style={{ background: colors.lightBlue }}
-                    >
-                      <Plus size={14} />
-                    </button>
-                    <button
-                      onClick={() => removeItem(item.id)}
-                      className="p-1 rounded"
-                      style={{ color: colors.darkBlue }}
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
+                      <div className="flex items-center space-x-2">
+                        <button
+                          onClick={() => changeQty(item.id, -1)}
+                          className="p-1 rounded"
+                          style={{ background: colors.lightBlue }}
+                        >
+                          <Minus size={14} />
+                        </button>
+                        <span>{item.qty}</span>
+                        <button
+                          onClick={() => changeQty(item.id, 1)}
+                          className="p-1 rounded"
+                          style={{ background: colors.lightBlue }}
+                        >
+                          <Plus size={14} />
+                        </button>
+                        <button
+                          onClick={() => removeItem(item.id)}
+                          className="p-1 rounded"
+                          style={{ color: colors.darkBlue }}
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            {/* Total + Checkout */}
-            <div className="flex justify-between items-center">
-              <span
-                className="font-bold text-lg"
-                style={{ color: colors.darkestBlue }}
-              >
-                Total: ₹{total}
-              </span>
-              <button
-                onClick={() => setShow(true)}
-                className="px-4 py-2 rounded text-white"
-                style={{ background: colors.darkBlue }}
-              >
-                Go to Checkout
-              </button>
-            </div>
-          </>
-        )}
+                {/* Total + Checkout */}
+                <div className="flex justify-between items-center">
+                  <span
+                    className="font-bold text-lg"
+                    style={{ color: colors.darkestBlue }}
+                  >
+                    Total: ₹{total}
+                  </span>
+                  <button
+                    onClick={() => setShow(true)}
+                    className="px-4 py-2 rounded text-white"
+                    style={{ background: colors.darkBlue }}
+                  >
+                    Go to Checkout
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* Checkout Modal */}
+          {showCheckout && (
+            <CheckoutModal
+              cart={cart}
+              total={total}
+              changeQty={changeQty}
+              removeItem={removeItem}
+              onClose={() => setShow(false)}
+              onPlaceOrder={handlePlaceOrder}
+            />
+          )}
+        </div>
       </div>
-
-      {/* Checkout Modal */}
-      {showCheckout && (
-        <CheckoutModal
-          cart={cart}
-          total={total}
-          changeQty={changeQty}
-          removeItem={removeItem}
-          onClose={() => setShow(false)}
-          onPlaceOrder={handlePlaceOrder}
-        />
-      )}
     </div>
   );
 }
