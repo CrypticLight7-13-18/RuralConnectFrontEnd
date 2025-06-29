@@ -42,6 +42,7 @@ export default function Appointments() {
   const [showNewAppointment, setShowNewAppointment] = useState(false);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [editingAppointment, setEditingAppointment] = useState(null);
+  const [viewingReport, setViewingReport] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [availableSlots, setAvailableSlots] = useState([]);
@@ -259,6 +260,10 @@ export default function Appointments() {
     }
   };
 
+  const handleViewReport = (appointment) => {
+    setViewingReport(appointment);
+  };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-blue-100">
       {/* Error Message */}
@@ -324,6 +329,7 @@ export default function Appointments() {
                         getStatusColor={getStatusColor}
                         onEdit={handleEditAppointment}
                         onCancel={handleCancelAppointment}
+                        onViewReport={handleViewReport}
                         loading={loading}
                       />
                     ))}
@@ -475,6 +481,13 @@ export default function Appointments() {
             appointmentTime: "",
           });
         }}
+      />
+
+      {/* Report Modal */}
+      <ReportModal
+        isOpen={!!viewingReport}
+        appointment={viewingReport}
+        onClose={() => setViewingReport(null)}
       />
     </div>
   );
