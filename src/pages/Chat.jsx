@@ -8,7 +8,7 @@ import { fetchChatSummaries, createChat, deleteChatById } from "../services/chat
 import { io } from "socket.io-client";
 import { backendURL } from "../services/api";
 
-const socket = io(backendURL);
+const socket = io("https://pharmaconnectbackend.onrender.com");
 
 const colors = {
     lightestBlue: "#e0fbfc",
