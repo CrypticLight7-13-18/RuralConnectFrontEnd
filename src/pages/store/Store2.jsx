@@ -33,22 +33,25 @@ export default function StorePage() {
     useEffect(() => {
         const loadMedicines = async () => {
             try {
-                const meds = await fetchMedicines({ limit: 30 });
-                // Transform medicines to expected shape for UI
-                const transformed = meds.map((m) => ({
-                    id: m._id,
+                const res = await fetch("/store.json");
+                const meds = await res.json();
+
+                const transformed = meds.map((m, idx) => ({
+                    id: m.id || idx, // fallback to index if no ID
                     name: m.name,
-                    price: m.price,
-                    description: m.shortDesc,
+                    price: m.price || 50, // fallback price if missing
+                    description: m.shortDesc || "No description available",
                     img: m.image || "https://source.unsplash.com/200x160/?medicine",
                 }));
+                console.log(transformed)
                 setMedicines(transformed);
             } catch (err) {
-                console.error("Failed to load medicines", err);
+                console.error("Failed to load medicines from store.json", err);
             } finally {
                 setLoading(false);
             }
         };
+
         loadMedicines();
     }, []);
 
