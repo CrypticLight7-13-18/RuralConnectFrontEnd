@@ -18,11 +18,13 @@ export const getDoctors = async(filters = {}) => {
         if (filters.maxFee) {
             queryParams.append("maxFee", filters.maxFee);
         }
-
+        console.log(filters, queryParams.toString())
         const response = await axiosInstance.get(
             `/api/doctors?${queryParams.toString()}`
         );
-        return response.data.doctors;
+        console.log("response", response)
+        console.log("doctor.js",response.data.doctors)
+        return response.data.data.doctors;
     } catch (error) {
         console.error("Error fetching doctors:", error);
         throw error;
@@ -32,7 +34,7 @@ export const getDoctors = async(filters = {}) => {
 // Get doctor by ID
 export const getDoctorById = async(doctorId) => {
     try {
-        const response = await axiosInstance.get(`/api/doctors/${doctorId}`);
+        const response = await axiosInstance.get(`/api/doctors/${doctorId.toString()}`);
         return response.data.doctor;
     } catch (error) {
         console.error("Error fetching doctor:", error);
@@ -46,7 +48,7 @@ export const getDoctorAvailability = async(doctorId, date) => {
         const response = await axiosInstance.get(
             `/api/doctors/${doctorId}/availability?date=${date}`
         );
-        return response.data.availableSlots;
+        return response.data.data.availableSlots;
     } catch (error) {
         console.error("Error fetching doctor availability:", error);
         throw error;

@@ -26,7 +26,7 @@ import {
   updateAppointment,
   deleteAppointment,
 } from "../services/appointments";
-import { getDoctorAvailability, getDoctors } from "../services/doctors";
+import { getDoctorAvailability, getDoctorById, getDoctors } from "../services/doctors";
 import { dummyAppointments, dummyDoctors } from "../assets/dummyVariables";
 
 export default function Appointments() {
@@ -39,7 +39,8 @@ export default function Appointments() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [availableSlots, setAvailableSlots] = useState([]);
-  const [useDummyData, setUseDummyData] = useState(true); // Toggle for testing
+  // const [appointmentDate, setAppointmentDate] = useState(null)
+  const [useDummyData, setUseDummyData] = useState(false); // Toggle for testing
 
   // Filters
   const [appointmentFilter, setAppointmentFilter] = useState("all");
@@ -57,24 +58,6 @@ export default function Appointments() {
     appointmentTime: "",
   });
 
-  // Generate dummy time slots for testing
-  const generateDummyTimeSlots = () => {
-    return [
-      "09:00 AM",
-      "09:30 AM",
-      "10:00 AM",
-      "10:30 AM",
-      "11:00 AM",
-      "11:30 AM",
-      "02:00 PM",
-      "02:30 PM",
-      "03:00 PM",
-      "03:30 PM",
-      "04:00 PM",
-      "04:30 PM",
-    ];
-  };
-
   // Load appointments
   const loadAppointments = async () => {
     try {
@@ -84,6 +67,7 @@ export default function Appointments() {
         setAppointments(dummyAppointments);
       } else {
         const data = await getAppointments(appointmentFilter);
+        console.log(data)
         setAppointments(data);
       }
     } catch (err) {
@@ -104,7 +88,10 @@ export default function Appointments() {
         setDoctors(dummyDoctors);
       } else {
         const data = await getDoctors(doctorFilters);
-        setDoctors(data);
+        const doctorData = data || [];
+        console.log("data",data)
+        console.log("doctorData",doctorData)
+        setDoctors(doctorData);
       }
     } catch (err) {
       setError("Failed to load doctors: " + err.message);
@@ -166,24 +153,14 @@ export default function Appointments() {
     setEditingAppointment(null);
   };
 
-  const handleEditAppointment = (appointment) => {
+  const handleEditAppointment = async(appointment) => {
     // Find the doctor for this appointment
-    const doctor = dummyDoctors.find(
-      (d) => d._id === appointment.doctorId?._id || appointment.doctorId
-    );
-
-    setSelectedDoctor(
-      doctor || {
-        _id: appointment.doctorId?._id || appointment.doctorId,
-        name: appointment.doctorId?.name || "Doctor Name",
-        specialization:
-          appointment.doctorId?.specialization || "Specialization",
-        consultationFee: appointment.consultationFee,
-      }
-    );
+    
+    console.log("appointment", appointment)
+    setSelectedDoctor(appointment.doctorId);
 
     setAppointmentForm({
-      doctorId: appointment.doctorId?._id || appointment.doctorId,
+      doctorId: appointment.doctorId,
       appointmentDate: appointment.appointmentDate.split("T")[0], // Convert to YYYY-MM-DD format
       appointmentTime: appointment.appointmentTime,
     });
@@ -194,7 +171,7 @@ export default function Appointments() {
     // Load available slots for the appointment date
     if (appointment.appointmentDate) {
       loadDoctorAvailability(
-        appointment.doctorId?._id || appointment.doctorId,
+        appointment.doctorId._id,
         appointment.appointmentDate.split("T")[0]
       );
     }
@@ -327,9 +304,9 @@ export default function Appointments() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-blue-100">
       {/* Testing Mode Toggle */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex justify-end">
           <label className="flex items-center space-x-2 text-sm text-slate-600">
             <input
@@ -341,7 +318,7 @@ export default function Appointments() {
             <span>Use Dummy Data (Testing Mode)</span>
           </label>
         </div>
-      </div>
+      </div> */}
 
       {/* Error Message */}
       {error && (
@@ -762,11 +739,12 @@ export default function Appointments() {
                       <input
                         type="date"
                         value={appointmentForm.appointmentDate}
-                        onChange={(e) =>
-                          setAppointmentForm({
-                            ...appointmentForm,
-                            appointmentDate: e.target.value,
-                          })
+                        onChange={(e) =>{
+                            setAppointmentForm({
+                              ...appointmentForm,
+                              appointmentDate: e.target.value,
+                            })
+                          }
                         }
                         min={new Date().toISOString().split("T")[0]}
                         className="w-full border border-slate-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-600"

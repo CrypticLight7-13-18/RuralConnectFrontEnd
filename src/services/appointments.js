@@ -10,7 +10,7 @@ export const getAppointments = async(appointmentFilter) => {
         const response = await axiosInstance.get(
             `/api/appointments?${queryParams.toString()}`
         );
-        return response.data.appointments;
+        return response.data.data.appointments;
     } catch (error) {
         console.error("Error fetching appointments:", error);
         throw error;
@@ -26,6 +26,7 @@ export const createAppointment = async(appointmentData) => {
         );
         return response.data;
     } catch (error) {
+        console.log(error.response.data.message)
         console.error("Error creating appointment:", error);
         throw error;
     }
