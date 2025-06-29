@@ -19,7 +19,7 @@ export default function ReportModal({ isOpen, appointment, onClose }) {
     age: 35,
     weight: 75,
     height: 175,
-    comment: "Patient reports feeling much better after following the prescribed treatment. Blood pressure has normalized and symptoms have significantly reduced.",
+    comments: "Patient reports feeling much better after following the prescribed treatment. Blood pressure has normalized and symptoms have significantly reduced.",
     diagnosis: "Hypertension Stage 1 - Well controlled with medication",
     prescription: "1. Lisinopril 10mg - Take once daily in the morning\n2. Amlodipine 5mg - Take once daily\n3. Low sodium diet\n4. Regular exercise 30 min/day"
   };
@@ -143,11 +143,11 @@ export default function ReportModal({ isOpen, appointment, onClose }) {
               </div>
 
               {/* Doctor's Comments */}
-              {reportData.comment && (
+              {reportData.comments && (
                 <div>
                   <h3 className="text-lg font-semibold text-slate-800 mb-3">Doctor's Comments</h3>
                   <div className="bg-slate-50 p-4 rounded-lg border">
-                    <p className="text-slate-700 leading-relaxed">{reportData.comment}</p>
+                    <p className="text-slate-700 leading-relaxed">{reportData.comments}</p>
                   </div>
                 </div>
               )}
