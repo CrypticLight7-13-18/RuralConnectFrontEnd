@@ -1,17 +1,11 @@
 import axiosInstance from "./api";
 
-export const fetchDoctorAppointments = async () => {
-  const response = await axiosInstance.get("/api/appointments");
-  console.log(response)
-  return response.data.data.appointments; // list
-};
-
 export const addConsultationReport = async (
   appointmentId,
   consultationReport
 ) => {
   const response = await axiosInstance.patch(
-    `/api/appointments/${appointmentId}/status`,
+    `/api/appointments/${appointmentId}/report`,
     {
       consultationReport,
     }
@@ -20,21 +14,12 @@ export const addConsultationReport = async (
   return response.data.data;
 };
 
-export const fetchMyAppointments = async () => {
-  const response = await axiosInstance.get("/api/appointments");
-  console.log(response)
-  return response.data.data;
-};
 
 // Get appointments with optional filtering
-export const getAppointments = async(appointmentFilter) => {
+export const getAppointments = async() => {
     try {
-        const queryParams = new URLSearchParams();
-        if (appointmentFilter !== "all") {
-            queryParams.append("status", appointmentFilter);
-        }
         const response = await axiosInstance.get(
-            `/api/appointments?${queryParams.toString()}`
+            `/api/appointments`
         );
         return response.data.data.appointments;
     } catch (error) {

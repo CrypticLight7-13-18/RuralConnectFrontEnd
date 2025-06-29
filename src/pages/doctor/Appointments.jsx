@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Search, Calendar, FileText, Plus } from "lucide-react";
 import ReportForm from "../../components/doctor/ReportForm";
 import {
-  fetchDoctorAppointments,
+  getAppointments,
   addConsultationReport,
 } from "../../services/appointments";
 
@@ -27,7 +27,7 @@ export default function DoctorAppointments() {
     const load = async () => {
       setLoading(true);
       try {
-        const data = await fetchDoctorAppointments();
+        const data = await getAppointments();
         // Transform backend shape into UI shape
         const transformed = data.map((a) => ({
           id: a._id,

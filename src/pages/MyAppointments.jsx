@@ -48,6 +48,7 @@ export default function Appointments() {
     const [error, setError] = useState("");
     const [availableSlots, setAvailableSlots] = useState([]);
     const [useDummyData, setUseDummyData] = useState(false);
+    const [filteredAppointments, setFilteredAppointments] = useState([])
 
     // Filters
     const [appointmentFilter, setAppointmentFilter] = useState("all");
@@ -72,7 +73,7 @@ export default function Appointments() {
             if (useDummyData) {
                 setAppointments(dummyAppointments);
             } else {
-                const data = await getAppointments(appointmentFilter);
+                const data = await getAppointments();
                 setAppointments(data);
             }
         } catch (err) {
@@ -134,10 +135,15 @@ export default function Appointments() {
         }
     }, [appointmentForm.appointmentDate, selectedDoctor]);
 
-    const filteredAppointments = appointments.filter((appointment) => {
+    useEffect(()=>{
+      // console.log("appointments",appointments)
+      setFilteredAppointments(appointments.filter((appointment) => {
         if (appointmentFilter === "all") return true;
         return appointment.status.toLowerCase() === appointmentFilter.toLowerCase();
-    });
+      }));
+      // console.log("filteredAppointments", filteredAppointments)
+    },[appointmentFilter, appointments])
+
 
     const handleBookAppointment = (doctor) => {
         setSelectedDoctor(doctor);
