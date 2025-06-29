@@ -1,3 +1,11 @@
+// Delete a chat by ID
+export const deleteChatById = async (chatId) => {
+  const response = await axiosInstance.delete(`/api/chat/${chatId}`);
+  if (response.data && response.data.success) {
+    return response.data;
+  }
+  throw new Error(response.data?.message || "Failed to delete chat");
+};
 import axiosInstance from "../services/api";
 
 // Create a new chat

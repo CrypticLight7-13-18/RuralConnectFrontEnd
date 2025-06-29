@@ -33,16 +33,14 @@ export default function StorePage() {
     useEffect(() => {
         const loadMedicines = async () => {
             try {
-                const meds = await fetchMedicines({ limit: 30 });
+                const meds = await fetchMedicines({ limit: 1000 });
                 // Transform medicines to expected shape for UI
                 const transformed = meds.map((m) => ({
                     id: m._id,
                     name: m.name,
                     price: m.price,
                     description: m.shortDesc,
-                    img:
-                        m.image ||
-                        "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmedicine&psig=AOvVaw31Fvl6WowcSRAonBE6VEKh&ust=1751277740821000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDN7I-wlo4DFQAAAAAdAAAAABAE",
+                    img: (Math.floor(Math.random() * 100) + 1),
                 }));
                 setMedicines(transformed);
             } catch (err) {
