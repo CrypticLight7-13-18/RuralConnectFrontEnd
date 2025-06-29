@@ -101,22 +101,25 @@ export default function Navbar() {
                 <Calendar className="w-4 h-4" />
                 <span>Appointments</span>
               </button>
-
-              <button
-                onClick={() => handleNavigation('store')}
-                className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
-              >
-                <Store className="w-4 h-4" />
-                <span>Store</span>
-              </button>
-
-              <button
-                onClick={() => handleNavigation('chat')}
-                className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
-              >
-                <MessageCircle className="w-4 h-4" />
-                <span>Chat</span>
-              </button>
+              {/* Only show Store and Chat if not doctor */}
+              {userData.role !== 'doctor' && (
+                <>
+                  <button
+                    onClick={() => handleNavigation('store')}
+                    className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                  >
+                    <Store className="w-4 h-4" />
+                    <span>Store</span>
+                  </button>
+                  <button
+                    onClick={() => handleNavigation('chat')}
+                    className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Chat</span>
+                  </button>
+                </>
+              )}
             </div>
           </div>
 

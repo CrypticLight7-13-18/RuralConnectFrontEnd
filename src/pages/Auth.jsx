@@ -72,9 +72,8 @@ export default function Auth() {
       }
 
       const role = res?.user?.role;
-
       if (role === "doctor") {
-        navigate("/appointmentsDoctor");
+        navigate("/appointment");
       } else {
         navigate("/chat");
       }
