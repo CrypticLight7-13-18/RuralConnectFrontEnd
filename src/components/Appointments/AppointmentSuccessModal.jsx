@@ -17,20 +17,37 @@ export default function AppointmentSuccessModal({
   if (!isOpen || !appointmentData) return null;
 
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    if (!dateString) return "Date not specified";
+    try {
+      return new Date(dateString).toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    } catch {
+      return dateString; // Return as-is if parsing fails
+    }
   };
 
   const formatTime = (timeString) => {
-    return new Date(`2000-01-01T${timeString}`).toLocaleTimeString("en-US", {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
+    if (!timeString) return "Time not specified";
+    try {
+      // Handle time formats like "14:30" or "2:30 PM"
+      if (timeString.includes(":")) {
+        const [hours, minutes] = timeString.split(":");
+        const date = new Date();
+        date.setHours(parseInt(hours), parseInt(minutes), 0, 0);
+        return date.toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true,
+        });
+      }
+      return timeString; // Return as-is if not in expected format
+    } catch {
+      return timeString; // Return as-is if parsing fails
+    }
   };
 
   return (
@@ -81,8 +98,7 @@ export default function AppointmentSuccessModal({
                     <p className="text-sm text-gray-600">Doctor</p>
                     <p className="font-semibold text-gray-800">
                       {appointmentData.doctorName ||
-                        appointmentData.doctorId?.name ||
-                        "Dr. Smith"}
+                        "Doctor name not available"}
                     </p>
                   </div>
                 </div>

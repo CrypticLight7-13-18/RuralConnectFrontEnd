@@ -1,43 +1,89 @@
-import { motion } from "framer-motion";
-import { Stethoscope, MapPin, IndianRupee } from "lucide-react";
+import React from "react";
+import { MapPin, Star, Clock } from "lucide-react";
 
 export default function DoctorCard({ doctor, onBookAppointment, loading }) {
+  if (!doctor) return null;
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-    >
-      <div className="p-6">
-        <div className="flex items-center space-x-4 mb-4">
-          <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center">
-            <Stethoscope className="w-8 h-8 text-slate-600" />
-          </div>
-          <div>
-            <h3 className="font-semibold text-slate-800">{doctor.name}</h3>
-            <p className="text-sm text-slate-600">{doctor.specialization}</p>
-          </div>
-        </div>
-
-        <div className="space-y-2 text-sm text-slate-600 mb-4">
-          <div className="flex items-center">
-            <MapPin className="w-4 h-4 mr-2" />
-            {doctor.location}
-          </div>
-          <div className="flex items-center">
-            <IndianRupee className="w-4 h-4 mr-2" />
-            {doctor.consultationFee || "Fee not specified"} consultation
-          </div>
-        </div>
-
-        <button
-          onClick={() => onBookAppointment(doctor)}
-          disabled={loading}
-          className="w-full bg-gradient-to-r from-slate-600 to-slate-700 text-white font-semibold py-2 px-4 rounded-lg hover:from-slate-700 hover:to-slate-800 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+      {/* Doctor Info */}
+      <div className="flex items-center mb-4">
+        <div
+          className="w-16 h-16 rounded-full flex items-center justify-center mr-4"
+          style={{ backgroundColor: "#e0fbfc" }}
         >
-          Book Appointment
-        </button>
+          <span className="font-semibold text-xl" style={{ color: "#5c6b73" }}>
+            {doctor.name?.charAt(0) || "D"}
+          </span>
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold" style={{ color: "#253237" }}>
+            {doctor.name || "Doctor"}
+          </h3>
+          <p className="text-sm" style={{ color: "#5c6b73" }}>
+            {doctor.specialization || "General Physician"}
+          </p>
+        </div>
       </div>
-    </motion.div>
+
+      {/* Details */}
+      <div className="space-y-2 mb-4">
+        {doctor.location && (
+          <div
+            className="flex items-center text-sm"
+            style={{ color: "#5c6b73" }}
+          >
+            <MapPin size={16} className="mr-2" style={{ color: "#9db4c0" }} />
+            <span>{doctor.location}</span>
+          </div>
+        )}
+
+        {doctor.rating && (
+          <div
+            className="flex items-center text-sm"
+            style={{ color: "#5c6b73" }}
+          >
+            <Star size={16} className="mr-2" style={{ color: "#9db4c0" }} />
+            <span>{doctor.rating} rating</span>
+          </div>
+        )}
+
+        {doctor.experience && (
+          <div
+            className="flex items-center text-sm"
+            style={{ color: "#5c6b73" }}
+          >
+            <Clock size={16} className="mr-2" style={{ color: "#9db4c0" }} />
+            <span>{doctor.experience} years experience</span>
+          </div>
+        )}
+      </div>
+
+      {/* Fee */}
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-sm" style={{ color: "#5c6b73" }}>
+          Consultation Fee
+        </span>
+        <span className="text-lg font-semibold" style={{ color: "#5c6b73" }}>
+          ₹{doctor.consultationFee || 500}
+        </span>
+      </div>
+
+      {/* Book Appointment Button */}
+      <button
+        onClick={() => onBookAppointment(doctor)}
+        disabled={loading}
+        className="w-full text-white py-3 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        style={{ backgroundColor: "#5c6b73" }}
+        onMouseEnter={(e) => {
+          if (!loading) e.target.style.backgroundColor = "#253237";
+        }}
+        onMouseLeave={(e) => {
+          if (!loading) e.target.style.backgroundColor = "#5c6b73";
+        }}
+      >
+        {loading ? "Loading..." : "Book Appointment"}
+      </button>
+    </div>
   );
 }

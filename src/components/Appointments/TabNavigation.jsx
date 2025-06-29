@@ -1,33 +1,43 @@
-import { motion } from "framer-motion";
+import React from "react";
 
 export default function TabNavigation({ activeTab, setActiveTab }) {
+  const tabs = [
+    { id: "appointments", label: "My Appointments" },
+    { id: "doctors", label: "Find Doctors" },
+  ];
+
   return (
-    <div className="flex items-center justify-center mb-8">
-      <div className="relative bg-white rounded-full p-1 shadow-lg">
-        <motion.div
-          className="absolute inset-y-1 bg-slate-600 rounded-full"
-          animate={{
-            x: activeTab === "appointments" ? 4 : "calc(100% - 4px)",
-            width: "calc(50% - 4px)",
-          }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        />
-        <button
-          onClick={() => setActiveTab("appointments")}
-          className={`relative z-10 px-8 py-3 rounded-full text-sm font-semibold transition-colors ${
-            activeTab === "appointments" ? "text-white" : "text-slate-600"
-          }`}
-        >
-          My Appointments
-        </button>
-        <button
-          onClick={() => setActiveTab("doctors")}
-          className={`relative z-10 px-8 py-3 rounded-full text-sm font-semibold transition-colors ${
-            activeTab === "doctors" ? "text-white" : "text-slate-600"
-          }`}
-        >
-          Find Doctors
-        </button>
+    <div className="bg-white rounded-xl shadow-lg mb-6">
+      <div className="flex border-b" style={{ borderColor: "#c2dfe3" }}>
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex-1 py-4 px-6 text-center font-medium transition-colors ${
+              activeTab === tab.id ? "border-b-2" : "hover:bg-opacity-50"
+            }`}
+            style={{
+              color: activeTab === tab.id ? "#5c6b73" : "#9db4c0",
+              borderBottomColor:
+                activeTab === tab.id ? "#5c6b73" : "transparent",
+              backgroundColor: activeTab === tab.id ? "#e0fbfc" : "transparent",
+            }}
+            onMouseEnter={(e) => {
+              if (activeTab !== tab.id) {
+                e.target.style.backgroundColor = "#e0fbfc";
+                e.target.style.color = "#5c6b73";
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (activeTab !== tab.id) {
+                e.target.style.backgroundColor = "transparent";
+                e.target.style.color = "#9db4c0";
+              }
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
     </div>
   );
