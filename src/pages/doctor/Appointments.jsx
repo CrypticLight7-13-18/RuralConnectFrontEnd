@@ -37,7 +37,7 @@ export default function DoctorAppointments() {
           consultationReport: a.consultationReport,
           status : a.status
         }));
-        const incomplete = transformed.filter((a) => !a.consultationReport);
+        const incomplete = transformed.filter((a) => a.status === "Pending");
         setAppointments(incomplete);
         setFiltered(incomplete);
       } catch (err) {
