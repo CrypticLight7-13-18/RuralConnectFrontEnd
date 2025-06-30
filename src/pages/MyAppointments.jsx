@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { AlertCircle, X } from "lucide-react";
 
@@ -8,11 +9,7 @@ import {
   updateAppointment,
   deleteAppointment,
 } from "../services/appointments";
-import {
-  getDoctorAvailability,
-  getDoctorById,
-  getDoctors,
-} from "../services/doctors";
+import { getDoctorAvailability, getDoctors } from "../services/doctors";
 import { dummyAppointments, dummyDoctors } from "../assets/dummyVariables";
 
 import TabNavigation from "../components/Appointments/TabNavigation";
@@ -52,21 +49,21 @@ const getStatusColor = (status) => {
 };
 
 export default function Appointments() {
-    const [activeTab, setActiveTab] = useState("appointments");
-    const [appointments, setAppointments] = useState([]);
-    const [doctors, setDoctors] = useState([]);
-    const [showNewAppointment, setShowNewAppointment] = useState(false);
-    const [selectedDoctor, setSelectedDoctor] = useState(null);
-    const [editingAppointment, setEditingAppointment] = useState(null);
-    const [viewingReport, setViewingReport] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
-    const [availableSlots, setAvailableSlots] = useState([]);
-    const [useDummyData, setUseDummyData] = useState(false);
-    const [filteredAppointments, setFilteredAppointments] = useState([])
-    const [showSuccessModal, setShowSuccessModal] = useState(false)
-    const [successAppointmentData, setSuccessAppointmentData] = useState([])
-    const [isUpdateSuccess, setIsUpdateSuccess] = useState(false)
+  const [activeTab, setActiveTab] = useState("appointments");
+  const [appointments, setAppointments] = useState([]);
+  const [doctors, setDoctors] = useState([]);
+  const [showNewAppointment, setShowNewAppointment] = useState(false);
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [editingAppointment, setEditingAppointment] = useState(null);
+  const [viewingReport, setViewingReport] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [availableSlots, setAvailableSlots] = useState([]);
+  const [useDummyData, _setUseDummyData] = useState(false);
+  const [filteredAppointments, setFilteredAppointments] = useState([]);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [successAppointmentData, setSuccessAppointmentData] = useState([]);
+  const [isUpdateSuccess, setIsUpdateSuccess] = useState(false);
 
   // Filters
   const [appointmentFilter, setAppointmentFilter] = useState("all");
@@ -84,26 +81,26 @@ export default function Appointments() {
     appointmentTime: "",
   });
 
-    // Load appointments
-    const loadAppointments = async () => {
-        try {
-            setLoading(true);
-            if (useDummyData) {
-                setAppointments(dummyAppointments);
-            } else {
-                const data = await getAppointments();
-                setAppointments(data);
-            }
-        } catch (err) {
-            setError("Failed to load appointments: " + err.message);
-            setAppointments(dummyAppointments);
-        } finally {
-            setLoading(false);
-        }
-    };
+  // Load appointments
+  const loadAppointments = useCallback(async () => {
+    try {
+      setLoading(true);
+      if (useDummyData) {
+        setAppointments(dummyAppointments);
+      } else {
+        const data = await getAppointments();
+        setAppointments(data);
+      }
+    } catch (err) {
+      setError("Failed to load appointments: " + err.message);
+      setAppointments(dummyAppointments);
+    } finally {
+      setLoading(false);
+    }
+  }, [useDummyData]);
 
   // Load doctors
-  const loadDoctors = async () => {
+  const loadDoctors = useCallback(async () => {
     try {
       setLoading(true);
       if (useDummyData) {
@@ -119,22 +116,25 @@ export default function Appointments() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [doctorFilters, useDummyData]);
 
   // Load doctor availability
-  const loadDoctorAvailability = async (doctorId, date) => {
-    try {
-      if (useDummyData) {
+  const loadDoctorAvailability = useCallback(
+    async (doctorId, date) => {
+      try {
+        if (useDummyData) {
+          setAvailableSlots(generateDummyTimeSlots());
+        } else {
+          const data = await getDoctorAvailability(doctorId, date);
+          setAvailableSlots(data);
+        }
+      } catch (err) {
+        setError("Failed to load availability: " + err.message);
         setAvailableSlots(generateDummyTimeSlots());
-      } else {
-        const data = await getDoctorAvailability(doctorId, date);
-        setAvailableSlots(data);
       }
-    } catch (err) {
-      setError("Failed to load availability: " + err.message);
-      setAvailableSlots(generateDummyTimeSlots());
-    }
-  };
+    },
+    [useDummyData]
+  );
 
   useEffect(() => {
     if (activeTab === "appointments") {
@@ -142,7 +142,7 @@ export default function Appointments() {
     } else {
       loadDoctors();
     }
-  }, [activeTab, appointmentFilter, doctorFilters, useDummyData]);
+  }, [activeTab, loadAppointments, loadDoctors]);
 
   useEffect(() => {
     if (appointmentForm.appointmentDate && selectedDoctor) {
@@ -151,17 +151,20 @@ export default function Appointments() {
         appointmentForm.appointmentDate
       );
     }
-  }, [appointmentForm.appointmentDate, selectedDoctor]);
+  }, [appointmentForm.appointmentDate, selectedDoctor, loadDoctorAvailability]);
 
-    useEffect(()=>{
-      // console.log("appointments",appointments)
-      setFilteredAppointments(appointments.filter((appointment) => {
+  useEffect(() => {
+    // console.log("appointments",appointments)
+    setFilteredAppointments(
+      appointments.filter((appointment) => {
         if (appointmentFilter === "all") return true;
-        return appointment.status.toLowerCase() === appointmentFilter.toLowerCase();
-      }));
-      // console.log("filteredAppointments", filteredAppointments)
-    },[appointmentFilter, appointments])
-
+        return (
+          appointment.status.toLowerCase() === appointmentFilter.toLowerCase()
+        );
+      })
+    );
+    // console.log("filteredAppointments", filteredAppointments)
+  }, [appointmentFilter, appointments]);
 
   const handleBookAppointment = (doctor) => {
     setSelectedDoctor(doctor);

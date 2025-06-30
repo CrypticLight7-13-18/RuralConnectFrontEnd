@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { CheckCircle, Package, Calendar, MapPin, X } from "lucide-react";
 
 export default function OrderSuccessModal({
@@ -7,6 +8,8 @@ export default function OrderSuccessModal({
   orderData,
   orderNumber = null,
 }) {
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
 
   return (
@@ -92,17 +95,32 @@ export default function OrderSuccessModal({
             <div className="flex flex-col space-y-3">
               <button
                 onClick={onClose}
-                className="w-full px-4 py-3 rounded-lg bg-green-500 text-white font-medium hover:bg-green-600 transition-colors"
+                className="w-full px-4 py-3 rounded-lg text-white font-medium transition-colors"
+                style={{ backgroundColor: '#5c6b73', ':hover': { backgroundColor: '#253237' } }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#253237'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#5c6b73'}
               >
                 Continue Shopping
               </button>
               <button
                 onClick={() => {
-                  // Navigate to orders page - you can implement this
-                  console.log("Navigate to orders page");
+                  navigate('/store/order-history');
                   onClose();
                 }}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                className="w-full px-4 py-3 rounded-lg font-medium transition-colors"
+                style={{ 
+                  backgroundColor: 'transparent', 
+                  border: '1px solid #9db4c0', 
+                  color: '#5c6b73'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#e0fbfc';
+                  e.target.style.color = '#253237';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = 'transparent';
+                  e.target.style.color = '#5c6b73';
+                }}
               >
                 View My Orders
               </button>

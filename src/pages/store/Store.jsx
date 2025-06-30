@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { Plus, Minus, Trash2, ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Plus, Minus, Trash2, ShoppingCart, History } from "lucide-react";
 // Using simple alert for notifications. Feel free to swap with toast library.
 import { fetchMedicines } from "../../services/medicine";
 // import { createOrder } from "../../services/order";
@@ -23,6 +24,8 @@ const colors = {
 /* -------------------------------------------------- */
 /* 4.  MAIN STORE PAGE  */
 export default function StorePage() {
+  const navigate = useNavigate();
+  
   /* cart = { id, name, price, qty }[] */
   const [cart, setCart] = useState([]);
   const [showCheckout, setShow] = useState(false);
@@ -195,12 +198,27 @@ export default function StorePage() {
       {/* Product List */}
       <div className="flex-1 h-full p-6 overflow-y-scroll">
         {/* Header */}
-        <h1
-          className="text-2xl font-bold mb-6"
-          style={{ color: colors.darkestBlue }}
-        >
-          Pharmacy Store
-        </h1>
+        <div className="flex justify-between items-center mb-6">
+          <h1
+            className="text-2xl font-bold"
+            style={{ color: colors.darkestBlue }}
+          >
+            Pharmacy Store
+          </h1>
+          <button
+            onClick={() => navigate('/store/order-history')}
+            className="flex items-center px-4 py-2 rounded-lg font-medium transition-colors"
+            style={{ 
+              backgroundColor: colors.darkBlue,
+              color: 'white'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = colors.darkestBlue}
+            onMouseLeave={(e) => e.target.style.backgroundColor = colors.darkBlue}
+          >
+            <History size={18} className="mr-2" />
+            Order History
+          </button>
+        </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
