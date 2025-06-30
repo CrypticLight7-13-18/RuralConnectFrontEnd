@@ -70,15 +70,4 @@ export const deleteAppointment = async(appointmentId) => {
     }
 };
 
-// Get appointment by ID
-export const getAppointmentById = async(appointmentId) => {
-    try {
-        const response = await axiosInstance.get(
-            `/api/appointments/${appointmentId}`
-        );
-        return response.data.appointment;
-    } catch (error) {
-        console.error("Error fetching appointment:", error);
-        throw error;
-    }
-};
+
