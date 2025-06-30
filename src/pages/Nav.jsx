@@ -31,6 +31,7 @@ export default function Navbar() {
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { logout: authLogout } = useAuth();
 
@@ -64,6 +65,7 @@ export default function Navbar() {
   };
 
   const handleNavigation = (section) => {
+    setMobileMenuOpen(false); // Close mobile menu on navigation
     if (section === "appointments") {
       if (userData.role === "doctor") {
         navigate("/appointment");
@@ -176,7 +178,11 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button className="p-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-colors duration-200">
+            <button
+              className="p-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label="Open mobile menu"
+            >
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -195,33 +201,38 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <button
-              onClick={() => handleNavigation("appointments")}
-              className="flex items-center space-x-2 w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
-            >
-              <Calendar className="w-5 h-5" />
-              <span>Appointments</span>
-            </button>
-
-            <button
-              onClick={() => handleNavigation("store")}
-              className="flex items-center space-x-2 w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
-            >
-              <Store className="w-5 h-5" />
-              <span>Store</span>
-            </button>
-
-            <button
-              onClick={() => handleNavigation("chat")}
-              className="flex items-center space-x-2 w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Chat</span>
-            </button>
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute left-0 right-0 bg-darkestBlue shadow-lg z-50">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <button
+                onClick={() => handleNavigation("appointments")}
+                className="flex items-center space-x-2 w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+              >
+                <Calendar className="w-5 h-5" />
+                <span>Appointments</span>
+              </button>
+              {/* Only show Store and Chat if not doctor */}
+              {userData.role !== "doctor" && (
+                <>
+                  <button
+                    onClick={() => handleNavigation("store")}
+                    className="flex items-center space-x-2 w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                  >
+                    <Store className="w-5 h-5" />
+                    <span>Store</span>
+                  </button>
+                  <button
+                    onClick={() => handleNavigation("chat")}
+                    className="flex items-center space-x-2 w-full text-left px-3 py-2 rounded-md text-base font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Chat</span>
+                  </button>
+                </>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
