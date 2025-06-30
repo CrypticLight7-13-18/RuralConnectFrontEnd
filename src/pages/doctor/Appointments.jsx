@@ -35,7 +35,7 @@ export default function DoctorAppointments() {
           appointmentDate: a.appointmentDate,
           pastReports: a.pastReports || [],
           consultationReport: a.consultationReport,
-          status: a.status
+          status : a.status
         }));
         const incomplete = transformed.filter((a) => a.status === "Pending");
         setAppointments(incomplete);

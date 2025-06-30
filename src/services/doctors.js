@@ -31,16 +31,7 @@ export const getDoctors = async(filters = {}) => {
     }
 };
 
-// Get doctor by ID
-export const getDoctorById = async(doctorId) => {
-    try {
-        const response = await axiosInstance.get(`/api/doctors/${doctorId.toString()}`);
-        return response.data.doctor;
-    } catch (error) {
-        console.error("Error fetching doctor:", error);
-        throw error;
-    }
-};
+
 
 // Get doctor availability for a specific date
 export const getDoctorAvailability = async(doctorId, date) => {
@@ -55,15 +46,3 @@ export const getDoctorAvailability = async(doctorId, date) => {
     }
 };
 
-// Get doctors by specialization
-export const getDoctorsBySpecialization = async(specialization) => {
-    try {
-        const response = await axiosInstance.get(
-            `/api/doctors?specialization=${specialization}`
-        );
-        return response.data.doctors;
-    } catch (error) {
-        console.error("Error fetching doctors by specialization:", error);
-        throw error;
-    }
-};

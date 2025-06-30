@@ -117,7 +117,7 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-4">
               <button
                 onClick={() => handleNavigation("appointments")}
-                className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-darkestBlue hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Appointments</span>
@@ -127,14 +127,14 @@ export default function Navbar() {
                 <>
                   <button
                     onClick={() => handleNavigation("store")}
-                    className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                    className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-darkestBlue hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
                   >
                     <Store className="w-4 h-4" />
                     <span>Store</span>
                   </button>
                   <button
                     onClick={() => handleNavigation("chat")}
-                    className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
+                    className="flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium hover:bg-white hover:text-darkestBlue hover:bg-opacity-20 transition-colors duration-200 text-lightestBlue"
                   >
                     <MessageCircle className="w-4 h-4" />
                     <span>Chat</span>
