@@ -5,8 +5,15 @@ import axiosInstance from "./api";
  * @returns {Promise<Object>} - The response data
  */
 export const login = async (credentials) => {
-  const response = await axiosInstance.post("/api/users/login", credentials);
-  return response.data;
+  try {
+    const response = await axiosInstance.post("/api/users/login", credentials);
+    return response.data;
+  } catch (error) {
+    console.error("auth.js: Login request failed:", error);
+    console.error("auth.js: Login error response:", error.response);
+    console.error("auth.js: Login error message:", error.message);
+    throw error;
+  }
 };
 
 /**
@@ -15,8 +22,15 @@ export const login = async (credentials) => {
  * @returns {Promise<Object>} - The response data
  */
 export const signup = async (userData) => {
-  const response = await axiosInstance.post("/api/users/signup", userData);
-  return response.data;
+  try {
+    const response = await axiosInstance.post("/api/users/signup", userData);
+    return response.data;
+  } catch (error) {
+    console.error("auth.js: Signup request failed:", error);
+    console.error("auth.js: Signup error response:", error.response);
+    console.error("auth.js: Signup error message:", error.message);
+    throw error;
+  }
 };
 
 /**
@@ -24,8 +38,14 @@ export const signup = async (userData) => {
  * @returns {Promise<Object>} - The response data
  */
 export const logout = async () => {
-  const response = await axiosInstance.get("/api/users/logout");
-  return response.data;
+  try {
+    const response = await axiosInstance.get("/api/users/logout");
+    return response.data;
+  } catch (error) {
+    console.error("auth.js: Logout request failed:", error);
+    console.error("auth.js: Logout error response:", error.response);
+    throw error;
+  }
 };
 
 /**
@@ -39,7 +59,9 @@ export const fetchUserProfile = async () => {
     });
     return response.data.data.user;
   } catch (error) {
-    console.error("Failed to fetch user profile:", error);
+    console.error("auth.js: fetchUserProfile request failed:", error);
+    console.error("auth.js: fetchUserProfile error response:", error.response);
+    console.error("auth.js: fetchUserProfile error message:", error.message);
     throw error;
   }
 };
