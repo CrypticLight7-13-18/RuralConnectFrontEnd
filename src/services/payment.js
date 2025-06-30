@@ -15,6 +15,7 @@ export const createCheckoutSession = async (paymentData) => {
       "/api/payment/create-checkout-session",
       paymentData
     );
+    console.log("Hello from end");
     return response.data;
   } catch (error) {
     console.error("Failed to create checkout session:", error);

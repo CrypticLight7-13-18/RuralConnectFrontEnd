@@ -5,13 +5,17 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react(), tailwindcss()],
-    server: {
-        proxy: {
-            "/api": {
-                target: "https://pharmaconnectbackend.onrender.com/",
-                changeOrigin: true,
-                secure: false,
-            },
+    define: {
+        global: 'globalThis',
+    },
+    resolve: {
+        alias: {
+            crypto: 'crypto-browserify',
         },
+    },
+    optimizeDeps: {
+        include: ['crypto-browserify'],
+    },
+    server: {
     },
 });

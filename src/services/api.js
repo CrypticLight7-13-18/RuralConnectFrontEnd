@@ -3,7 +3,11 @@ import axios from "axios";
 // In dev we rely on the Vite proxy (see vite.config.js) so a relative base
 // path keeps requests "same-origin" and avoids CORS. In production you can
 // set VITE_BACKEND_URL to point to your deployed API.
-export const backendURL = "https://pharmaconnectbackend.onrender.com";
+export const backendURL = import.meta.env.VITE_BACKEND_URL || "/api";
+
+// For Socket.IO connections, we need the base URL without /api path
+// In development, use the current origin to avoid CORS issues
+export const socketURL = import.meta.env.VITE_BACKEND_URL || window.location.origin;
 
 const axiosInstance = axios.create({
     baseURL: backendURL,

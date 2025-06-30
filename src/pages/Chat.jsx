@@ -6,9 +6,9 @@ import MainArea from "../components/Chat/MainArea";
 import { dummyPatientData } from "../assets/dummyVariables";
 import { fetchChatSummaries, createChat, deleteChatById } from "../services/chat";
 import { io } from "socket.io-client";
-import { backendURL } from "../services/api";
+import { socketURL } from "../services/api";
 
-const socket = io("https://pharmaconnectbackend.onrender.com");
+const socket = io(socketURL);
 
 const colors = {
     lightestBlue: "#e0fbfc",
