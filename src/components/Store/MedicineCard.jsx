@@ -1,5 +1,6 @@
-import { Plus, Minus, Trash2, ShoppingCart, X } from "lucide-react";
 import React from "react";
+import { Plus } from "lucide-react";
+
 const colors = {
   lightestBlue: "#e0fbfc",
   lightBlue: "#c2dfe3",
@@ -7,12 +8,14 @@ const colors = {
   darkBlue: "#5c6b73",
   darkestBlue: "#253237",
 };
-export default function MedicineCard({ product, onAdd }) {
+
+export default function MedicineCard({ product, onAdd, quantity = 0 }) {
   function imagegen(id) {
-    const clampedId = Math.max(1, Math.min(id, 100)); // Ensure it's between 1 and 100
-    const paddedIndex = String(clampedId).padStart(3, "0"); // Use 3 digits for 001–100
+    const clampedId = Math.max(1, Math.min(id, 100));
+    const paddedIndex = String(clampedId).padStart(3, "0");
     return `/Picture/generated_images/image${paddedIndex}.svg`;
   }
+
   return (
     <div
       className="flex flex-col rounded-lg shadow hover:shadow-lg transition overflow-hidden"
@@ -42,10 +45,11 @@ export default function MedicineCard({ product, onAdd }) {
             className="px-3 py-1 rounded-full text-sm flex items-center space-x-1"
             style={{ background: colors.darkBlue, color: "white" }}
           >
-            <Plus size={14} /> <span>Add</span>
+            <Plus size={14} />
+            <span>{quantity > 0 ? `Qty: ${quantity}` : "Add"}</span>
           </button>
         </div>
       </div>
     </div>
-  );
+);
 }

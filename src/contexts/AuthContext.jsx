@@ -13,14 +13,13 @@ export default function AuthProvider({ children }) {
   const checkAuthStatus = async () => {
     try {
       setLoading(true);
-      console.log("Checking authentication status...");
       const profile = await fetchUserProfile();
-      console.log("Authentication successful:", profile);
       setUser(profile);
       setIsAuthenticated(true);
     } catch (err) {
       // User is not authenticated or session expired
-      console.log("Authentication check failed:", err.message);
+      console.error("AuthProvider: Authentication check failed:", err);
+      console.error("AuthProvider: Error message:", err.message);
       setUser(null);
       setIsAuthenticated(false);
     } finally {
