@@ -62,6 +62,14 @@ const ShimmerCartItem = () => (
 /* 3. SEARCH BAR COMPONENT */
 const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShowFilters, filters, setFilters, loading }) => {
   const [localQuery, setLocalQuery] = useState(searchQuery);
+  const [isMobile, setIsMobile] = useState(false);
+ 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
  
   useEffect(() => {
     setLocalQuery(searchQuery);
@@ -77,7 +85,6 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShow
     const value = e.target.value;
     setLocalQuery(value);
    
-    // Debounced search
     if (value.trim() === '') {
       setSearchQuery('');
       onSearch('', filters);
@@ -99,96 +106,117 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShow
   const hasActiveFilters = Object.values(filters).some(value => value !== '');
  
   return (
-    <div className="w-full mb-6">
-      {/* Search Input */}
-      <form onSubmit={handleSearch} className="relative mb-4">
-        <div className="relative flex items-center">
-          <Search
-            size={20}
-            className="absolute left-3 z-10"
-            style={{ color: colors.darkBlue }}
-          />
+    <div className="w-full">
+      {/* Enhanced Search Input with Mobile-First Design */}
+      <form onSubmit={handleSearch} className="relative">
+        <div className="relative flex items-stretch bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
+            <Search size={isMobile ? 14 : 16} style={{ color: colors.mediumBlue }} />
+          </div>
           <input
             type="text"
             value={localQuery}
             onChange={handleInputChange}
-            placeholder="Search medicines by name..."
-            className="w-full pl-10 pr-20 py-3 md:py-4 rounded-lg border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-sm md:text-base"
+            placeholder="Search medicines..."
+            className="flex-1 pl-12 pr-4 py-4 md:py-3 text-base md:text-sm bg-transparent border-0 focus:outline-none focus:ring-0"
             style={{
-              backgroundColor: 'white',
-              color: colors.darkestBlue
+              color: colors.darkestBlue,
+              minHeight: isMobile ? '56px' : '48px'
             }}
           />
-          <div className="absolute right-2 flex items-center space-x-2">
+          <div className="flex items-stretch">
             <button
               type="button"
               onClick={() => setShowFilters(!showFilters)}
-              className={`p-2 rounded-lg transition-all ${showFilters ? 'bg-blue-100' : 'hover:bg-gray-100'}`}
+              className={`relative px-3 md:px-4 py-2 border-l border-gray-200 transition-all duration-200 active:scale-95 ${
+                showFilters ? 'bg-blue-50 text-blue-600' : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
+              }`}
               style={{
-                color: showFilters ? colors.darkBlue : colors.mediumBlue
+                minWidth: isMobile ? '56px' : '48px',
+                minHeight: isMobile ? '56px' : '48px'
               }}
+              aria-label="Filter medicines"
             >
-              <Filter size={18} />
+              <Filter size={isMobile ? 20 : 18} />
               {hasActiveFilters && (
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></span>
               )}
             </button>
-            <button
-              type="submit"
-              disabled={loading}
-              className="px-4 py-2 rounded-lg text-white font-medium hover:opacity-90 transition-all disabled:opacity-50"
-              style={{ backgroundColor: colors.darkBlue }}
-            >
-              {loading ? (
-                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              ) : (
-                <span className="hidden sm:inline">Search</span>
-              )}
-            </button>
+           <button
+  type="submit"
+  disabled={loading}
+  className="flex items-center justify-center px-4 py-2 text-white font-medium transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-300"
+  style={{
+    backgroundColor: colors.darkBlue,
+    minWidth: isMobile ? "48px" : "48px",
+    minHeight: isMobile ? "48px" : "48px"
+  }}
+  aria-label="Search medicines"
+>
+  {loading ? (
+    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+  ) : (
+    <Search size={isMobile ? 20 : 20} />
+  )}
+</button>
+ 
           </div>
         </div>
       </form>
  
       {/* Filters Panel */}
       {showFilters && (
-        <div className="bg-white rounded-lg border border-gray-200 p-4 mb-4 shadow-sm">
+        <div className="bg-white rounded-xl border border-gray-200 p-4 mb-4 shadow-sm">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="font-semibold" style={{ color: colors.darkestBlue }}>
-              Filters
+            <h3 className="font-semibold text-base md:text-sm" style={{ color: colors.darkestBlue }}>
+              Filter Medicines
             </h3>
-            {hasActiveFilters && (
+            <div className="flex items-center space-x-3">
+              {hasActiveFilters && (
+                <button
+                  onClick={clearFilters}
+                  className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+                >
+                  Clear all
+                </button>
+              )}
               <button
-                onClick={clearFilters}
-                className="text-sm hover:underline"
-                style={{ color: colors.darkBlue }}
+                onClick={() => setShowFilters(false)}
+                className="p-1 hover:bg-gray-100 rounded-full md:hidden"
+                style={{ minWidth: "44px", minHeight: "44px" }}
               >
-                Clear all
+                <X size={18} style={{ color: colors.darkBlue }} />
               </button>
-            )}
+            </div>
           </div>
          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* Category Filter */}
             <div>
               <label className="block text-sm font-medium mb-2" style={{ color: colors.darkBlue }}>
                 Category
               </label>
-              <select
-                value={filters.category}
-                onChange={(e) => handleFilterChange('category', e.target.value)}
-                className="w-full p-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-1 focus:ring-blue-100 outline-none"
-              >
-                <option value="">All Categories</option>
-                <option value="Analgesic">Analgesic</option>
-                <option value="Antibiotic">Antibiotic</option>
-                <option value="Antihistamine">Antihistamine</option>
-                <option value="Antidiabetic">Antidiabetic</option>
-                <option value="Supplement">Supplement</option>
-                <option value="General">General</option>
-              </select>
+              <div className="relative">
+                <select
+                  value={filters.category}
+                  onChange={(e) => handleFilterChange('category', e.target.value)}
+                  className="w-full p-3 md:p-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none appearance-none bg-white"
+                  style={{ minHeight: isMobile ? "48px" : "40px" }}
+                >
+                  <option value="">All Categories</option>
+                  <option value="Analgesic">Analgesic</option>
+                  <option value="Antibiotic">Antibiotic</option>
+                  <option value="Antihistamine">Antihistamine</option>
+                  <option value="Antidiabetic">Antidiabetic</option>
+                  <option value="Supplement">Supplement</option>
+                  <option value="General">General</option>
+                </select>
+                <ChevronDown
+                  size={16}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                  style={{ color: colors.mediumBlue }}
+                />
+              </div>
             </div>
- 
-            {/* Price Range */}
             <div>
               <label className="block text-sm font-medium mb-2" style={{ color: colors.darkBlue }}>
                 Min Price (₹)
@@ -198,10 +226,10 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShow
                 value={filters.minPrice}
                 onChange={(e) => handleFilterChange('minPrice', e.target.value)}
                 placeholder="0"
-                className="w-full p-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-1 focus:ring-blue-100 outline-none"
+                className="w-full p-3 md:p-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
+                style={{ minHeight: isMobile ? "48px" : "40px" }}
               />
             </div>
- 
             <div>
               <label className="block text-sm font-medium mb-2" style={{ color: colors.darkBlue }}>
                 Max Price (₹)
@@ -211,7 +239,8 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShow
                 value={filters.maxPrice}
                 onChange={(e) => handleFilterChange('maxPrice', e.target.value)}
                 placeholder="1000"
-                className="w-full p-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-1 focus:ring-blue-100 outline-none"
+                className="w-full p-3 md:p-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:ring-2 focus:ring-blue-100 outline-none"
+                style={{ minHeight: isMobile ? "48px" : "40px" }}
               />
             </div>
           </div>
@@ -220,7 +249,7 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShow
  
       {/* Search Results Info */}
       {searchQuery && (
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 space-y-2 md:space-y-0">
           <p className="text-sm" style={{ color: colors.darkBlue }}>
             Search results for: <span className="font-semibold">"{searchQuery}"</span>
           </p>
@@ -230,8 +259,8 @@ const SearchBar = ({ searchQuery, setSearchQuery, onSearch, showFilters, setShow
               setLocalQuery('');
               onSearch('', filters);
             }}
-            className="text-sm hover:underline"
-            style={{ color: colors.darkBlue }}
+            className="text-sm text-blue-600 hover:text-blue-800 hover:underline self-start md:self-auto"
+            style={{ minHeight: '44px' }}
           >
             Clear search
           </button>
@@ -304,12 +333,10 @@ export default function StorePage() {
       setSearchLoading(true);
      
       if (!query && !Object.values(currentFilters).some(v => v !== '')) {
-        // No search query or filters, load all medicines
         await loadMedicines();
         return;
       }
  
-      // Prepare search parameters
       const searchParams = {};
       if (query) searchParams.q = query;
       if (currentFilters.category) searchParams.category = currentFilters.category;
@@ -365,10 +392,10 @@ export default function StorePage() {
     [cart]
   );
  
-  // Cart Component for reuse
+  // Cart Component for reuse with independent scrolling
   const CartContent = ({ className = "" }) => (
-    <div className={className}>
-      <div className="flex justify-between items-center mb-4">
+    <div className={`${className} flex flex-col h-full`}>
+      <div className="flex justify-between items-center mb-4 flex-shrink-0">
         <h2
           className="text-lg md:text-xl font-semibold flex items-center"
           style={{ color: colors.darkestBlue }}
@@ -387,24 +414,25 @@ export default function StorePage() {
       </div>
  
       {loading && cart.length === 0 ? (
-        <div className="space-y-3">
+        <div className="space-y-3 flex-1 overflow-y-auto">
           {[...Array(3)].map((_, i) => (
             <ShimmerCartItem key={i} />
           ))}
         </div>
       ) : cart.length === 0 ? (
-        <div className="text-center py-8">
+        <div className="text-center py-8 flex-1 flex flex-col justify-center">
           <ShoppingCart size={48} className="mx-auto mb-4 opacity-30" />
           <p style={{ color: colors.darkBlue }}>Your cart is empty</p>
           <p className="text-sm text-gray-500 mt-1">Add some medicines to get started</p>
         </div>
       ) : (
         <>
-          <div className="space-y-3 mb-6 max-h-60 md:max-h-96 overflow-y-auto">
+          {/* Scrollable Cart Items Area */}
+          <div className="flex-1 overflow-y-auto space-y-3 mb-6 min-h-0">
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="bg-white p-4 rounded-lg shadow-sm border-l-4"
+                className="bg-white p-4 rounded-lg shadow-sm border-l-4 flex-shrink-0"
                 style={{ borderLeftColor: colors.mediumBlue }}
               >
                 <div className="flex justify-between items-start mb-2">
@@ -451,7 +479,8 @@ export default function StorePage() {
             ))}
           </div>
  
-          <div className="border-t pt-4">
+          {/* Fixed Checkout Section */}
+          <div className="border-t pt-4 flex-shrink-0">
             <div className="flex justify-between items-center mb-4">
               <span
                 className="text-lg md:text-xl font-bold"
@@ -479,11 +508,11 @@ export default function StorePage() {
   /* ----- render ----- */
   return (
     <div
-      className="min-h-screen w-full"
+      className="h-[88vh] w-full flex flex-col overflow-hidden"
       style={{ backgroundColor: colors.lightestBlue }}
     >
       {/* Mobile Header */}
-      <div className="md:hidden sticky top-0 z-40 bg-white shadow-sm border-b w-full">
+      <div className="md:hidden flex-shrink-0 bg-white shadow-sm border-b w-full">
         <div className="flex justify-between items-center p-4 w-full">
           <div className="flex-1">
             <h1
@@ -521,92 +550,99 @@ export default function StorePage() {
       </div>
  
       {/* Desktop Layout */}
-      <div className="hidden md:flex w-full" style={{ minHeight: "100vh" }}>
-        {/* Desktop Sidebar */}
-        <div className="w-80 bg-white shadow-lg border-r p-6 overflow-y-auto">
-          <CartContent />
+      <div className="hidden md:flex w-full flex-1 min-h-0">
+        {/* Desktop Sidebar with Independent Scroll */}
+        <div className="w-80 bg-white shadow-lg border-r flex flex-col">
+          <div className="p-6 h-full flex flex-col min-h-0">
+            <CartContent />
+          </div>
         </div>
  
-        {/* Desktop Main Content */}
-        <div className="flex-1 p-6 overflow-y-auto w-full">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <h1
-                className="text-3xl font-bold"
-                style={{ color: colors.darkestBlue }}
-              >
-                Pharmacy Store
-              </h1>
-              <p className="text-gray-600 mt-1">
-                {loading ? "Loading..." : `${medicines.length} medicines found`}
-              </p>
-            </div>
-            <button
-              onClick={() => navigate('/store/order-history')}
-              className="flex items-center px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-all"
-              style={{
-                backgroundColor: colors.darkBlue,
-                color: 'white'
-              }}
-            >
-              <History size={20} className="mr-2" />
-              Order History
-            </button>
-          </div>
- 
-          {/* Search Bar - Desktop */}
-          <SearchBar
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            onSearch={handleSearch}
-            showFilters={showFilters}
-            setShowFilters={setShowFilters}
-            filters={filters}
-            setFilters={setFilters}
-            loading={searchLoading}
-          />
- 
-          {/* Medicine Grid - Desktop */}
-          {loading || searchLoading ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {[...Array(9)].map((_, i) => (
-                <ShimmerCard key={i} />
-              ))}
-            </div>
-          ) : medicines.length === 0 ? (
-            <div className="text-center py-12">
-              <Search size={64} className="mx-auto mb-4 opacity-30" />
-              <h3 className="text-lg font-medium mb-2" style={{ color: colors.darkestBlue }}>
-                No medicines found
-              </h3>
-              <p className="text-gray-500 mb-4">
-                {searchQuery ? `No results for "${searchQuery}"` : "Try adjusting your search or filters"}
-              </p>
+        {/* Desktop Main Content with Independent Scroll */}
+        <div className="flex-1 flex flex-col min-h-0">
+          {/* Fixed Header Area */}
+          <div className="flex-shrink-0 p-4 bg-white border-b">
+            <div className="flex justify-between items-center mb-1 ">
+              
+               <SearchBar
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              onSearch={handleSearch}
+              showFilters={showFilters}
+              setShowFilters={setShowFilters}
+              filters={filters}
+              setFilters={setFilters}
+              loading={searchLoading}
+            />
               <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setFilters({ category: '', minPrice: '', maxPrice: '' });
-                  loadMedicines();
+                onClick={() => navigate('/store/order-history')}
+                className="flex items-center ml-1 px-4 py-2 rounded-lg font-medium text-xs hover:opacity-90 transition-all"
+                style={{
+                  backgroundColor: colors.darkBlue,
+                  color: 'white'
                 }}
-                className="px-6 py-2 rounded-lg text-white font-medium"
-                style={{ backgroundColor: colors.darkBlue }}
               >
-                Show All Medicines
+                <History size={20} className="mr-2" />
+                Order History
               </button>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {medicines.map((medicine) => (
-                <MedicineCard key={medicine.id} product={medicine} onAdd={addToCart} />
-              ))}
-            </div>
-          )}
+ 
+            {/* Search Bar - Fixed in Header */}
+           
+          </div>
+ 
+          {/* Scrollable Medicine Grid Area */}
+          <div className="flex-1 overflow-y-auto p-6 min-h-0">
+            {loading || searchLoading ? (
+              <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-3 gap-6">
+                {[...Array(9)].map((_, i) => (
+                  <ShimmerCard key={i} />
+                ))}
+              </div>
+            ) : medicines.length === 0 ? (
+              <div className="text-center py-12">
+                <Search size={64} className="mx-auto mb-4 opacity-30" />
+                <h3 className="text-lg font-medium mb-2" style={{ color: colors.darkestBlue }}>
+                  No medicines found
+                </h3>
+                <p className="text-gray-500 mb-4">
+                  {searchQuery ? `No results for "${searchQuery}"` : "Try adjusting your search or filters"}
+                </p>
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setFilters({ category: '', minPrice: '', maxPrice: '' });
+                    loadMedicines();
+                  }}
+                  className="px-6 py-2 rounded-lg text-white font-medium"
+                  style={{ backgroundColor: colors.darkBlue }}
+                >
+                  Show All Medicines
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6">
+                {medicines.map((medicine) => {
+                  const cartItem = cart.find(i => i.id === medicine.id);
+                  const qty = cartItem ? cartItem.qty : 0;
+                  return (
+                    <MedicineCard
+                      key={medicine.id}
+                      product={medicine}
+                      quantity={qty}
+                      onAdd={addToCart}
+                    />
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
       </div>
  
       {/* Mobile Layout - Full Width */}
-      <div className="md:hidden w-full">
-        <div className="p-4 pb-20 w-full">
+      <div className="md:hidden flex-1 flex flex-col min-h-0">
+        <div className="flex-1 overflow-y-auto p-4">
           {/* Search Bar - Mobile */}
           <SearchBar
             searchQuery={searchQuery}
@@ -648,10 +684,19 @@ export default function StorePage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-              {medicines.map((medicine) => (
-                <MedicineCard key={medicine.id} product={medicine} onAdd={addToCart} />
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full pb-20">
+              {medicines.map((medicine) => {
+                const cartItem = cart.find(i => i.id === medicine.id);
+                const qty = cartItem ? cartItem.qty : 0;
+                return (
+                  <MedicineCard
+                    key={medicine.id}
+                    product={medicine}
+                    quantity={qty}
+                    onAdd={addToCart}
+                  />
+                );
+              })}
             </div>
           )}
         </div>
@@ -675,12 +720,12 @@ export default function StorePage() {
         )}
       </div>
  
-      {/* Mobile Cart Modal - Full Width */}
+      {/* Mobile Cart Modal with Independent Scroll */}
       {isMobile && showMobileCart && (
         <div className="fixed inset-0 z-50 md:hidden w-full h-full">
           <div className="absolute inset-0 bg-black bg-opacity-50 w-full h-full" onClick={() => setShowMobileCart(false)} />
-          <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden w-full">
-            <div className="p-4 max-h-full overflow-y-auto w-full">
+          <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-xl max-h-[80vh] overflow-hidden w-full flex flex-col">
+            <div className="p-4 h-full flex flex-col min-h-0">
               <CartContent />
             </div>
           </div>
@@ -700,4 +745,3 @@ export default function StorePage() {
     </div>
   );
 }
- 
