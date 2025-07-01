@@ -15,10 +15,8 @@ export function OrderHistoryPage() {
         setError(null);
 
         const user = await fetchUserProfile();
-        console.log("User profile:", user);
 
         const fetchedOrders = await fetchUserOrders(user._id, { limit: 20 });
-        console.log("Fetched orders:", fetchedOrders);
 
         const transformedOrders = fetchedOrders.map((order) => ({
           id: order._id,

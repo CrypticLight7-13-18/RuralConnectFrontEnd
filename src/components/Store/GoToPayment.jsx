@@ -20,9 +20,7 @@ export default function GoToPayment({ cart, total, address, onClose }) {
       };
 
       if (paymentMethod === "cod") {
-        console.log("Cash on Delivery order:", orderData);
         const response = await processCODOrder(orderData);
-        console.log("COD Order response:", response);
 
         // Store order response and show success modal
         setOrderResponse(response);

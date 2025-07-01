@@ -40,7 +40,6 @@ export default function Navbar() {
       setIsLoading(true);
       setError(null);
       const profile = await fetchUserProfile();
-      console.log("User profile loaded:", profile);
       setUserData(profile);
     } catch (err) {
       setError("Failed to load user profile");

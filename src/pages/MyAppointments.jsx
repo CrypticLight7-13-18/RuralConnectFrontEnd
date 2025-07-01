@@ -154,7 +154,6 @@ export default function Appointments() {
   }, [appointmentForm.appointmentDate, selectedDoctor, loadDoctorAvailability]);
 
   useEffect(() => {
-    // console.log("appointments",appointments)
     setFilteredAppointments(
       appointments.filter((appointment) => {
         if (appointmentFilter === "all") return true;
@@ -163,7 +162,6 @@ export default function Appointments() {
         );
       })
     );
-    // console.log("filteredAppointments", filteredAppointments)
   }, [appointmentFilter, appointments]);
 
   const handleBookAppointment = (doctor) => {
@@ -293,9 +291,6 @@ export default function Appointments() {
         loadAppointments();
       }
 
-      // Show success modal instead of alert
-      console.log("Appointment data being passed to modal:", appointmentData);
-      console.log("Selected doctor:", selectedDoctor);
       setSuccessAppointmentData(appointmentData);
       setIsUpdateSuccess(isUpdate);
       setShowSuccessModal(true);
