@@ -52,6 +52,7 @@ npm install
 Create a `.env` file in the root:
 
 ```
+VITE_STRIPE_PUBLISHABLE_KEY=<stripe-publishable-key>
 VITE_BACKEND_URL=<your-backend-url>
 ```
 
