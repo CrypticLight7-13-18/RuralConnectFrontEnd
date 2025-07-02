@@ -1,6 +1,8 @@
 
 # RuralConnect Frontend
 
+## Deployed App :https://pharmaproject.netlify.app/
+
 RuralConnect is a telemedicine platform connecting rural patients with healthcare professionals and services. This is the frontend (React) application.
 
 ## Table of Contents
