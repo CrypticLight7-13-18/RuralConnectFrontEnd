@@ -11,16 +11,10 @@ import {
 } from "../services/chat";
 import { io } from "socket.io-client";
 import { socketURL } from "../services/api";
+import { colors } from "../utils/colors";
 
 const socket = io(socketURL);
 
-const colors = {
-  lightestBlue: "#e0fbfc",
-  lightBlue: "#c2dfe3",
-  mediumBlue: "#9db4c0",
-  darkBlue: "#5c6b73",
-  darkestBlue: "#253237",
-};
 
 const getPatientProfile = () => Promise.resolve(dummyPatientData);
 
@@ -42,7 +36,7 @@ const ChatPage = () => {
       let summaries = [];
       try {
         summaries = await fetchChatSummaries();
-      } catch (e) {
+      } catch {
         summaries = [];
       }
       setPatientProfile(profile);

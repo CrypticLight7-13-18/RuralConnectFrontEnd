@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from '../../components/ui/Button';
-
-const colors = {
-  lightestBlue: "#e0fbfc",
-  lightBlue:    "#c2dfe3",
-  mediumBlue:   "#9db4c0",
-  darkBlue:     "#5c6b73",
-  darkestBlue:  "#253237",
-};
+import { colors } from '../../utils/colors';
 
 export default function ReportForm({ appointment = {}, onCancel, onSave }) {
-  if (!appointment.patientName) return null;
-
   const [form, setForm] = useState({
     name:         appointment.patientName,
     age:          '',
@@ -21,13 +12,14 @@ export default function ReportForm({ appointment = {}, onCancel, onSave }) {
     diagnosis:    '',
     prescription: ''
   });
-  const [submitType, setSubmitType] = useState('draft'); 
+  const [submitType] = useState('draft'); 
   // 'draft' or 'final'
+
+  if (!appointment.patientName) return null;
 
   const handleChange = e => 
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleTypeChange = e => setSubmitType(e.target.value);
 
   const handleSubmit = e => {
     e.preventDefault();

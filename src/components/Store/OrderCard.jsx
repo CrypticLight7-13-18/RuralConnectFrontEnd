@@ -1,3 +1,4 @@
+import { colors } from "../../utils/colors";
 function Button({ children, onClick, variant = "primary", className = "" }) {
   const variants = {
     primary: "bg-darkBlue hover:bg-darkestBlue text-white",
@@ -15,13 +16,6 @@ function Button({ children, onClick, variant = "primary", className = "" }) {
   );
 }
 
-const colors = {
-  lightestBlue: "#e0fbfc",
-  lightBlue: "#c2dfe3",
-  mediumBlue: "#9db4c0",
-  darkBlue: "#5c6b73",
-  darkestBlue: "#253237",
-};
 
 function formatDate(dateString) {
   const date = new Date(dateString);

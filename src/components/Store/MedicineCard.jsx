@@ -1,13 +1,6 @@
 import React from "react";
 import { Plus } from "lucide-react";
-
-const colors = {
-  lightestBlue: "#e0fbfc",
-  lightBlue: "#c2dfe3",
-  mediumBlue: "#9db4c0",
-  darkBlue: "#5c6b73",
-  darkestBlue: "#253237",
-};
+import { colors } from "../../utils/colors";
 
 export default function MedicineCard({ product, onAdd, quantity = 0 }) {
   function imagegen(id) {

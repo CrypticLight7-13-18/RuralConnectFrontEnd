@@ -7,22 +7,14 @@ import { SearchBar } from "../../components/Store/SearchBar";
 import { CartContent } from "../../components/Store/CartContent";
 import { MobileHeader } from "../../components/Store/MobileHeader";
 import { MedicineGrid } from "../../components/Store/MedicineGrid";
-
-/* -------------------------------------------------- */
-/* 1.  THEME  */
-const colors = {
-  lightestBlue: "#e0fbfc",
-  lightBlue: "#c2dfe3",
-  mediumBlue: "#9db4c0",
-  darkBlue: "#5c6b73",
-  darkestBlue: "#253237",
-};
-
+import { colors } from "../../utils/colors";
+ 
+ 
 /* -------------------------------------------------- */
 /* 2.  MAIN STORE PAGE  */
 export default function StorePage() {
   const navigate = useNavigate();
-
+ 
   const [cart, setCart] = useState([]);
   const [showCheckout, setShow] = useState(false);
   const [medicines, setMedicines] = useState([]);
@@ -30,7 +22,7 @@ export default function StorePage() {
   const [searchLoading, setSearchLoading] = useState(false);
   const [showMobileCart, setShowMobileCart] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+ 
   // Search related state
   const [searchQuery, setSearchQuery] = useState("");
   const [showFilters, setShowFilters] = useState(false);
@@ -39,23 +31,23 @@ export default function StorePage() {
     minPrice: "",
     maxPrice: "",
   });
-
+ 
   // Detect mobile screen size
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
+ 
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
+ 
   /* Fetch medicines on mount */
   useEffect(() => {
     loadMedicines();
   }, []);
-
+ 
   const loadMedicines = async () => {
     try {
       setLoading(true);
@@ -75,16 +67,16 @@ export default function StorePage() {
       setLoading(false);
     }
   };
-
+ 
   const handleSearch = async (query, currentFilters) => {
     try {
       setSearchLoading(true);
-
+ 
       if (!query && !Object.values(currentFilters).some((v) => v !== "")) {
         await loadMedicines();
         return;
       }
-
+ 
       const searchParams = {};
       if (query) searchParams.q = query;
       if (currentFilters.category)
@@ -93,7 +85,7 @@ export default function StorePage() {
         searchParams.minPrice = currentFilters.minPrice;
       if (currentFilters.maxPrice)
         searchParams.maxPrice = currentFilters.maxPrice;
-
+ 
       const results = await searchMedicines(searchParams);
       const transformed = results.map((m) => ({
         id: m._id,
@@ -110,7 +102,7 @@ export default function StorePage() {
       setSearchLoading(false);
     }
   };
-
+ 
   /* ----- cart helpers ----- */
   const addToCart = (prod) => {
     setCart((prev) => {
@@ -123,26 +115,26 @@ export default function StorePage() {
       return [...prev, { ...prod, qty: 1 }];
     });
   };
-
+ 
   const changeQty = (id, delta) =>
     setCart((prev) =>
       prev
         .map((i) => (i.id === id ? { ...i, qty: i.qty + delta } : i))
         .filter((i) => i.qty > 0)
     );
-
+ 
   const removeItem = (id) => setCart((prev) => prev.filter((i) => i.id !== id));
-
+ 
   const total = useMemo(
     () => cart.reduce((sum, i) => sum + i.price * i.qty, 0),
     [cart]
   );
-
+ 
   const totalItems = useMemo(
     () => cart.reduce((sum, item) => sum + item.qty, 0),
     [cart]
   );
-
+ 
   /* ----- render ----- */
   return (
     <div
@@ -169,7 +161,7 @@ export default function StorePage() {
           />
         }
       />
-
+ 
       {/* Desktop Layout */}
       <div className="hidden md:flex w-full flex-1 min-h-0">
         {/* Desktop Sidebar */}
@@ -189,7 +181,7 @@ export default function StorePage() {
             />
           </div>
         </div>
-
+ 
         {/* Desktop Main Content */}
         <div className="flex-1 flex flex-col min-h-0">
           {/* Fixed Header Area */}
@@ -219,7 +211,7 @@ export default function StorePage() {
               </button>
             </div>
           </div>
-
+ 
           {/* Scrollable Medicine Grid Area */}
           <div className="flex-1 overflow-y-auto p-6 min-h-0">
             <MedicineGrid
@@ -237,7 +229,7 @@ export default function StorePage() {
           </div>
         </div>
       </div>
-
+ 
       {/* Mobile Layout */}
       <div className="md:hidden flex-1 flex flex-col min-h-0">
         <div className="flex-1 overflow-y-auto p-4">
@@ -256,7 +248,7 @@ export default function StorePage() {
             />
           </div>
         </div>
-
+ 
         {/* Fixed Cart Button */}
         {!showMobileCart && (
           <div className="fixed bottom-4 right-4 z-50">
@@ -275,7 +267,7 @@ export default function StorePage() {
           </div>
         )}
       </div>
-
+ 
       {/* Mobile Cart Modal */}
       {isMobile && showMobileCart && (
         <div className="fixed inset-0 z-50 md:hidden w-full h-full">
@@ -301,7 +293,7 @@ export default function StorePage() {
           </div>
         </div>
       )}
-
+ 
       {/* Checkout Modal */}
       {showCheckout && (
         <CheckoutModal
