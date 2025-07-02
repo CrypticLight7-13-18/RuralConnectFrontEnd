@@ -1,5 +1,5 @@
-import axiosInstance from "./api";
-import { createOrder } from "./order";
+import axiosInstance from "./api.js";
+import { createOrder } from "./order.js";
 
 /**
  * Create a Stripe checkout session for payment processing
@@ -10,12 +10,10 @@ import { createOrder } from "./order";
  */
 export const createCheckoutSession = async (paymentData) => {
   try {
-    console.log("Hello from frontend");
     const response = await axiosInstance.post(
       "/api/payment/create-checkout-session",
       paymentData
     );
-    console.log("Hello from end");
     return response.data;
   } catch (error) {
     console.error("Failed to create checkout session:", error);
@@ -39,7 +37,6 @@ export const processCODOrder = async (orderData) => {
     };
 
     const result = await createOrder(orderPayload);
-    console.log("COD order created:", result);
     return result;
   } catch (error) {
     console.error("Failed to process COD order:", error);
@@ -63,9 +60,6 @@ export const processCardPayment = async (orderData) => {
     };
 
     const orderResult = await createOrder(orderPayload);
-    console.log("Order created for card payment:", orderResult);
-
-    console.log(orderResult._id);
 
     // Then create Stripe checkout session with order ID
     const sessionData = await createCheckoutSession({

@@ -7,17 +7,17 @@ export const backendURL = import.meta.env.VITE_BACKEND_URL || "/api";
 
 // For Socket.IO connections, we need the base URL without /api path
 // In development, use the current origin to avoid CORS issues
-export const socketURL = import.meta.env.VITE_BACKEND_URL || window.location.origin;
+export const socketURL =
+  import.meta.env.VITE_BACKEND_URL || window.location.origin;
 
 const axiosInstance = axios.create({
-    baseURL: backendURL,
-    withCredentials: true, // Allow cookies to be sent with requests
-    headers: {
-        "Content-Type": "application/json",
-    },
+  baseURL: backendURL,
+  withCredentials: true, // Allow cookies to be sent with requests
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 // const response = await axiosInstance.post("/");
-// console.log(response)
 
 export default axiosInstance;

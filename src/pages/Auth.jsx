@@ -57,43 +57,76 @@ export default function Auth() {
       let res;
 
       if (isLogin) {
-        res = await login({
+        const loginData = {
           email: formData.email,
           password: formData.password,
           role: formData.role,
-        });
+        };
 
-        console.log("Login response:", res);
+        res = await login(loginData);
       } else {
+        // Password validation
         if (formData.password !== formData.confirmPassword) {
+          console.error("Password validation failed: passwords do not match");
           alert("Passwords do not match!");
           return;
         }
 
-        res = await signup({
+        const signupData = {
           name: formData.userName,
           email: formData.email,
           password: formData.password,
           passwordConfirm: formData.confirmPassword,
           role: "patient",
           dateOfBirth: formData.dateOfBirth,
-        });
+        };
 
-        console.log("Signup response:", res);
+        res = await signup(signupData);
+      }
+
+      // Check if response is valid
+      if (!res) {
+        console.error("No response received from server");
+        throw new Error("No response from server");
+      }
+
+      if (!res.user) {
+        console.error("No user data in response:", res);
+        throw new Error("Invalid response: no user data");
       }
 
       // Update authentication state
       setAuthUser(res.user);
 
       const role = res?.user?.role;
+      
       if (role === "doctor") {
         navigate("/appointment");
       } else {
         navigate("/chat");
       }
+      
     } catch (error) {
-      console.error("Auth error:", error);
-      alert(error.response?.data?.message || "Something went wrong!");
+      console.error("Auth error occurred:", error);
+      console.error("Error type:", typeof error);
+      console.error("Error constructor:", error.constructor.name);
+      console.error("Error message:", error.message);
+      console.error("Error stack:", error.stack);
+      
+      if (error.response) {
+        console.error("Error response data:", error.response.data);
+        console.error("Error response status:", error.response.status);
+        console.error("Error response headers:", error.response.headers);
+      } else if (error.request) {
+        console.error("Error request:", error.request);
+        console.error("No response received from server");
+      } else {
+        console.error("Error setting up request:", error.message);
+      }
+      
+      const errorMessage = error.response?.data?.message || error.message || "Something went wrong!";
+      console.error("Displaying error message to user:", errorMessage);
+      alert(errorMessage);
     }
   };
 
