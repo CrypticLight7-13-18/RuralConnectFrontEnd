@@ -3,12 +3,11 @@ import { useState } from "react";
 import { processCardPayment, processCODOrder } from "../../services/payment";
 import OrderSuccessModal from "./OrderSuccessModal";
 
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
-
 export default function GoToPayment({ cart, total, address, onClose }) {
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [orderResponse, setOrderResponse] = useState(null);
+
 
   const handlePayment = async () => {
     try {
@@ -32,7 +31,8 @@ export default function GoToPayment({ cart, total, address, onClose }) {
       const paymentResult = await processCardPayment(orderData);
 
       // Redirect to Stripe checkout
-      const stripe = await stripePromise;
+      const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);;
+      console.log("Stripe Promise After Resolving: ", stripe);
       await stripe.redirectToCheckout({ sessionId: paymentResult.id });
     } catch (error) {
       console.error("Payment error:", error);

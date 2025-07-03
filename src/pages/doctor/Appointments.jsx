@@ -8,6 +8,7 @@ import {
   addConsultationReport,
 } from "../../services/appointments";
 import { colors } from "../../utils/colors";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function DoctorAppointments() {
   const [appointments, setAppointments] = useState([]);
@@ -15,6 +16,7 @@ export default function DoctorAppointments() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [reportFor, setReportFor] = useState(null);
+  const { user } = useAuth();
 
   useEffect(() => {
     const load = async () => {
@@ -75,6 +77,8 @@ export default function DoctorAppointments() {
       </div>
     );
   }
+
+  if(user.role != "doctor") return <h1>You are not authorized to access this url</h1>
 
   return (
     <div
