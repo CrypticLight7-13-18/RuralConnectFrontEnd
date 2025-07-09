@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { AlertCircle, X } from "lucide-react";
+import { useError } from "../contexts/ErrorContext";
 
 import {
   getAppointments,
@@ -58,6 +59,7 @@ export default function Appointments() {
   const [viewingReport, setViewingReport] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { addError } = useError();
   const [availableSlots, setAvailableSlots] = useState([]);
   const [useDummyData, _setUseDummyData] = useState(false);
   const [filteredAppointments, setFilteredAppointments] = useState([]);
@@ -324,14 +326,14 @@ export default function Appointments() {
           (apt) => apt._id !== appointmentId
         );
         setAppointments(updatedAppointments);
-        alert("Appointment cancelled successfully!");
+        addError("Appointment cancelled successfully!");
       } else {
         await deleteAppointment(appointmentId);
         loadAppointments();
-        alert("Appointment cancelled successfully!");
+        addError("Appointment cancelled successfully!");
       }
     } catch (err) {
-      setError("Failed to cancel appointment: " + err.message);
+      addError("Failed to cancel appointment: " + err.message);
     } finally {
       setLoading(false);
     }

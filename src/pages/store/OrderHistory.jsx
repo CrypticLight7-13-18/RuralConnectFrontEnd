@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { OrderCard } from "../../components/Store/OrderCard";
 import { fetchUserOrders } from "../../services/order";
 import { fetchUserProfile } from "../../services/auth";
+import { useError } from "../../contexts/ErrorContext";
 
 export function OrderHistoryPage() {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { addError } = useError();
 
   useEffect(() => {
     const loadOrders = async () => {
@@ -59,7 +61,7 @@ export function OrderHistoryPage() {
       );
     } catch (err) {
       console.error("Failed to cancel order:", err);
-      alert("Failed to cancel order. Please try again.");
+      addError("Failed to cancel order. Please try again.");
     }
   };
 

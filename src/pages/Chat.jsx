@@ -12,9 +12,9 @@ import {
 import { io } from "socket.io-client";
 import { socketURL } from "../services/api";
 import { colors } from "../utils/colors";
+import { useError } from "../contexts/ErrorContext";
 
 const socket = io(socketURL);
-
 
 const getPatientProfile = () => Promise.resolve(dummyPatientData);
 
@@ -28,6 +28,7 @@ const ChatPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const messagesEndRef = useRef(null);
+  const { addError } = useError();
 
   useEffect(() => {
     // Load initial data
@@ -116,7 +117,7 @@ const ChatPage = () => {
       setChatSummary([newChat, ...chatSummary]);
       setSidebarOpen(false);
     } catch (error) {
-      alert(error.message || "Failed to create chat");
+      addError(error.message || "Failed to create chat");
     } finally {
       setIsLoading(false);
     }
@@ -158,7 +159,7 @@ const ChatPage = () => {
         setCurrentChat(null);
       }
     } catch (error) {
-      alert(error.message || "Failed to delete chat");
+      addError(error.message || "Failed to delete chat");
     } finally {
       setIsLoading(false);
     }

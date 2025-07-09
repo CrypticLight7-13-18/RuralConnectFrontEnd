@@ -1,5 +1,6 @@
 import React from "react";
 import { X, Calendar, Clock, User } from "lucide-react";
+import { useError } from "../../contexts/ErrorContext";
 
 export default function AppointmentModal({
   showModal,
@@ -12,12 +13,13 @@ export default function AppointmentModal({
   onSubmit,
   onClose,
 }) {
+  const { addError } = useError();
   if (!showModal && !editingAppointment) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!appointmentForm.appointmentDate || !appointmentForm.appointmentTime) {
-      alert("Please select both date and time");
+      addError("Please select both date and time");
       return;
     }
     onSubmit(e);

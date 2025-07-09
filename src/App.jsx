@@ -1,18 +1,25 @@
+import React, { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
-import Auth from "./pages/Auth";
-import ChatPage from "./pages/Chat";
-import MyAppointments from "./pages/MyAppointments";
-import DoctorAppointments from "./pages/doctor/Appointments";
-import Navbar from "./pages/Nav";
-import StorePage from "./pages/store/Store";
-import { OrderHistoryPage } from "./pages/store/OrderHistory";
-import PaymentSuccess from "./pages/PaymentSuccess";
-import PaymentCancel from "./pages/PaymentCancel";
+
+// ---------- Lazy-loaded pages ----------
+const Auth = lazy(() => import("./pages/Auth"));
+const ChatPage = lazy(() => import("./pages/Chat"));
+const MyAppointments = lazy(() => import("./pages/MyAppointments"));
+const DoctorAppointments = lazy(() => import("./pages/doctor/Appointments"));
+const Navbar = lazy(() => import("./pages/Nav"));
+const StorePage = lazy(() => import("./pages/store/Store"));
+const OrderHistoryPage = lazy(() =>
+  import("./pages/store/OrderHistory").then((m) => ({
+    default: m.OrderHistoryPage,
+  }))
+);
+const PaymentSuccess = lazy(() => import("./pages/PaymentSuccess"));
+const PaymentCancel = lazy(() => import("./pages/PaymentCancel"));
 import AuthProvider from "./contexts/AuthContext";
 import { ProtectedRoute, PublicRoute } from "./components/RouteGuards";
 import "./App.css";
@@ -100,7 +107,15 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <AppContent />
+        <Suspense
+          fallback={
+            <div className="flex justify-center items-center h-screen w-full text-darkBlue">
+              Loading...
+            </div>
+          }
+        >
+          <AppContent />
+        </Suspense>
       </Router>
     </AuthProvider>
   );

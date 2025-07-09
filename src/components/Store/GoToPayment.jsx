@@ -2,12 +2,13 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useState } from "react";
 import { processCardPayment, processCODOrder } from "../../services/payment";
 import OrderSuccessModal from "./OrderSuccessModal";
+import { useError } from "../../contexts/ErrorContext";
 
 export default function GoToPayment({ cart, total, address, onClose }) {
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [orderResponse, setOrderResponse] = useState(null);
-
+  const { addError } = useError();
 
   const handlePayment = async () => {
     try {
@@ -31,12 +32,14 @@ export default function GoToPayment({ cart, total, address, onClose }) {
       const paymentResult = await processCardPayment(orderData);
 
       // Redirect to Stripe checkout
-      const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);;
+      const stripe = await loadStripe(
+        import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
+      );
       console.log("Stripe Promise After Resolving: ", stripe);
       await stripe.redirectToCheckout({ sessionId: paymentResult.id });
     } catch (error) {
       console.error("Payment error:", error);
-      alert("Something went wrong during payment.");
+      addError("Something went wrong during payment.");
     }
   };
 

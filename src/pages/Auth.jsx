@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   User,
@@ -13,75 +16,87 @@ import {
 import { useNavigate } from "react-router-dom";
 import { login, signup } from "../services/auth";
 import { useAuth } from "../hooks/useAuth";
+import { useError } from "../contexts/ErrorContext";
 
 export default function Auth() {
   const navigate = useNavigate();
   const { login: setAuthUser } = useAuth();
+  const { addError } = useError();
 
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    userName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    role: "patient",
-    dateOfBirth: "",
+
+  // ------------------ Zod Schemas ------------------
+  const loginSchema = z.object({
+    email: z.string().email({ message: "Invalid email address" }),
+    password: z.string().min(6, { message: "Minimum 6 characters" }),
+    role: z.enum(["patient", "doctor"]),
   });
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const signupSchema = z
+    .object({
+      userName: z.string().min(2, { message: "Name is too short" }),
+      email: z.string().email({ message: "Invalid email address" }),
+      password: z.string().min(6, { message: "Minimum 6 characters" }),
+      confirmPassword: z.string().min(6),
+      dateOfBirth: z.string(),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+      message: "Passwords do not match",
+      path: ["confirmPassword"],
+    });
 
-  const toggleMode = () => {
-    setIsLogin(!isLogin);
-    setFormData({
+  const schema = isLogin ? loginSchema : signupSchema;
+
+  const {
+    register,
+    handleSubmit: formSubmit,
+    formState: { errors },
+    reset,
+    watch,
+  } = useForm({
+    resolver: zodResolver(schema),
+    defaultValues: {
       userName: "",
       email: "",
       password: "",
       confirmPassword: "",
       role: "patient",
       dateOfBirth: "",
-    });
+    },
+  });
+
+  const handleInputChange = () => {};
+
+  const toggleMode = () => {
+    setIsLogin((prev) => !prev);
+    reset();
   };
 
   const handleRoleSelect = (role) => {
-    setFormData({ ...formData, role });
+    // This function is no longer needed with react-hook-form
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const onSubmit = async (data) => {
     try {
       let res;
 
       if (isLogin) {
-        const loginData = {
-          email: formData.email,
-          password: formData.password,
-          role: formData.role,
-        };
-
-        res = await login(loginData);
+        res = await login({
+          email: data.email,
+          password: data.password,
+          role: data.role,
+        });
       } else {
-        // Password validation
-        if (formData.password !== formData.confirmPassword) {
-          console.error("Password validation failed: passwords do not match");
-          alert("Passwords do not match!");
-          return;
-        }
-
-        const signupData = {
-          name: formData.userName,
-          email: formData.email,
-          password: formData.password,
-          passwordConfirm: formData.confirmPassword,
+        res = await signup({
+          name: data.userName,
+          email: data.email,
+          password: data.password,
+          passwordConfirm: data.confirmPassword,
           role: "patient",
-          dateOfBirth: formData.dateOfBirth,
-        };
-
-        res = await signup(signupData);
+          dateOfBirth: data.dateOfBirth,
+        });
       }
 
       // Check if response is valid
@@ -99,20 +114,19 @@ export default function Auth() {
       setAuthUser(res.user);
 
       const role = res?.user?.role;
-      
+
       if (role === "doctor") {
         navigate("/appointment");
       } else {
         navigate("/chat");
       }
-      
     } catch (error) {
       console.error("Auth error occurred:", error);
       console.error("Error type:", typeof error);
       console.error("Error constructor:", error.constructor.name);
       console.error("Error message:", error.message);
       console.error("Error stack:", error.stack);
-      
+
       if (error.response) {
         console.error("Error response data:", error.response.data);
         console.error("Error response status:", error.response.status);
@@ -123,10 +137,13 @@ export default function Auth() {
       } else {
         console.error("Error setting up request:", error.message);
       }
-      
-      const errorMessage = error.response?.data?.message || error.message || "Something went wrong!";
+
+      const errorMessage =
+        error.response?.data?.message ||
+        error.message ||
+        "Something went wrong!";
       console.error("Displaying error message to user:", errorMessage);
-      alert(errorMessage);
+      addError(errorMessage);
     }
   };
 
@@ -235,7 +252,7 @@ export default function Auth() {
                           type="button"
                           onClick={() => handleRoleSelect("patient")}
                           className={`p-4 rounded-xl border-2 transition-all duration-200 ${
-                            formData.role === "patient"
+                            watch("role") === "patient"
                               ? "border-darkBlue bg-lightestBlue shadow-md"
                               : "border-lightBlue hover:border-mediumBlue"
                           }`}
@@ -244,14 +261,14 @@ export default function Auth() {
                         >
                           <User
                             className={`w-6 h-6 mx-auto mb-2 ${
-                              formData.role === "patient"
+                              watch("role") === "patient"
                                 ? "text-darkBlue"
                                 : "text-mediumBlue"
                             }`}
                           />
                           <span
                             className={`text-sm font-medium ${
-                              formData.role === "patient"
+                              watch("role") === "patient"
                                 ? "text-darkestBlue"
                                 : "text-mediumBlue"
                             }`}
@@ -263,7 +280,7 @@ export default function Auth() {
                           type="button"
                           onClick={() => handleRoleSelect("doctor")}
                           className={`p-4 rounded-xl border-2 transition-all duration-200 ${
-                            formData.role === "doctor"
+                            watch("role") === "doctor"
                               ? "border-darkBlue bg-lightestBlue shadow-md"
                               : "border-lightBlue hover:border-mediumBlue"
                           }`}
@@ -272,14 +289,14 @@ export default function Auth() {
                         >
                           <Stethoscope
                             className={`w-6 h-6 mx-auto mb-2 ${
-                              formData.role === "doctor"
+                              watch("role") === "doctor"
                                 ? "text-darkBlue"
                                 : "text-mediumBlue"
                             }`}
                           />
                           <span
                             className={`text-sm font-medium ${
-                              formData.role === "doctor"
+                              watch("role") === "doctor"
                                 ? "text-darkestBlue"
                                 : "text-mediumBlue"
                             }`}
@@ -292,7 +309,7 @@ export default function Auth() {
                   )}
                 </AnimatePresence>
                 {/* Form Fields */}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={formSubmit(onSubmit)} className="space-y-4">
                   <AnimatePresence mode="wait">
                     {!isLogin && (
                       <motion.div
@@ -307,25 +324,31 @@ export default function Auth() {
                           <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mediumBlue" />
                           <input
                             type="text"
-                            name="userName"
+                            {...register("userName")}
                             placeholder="Full Name"
-                            value={formData.userName}
-                            onChange={handleInputChange}
                             className="w-full pl-10 pr-4 py-3 border border-lightBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-darkBlue focus:border-transparent transition-all duration-200 bg-lightestBlue text-darkestBlue"
                             required={!isLogin}
                           />
+                          {errors.userName && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.userName.message}
+                            </p>
+                          )}
                         </div>
                         <div className="relative">
                           <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mediumBlue" />
                           <input
                             type="date"
-                            name="dateOfBirth"
+                            {...register("dateOfBirth")}
                             placeholder="Date of Birth"
-                            value={formData.dateOfBirth}
-                            onChange={handleInputChange}
                             className="w-full pl-10 pr-4 py-3 border border-lightBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-darkBlue focus:border-transparent transition-all duration-200 bg-lightestBlue text-darkestBlue"
                             required={!isLogin}
                           />
+                          {errors.dateOfBirth && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.dateOfBirth.message}
+                            </p>
+                          )}
                         </div>
                       </motion.div>
                     )}
@@ -334,25 +357,31 @@ export default function Auth() {
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mediumBlue" />
                     <input
                       type="email"
-                      name="email"
+                      {...register("email")}
                       placeholder="Email Address"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       className="w-full pl-10 pr-4 py-3 border border-lightBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-darkBlue focus:border-transparent transition-all duration-200 bg-lightestBlue text-darkestBlue"
                       required
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
                   <div className="relative">
                     <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mediumBlue" />
                     <input
                       type={showPassword ? "text" : "password"}
-                      name="password"
+                      {...register("password")}
                       placeholder="Password"
-                      value={formData.password}
-                      onChange={handleInputChange}
                       className="w-full pl-10 pr-12 py-3 border border-lightBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-darkBlue focus:border-transparent transition-all duration-200 bg-lightestBlue text-darkestBlue"
                       required
                     />
+                    {errors.password && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.password.message}
+                      </p>
+                    )}
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
@@ -377,13 +406,16 @@ export default function Auth() {
                         <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-mediumBlue" />
                         <input
                           type={showConfirmPassword ? "text" : "password"}
-                          name="confirmPassword"
+                          {...register("confirmPassword")}
                           placeholder="Confirm Password"
-                          value={formData.confirmPassword}
-                          onChange={handleInputChange}
                           className="w-full pl-10 pr-12 py-3 border border-lightBlue rounded-lg focus:outline-none focus:ring-2 focus:ring-darkBlue focus:border-transparent transition-all duration-200 bg-lightestBlue text-darkestBlue"
                           required={!isLogin}
                         />
+                        {errors.confirmPassword && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.confirmPassword.message}
+                          </p>
+                        )}
                         <button
                           type="button"
                           onClick={() =>
