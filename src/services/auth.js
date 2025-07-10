@@ -22,6 +22,7 @@ export const login = async (credentials) => {
  * @returns {Promise<Object>} - The response data
  */
 export const signup = async (userData) => {
+  console.log(userData)
   try {
     const response = await axiosInstance.post("/api/users/signup", userData);
     return response.data;
