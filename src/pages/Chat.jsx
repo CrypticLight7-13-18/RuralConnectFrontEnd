@@ -9,12 +9,13 @@ import {
   createChat,
   deleteChatById,
 } from "../services/chat";
-import { io } from "socket.io-client";
-import { socketURL } from "../services/api";
+import { socketService } from "../services/secureSocket";
 import { colors } from "../utils/colors";
 import { useError } from "../contexts/ErrorContext";
+import { sanitizeUserInput, ClientRateLimit } from "../utils/security";
 
-const socket = io(socketURL);
+// Rate limiter for chat messages
+const messageRateLimit = new ClientRateLimit(10, 60000); // 10 messages per minute
 
 const getPatientProfile = () => Promise.resolve(dummyPatientData);
 
@@ -27,6 +28,7 @@ const ChatPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState('disconnected');
   const messagesEndRef = useRef(null);
   const { addError } = useError();
 
@@ -46,53 +48,77 @@ const ChatPage = () => {
     loadData();
   }, []);
 
-  useEffect(() => {}, [currentChat]);
-
-  // Socket listeners for chatHistory and message
+  // Initialize secure socket connection
   useEffect(() => {
-    socket.on("chatHistory", (messages) => {
-      // Find the summary for the selected chat
-      const summary = chatSummary.find((c) => c.id === selectedChatId);
-      if (summary) {
-        setCurrentChat({ ...summary, messageHistory: messages.messageHistory });
-      }
-    });
-    socket.on("message", (msg) => {
-      setCurrentChat((prev) => {
-        if (!prev) return prev;
-        const history = prev.messageHistory || [];
-        // Prevent duplicate if the last message is identical
-        if (history.length > 0) {
-          const last = history[history.length - 1];
-          if (
-            last &&
-            last.message === msg.message &&
-            last.role === msg.role &&
-            new Date(last.timestamp).getTime() ===
-              new Date(msg.timestamp).getTime()
-          ) {
-            return prev;
+    const initializeSocket = async () => {
+      try {
+        setConnectionStatus('connecting');
+        await socketService.connect();
+        setConnectionStatus('connected');
+        
+        // Set up socket event listeners
+        socketService.on("chatHistory", (messages) => {
+          const summary = chatSummary.find((c) => c.id === selectedChatId);
+          if (summary) {
+            setCurrentChat({ ...summary, messageHistory: messages.messageHistory });
           }
-        }
-        return { ...prev, messageHistory: [...history, msg] };
-      });
-    });
-    return () => {
-      socket.off("chatHistory");
-      socket.off("message");
+        });
+
+        socketService.on("message", (msg) => {
+          setCurrentChat((prev) => {
+            if (!prev) return prev;
+            const history = prev.messageHistory || [];
+            
+            // Prevent duplicate messages
+            if (history.length > 0) {
+              const last = history[history.length - 1];
+              if (
+                last &&
+                last.message === msg.message &&
+                last.role === msg.role &&
+                new Date(last.timestamp).getTime() === new Date(msg.timestamp).getTime()
+              ) {
+                return prev;
+              }
+            }
+            return { ...prev, messageHistory: [...history, msg] };
+          });
+        });
+
+      } catch (error) {
+        console.error('Failed to initialize socket:', error);
+        setConnectionStatus('error');
+        addError(error.message || 'Failed to connect to chat server');
+      }
     };
-  }, [chatSummary, selectedChatId]);
+
+    initializeSocket();
+
+    // Cleanup on unmount
+    return () => {
+      socketService.disconnect();
+    };
+  }, []);
+
+  // Join chat room when chat changes
+  useEffect(() => {
+    const joinChatRoom = async () => {
+      if (currentChat?.id && socketService.isSocketConnected()) {
+        try {
+          await socketService.joinChat(currentChat.id);
+        } catch (error) {
+          console.error('Failed to join chat:', error);
+          addError('Failed to join chat room');
+        }
+      }
+    };
+
+    joinChatRoom();
+  }, [currentChat?.id, addError]);
 
   useEffect(() => {
     scrollToBottom();
   }, [currentChat?.messageHistory]);
-
-  // Join chat room when chat changes
-  useEffect(() => {
-    if (currentChat && currentChat.id) {
-      socket.emit("joinChat", { chatId: currentChat.id });
-    }
-  }, [currentChat?.id]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -123,30 +149,49 @@ const ChatPage = () => {
     }
   };
 
-  const selectChat = (chat) => {
+  const selectChat = async (chat) => {
     if (!chat) {
-      console.error(
-        "No chat or chat.id provided to selectChat",
-        chat,
-        chat?.id
-      );
+      console.error("No chat or chat.id provided to selectChat", chat, chat?.id);
       return;
     }
-    setSelectedChatId(chat.id);
-    socket.emit("joinChat", { chatId: chat.id });
-    setSidebarOpen(false);
+    
+    try {
+      setSelectedChatId(chat.id);
+      await socketService.joinChat(chat.id);
+      setSidebarOpen(false);
+    } catch (error) {
+      console.error('Failed to select chat:', error);
+      addError('Failed to join chat');
+    }
   };
 
   const handleSendMessage = async () => {
     if (!message.trim() || isLoading || !currentChat?.id) return;
-    setIsLoading(true);
-    socket.emit("newMessage", {
-      chatId: currentChat.id,
-      role: "User",
-      message,
-    });
-    setMessage("");
-    setIsLoading(false);
+    
+    // Validate message length and rate limiting
+    if (message.length > 1000) {
+      addError('Message is too long (max 1000 characters)');
+      return;
+    }
+
+    if (!messageRateLimit.isAllowed('sendMessage')) {
+      addError('You are sending messages too quickly. Please slow down.');
+      return;
+    }
+
+    // Sanitize the message
+    const sanitizedMessage = sanitizeUserInput(message.trim());
+    
+    try {
+      setIsLoading(true);
+      await socketService.sendMessage(currentChat.id, sanitizedMessage, "User");
+      setMessage("");
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      addError(error.message || 'Failed to send message');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const deleteChat = async (chatId, e) => {

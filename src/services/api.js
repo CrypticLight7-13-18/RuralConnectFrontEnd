@@ -1,4 +1,5 @@
 import axios from "axios";
+import { sanitizeUserInput } from "../utils/security";
 
 // ---------------------------------------------------------------------------
 //  Axios base URL and Socket URL configuration
@@ -16,13 +17,92 @@ export const backendURL = import.meta.env.VITE_BACKEND_URL || "";
 export const socketURL =
   import.meta.env.VITE_BACKEND_URL || window.location.origin;
 
+/**
+ * Recursively sanitize request data
+ * @param {any} data - Data to sanitize
+ * @returns {any} - Sanitized data
+ */
+const sanitizeRequestData = (data) => {
+  if (typeof data === 'string') {
+    return sanitizeUserInput(data);
+  }
+  
+  if (Array.isArray(data)) {
+    return data.map(sanitizeRequestData);
+  }
+  
+  if (data && typeof data === 'object') {
+    const sanitized = {};
+    for (const [key, value] of Object.entries(data)) {
+      sanitized[key] = sanitizeRequestData(value);
+    }
+    return sanitized;
+  }
+  
+  return data;
+};
+
+// Rate limiting for client-side requests
+class RequestRateLimit {
+  constructor() {
+    this.requests = new Map();
+    this.windowMs = 60000; // 1 minute
+    this.maxRequests = 60; // 60 requests per minute
+  }
+
+  isAllowed(url) {
+    const now = Date.now();
+    const requests = this.requests.get(url) || [];
+    
+    // Filter recent requests
+    const recentRequests = requests.filter(time => now - time < this.windowMs);
+    
+    if (recentRequests.length >= this.maxRequests) {
+      console.warn(`Rate limit exceeded for ${url}`);
+      return false;
+    }
+    
+    recentRequests.push(now);
+    this.requests.set(url, recentRequests);
+    return true;
+  }
+}
+
+const rateLimiter = new RequestRateLimit();
+
 const axiosInstance = axios.create({
   baseURL: backendURL,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
+  timeout: 30000, // 30 second timeout
 });
+
+// ---------------------------------------------------------------------------
+//  Request interceptor for security measures
+// ---------------------------------------------------------------------------
+axiosInstance.interceptors.request.use(
+  (config) => {
+    // Check rate limiting
+    if (!rateLimiter.isAllowed(config.url)) {
+      return Promise.reject(new Error('Rate limit exceeded. Please slow down.'));
+    }
+
+    // Sanitize request data if it exists
+    if (config.data && typeof config.data === 'object') {
+      config.data = sanitizeRequestData(config.data);
+    }
+
+    // Add security headers
+    config.headers['X-Requested-With'] = 'XMLHttpRequest';
+    
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 // ---------------------------------------------------------------------------
 //  Global error interceptor – converts any axios error to a unified object so
